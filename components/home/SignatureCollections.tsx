@@ -12,7 +12,7 @@ const collections = [
     description: "Discover timeless rings",
     href: "/collections",
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
     alt: "Elegant diamond ring in warm golden light",
   },
   {
@@ -20,7 +20,7 @@ const collections = [
     description: "Grace in every detail",
     href: "/collections",
     image:
-      "/images/home/banner2.jfif",
+      "/images/home/banner2.webp",
     alt: "Elegant necklace with a delicate pendant",
   },
   {
@@ -28,7 +28,7 @@ const collections = [
     description: "For every occasion",
     href: "/collections",
     image:
-      "/images/home/banner3.jfif",
+      "/images/home/banner3.webp",
     alt: "Statement earrings with sparkling stones",
   },
   {

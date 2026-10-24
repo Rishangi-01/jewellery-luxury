@@ -40,7 +40,7 @@ const slides = [
       "Find your signature style with our thoughtfully curated collection.",
     button: "SHOP SIGNATURES",
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
     position: "center 30%",
   },
 ];

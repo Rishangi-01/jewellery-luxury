@@ -53,21 +53,21 @@ const recommendations = [
     name: "Matching Necklace",
     price: 1899,
     category: "Necklaces",
-    image: "/images/home/banner3.jfif",
+    image: "/images/home/banner3.webp",
     description: "An elegant necklace to complement your ring.",
   },
   {
     name: "Diamond Earrings",
     price: 1299,
     category: "Earrings",
-    image: "/images/home/banner3.jfif",
+    image: "/images/home/banner3.webp",
     description: "Refined sparkle for every occasion.",
   },
   {
     name: "Elegant Bracelet",
     price: 1799,
     category: "Bracelets",
-    image: "/images/home/banner3.jfif",
+    image: "/images/home/banner3.webp",
     description: "A delicate finishing touch in gold.",
   },
 ];
@@ -290,7 +290,7 @@ export default function ProductExtraDetails() {
                           bg-[#2a211a] sm:aspect-[1/1] rounded-lg"
                       >
                         <Image
-                          src="/images/home/banner3.jfif"
+                          src="/images/home/banner3.webp"
                           alt="product"
                           fill
                           sizes="(max-width: 639px) 90vw, (max-width: 1023px) 30vw, 24vw"

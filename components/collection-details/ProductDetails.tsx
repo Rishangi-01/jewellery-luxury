@@ -37,15 +37,15 @@ const product = {
   sizes: ["5", "6", "7", "8", "9"],
   images: [
     {
-      src: "images/home/banner3.jfif",
+      src: "images/home/banner3.webp",
       alt: "Eternal diamond ring front view",
     },
     {
-      src: "images/about/banner1.jfif",
+      src: "images/about/banner1.webp",
       alt: "Diamond ring side detail",
     },
     {
-      src: "images/home/banner2.jfif",
+      src: "images/home/banner2.webp",
       alt: "Luxury jewelry close-up",
     },
   ],
@@ -124,7 +124,7 @@ export default function ProductDetails() {
                   }`}
               >
                 <Image
-                  src="/images/home/banner3.jfif"
+                  src="/images/home/banner3.webp"
                   alt={image.alt}
                   fill
                   sizes="76px"
@@ -160,7 +160,7 @@ export default function ProductDetails() {
                 className="absolute inset-0"
               >
                 <Image
-                  src="/images/home/banner3.jfif"
+                  src="/images/home/banner3.webp"
                   alt={product.images[activeImage].alt}
                   fill
                   priority

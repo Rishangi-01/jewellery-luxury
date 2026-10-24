@@ -38,7 +38,7 @@ const products: Product[] = [
     materials: ["Gold", "Diamond"],
     price: 3499,
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const products: Product[] = [
     materials: ["Gold", "Diamond"],
     price: 4999,
     image:
-      "/images/home/banner2.jfif",
+      "/images/home/banner2.webp",
     badge: "Bestseller",
   },
   {
@@ -57,7 +57,7 @@ const products: Product[] = [
     materials: ["Gold", "Silver"],
     price: 2199,
     image:
-      "/images/home/banner3.jfif",
+      "/images/home/banner3.webp",
   },
   {
     id: 4,
@@ -75,7 +75,7 @@ const products: Product[] = [
     materials: ["Gold", "Diamond", "Platinum"],
     price: 3299,
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
   },
   {
     id: 6,
@@ -84,7 +84,7 @@ const products: Product[] = [
     materials: ["Gold", "Diamond"],
     price: 3299,
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
   },
   {
     id: 7,
@@ -93,7 +93,7 @@ const products: Product[] = [
     materials: ["Gold"],
     price: 2599,
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
   },
   {
     id: 8,
@@ -102,7 +102,7 @@ const products: Product[] = [
     materials: ["Gold"],
     price: 1899,
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
   },
   {
     id: 9,
@@ -111,7 +111,7 @@ const products: Product[] = [
     materials: ["Gold", "Diamond"],
     price: 2899,
     image:
-      "/images/home/banner4.jfif",
+      "/images/home/banner4.webp",
   },
 ];
 
