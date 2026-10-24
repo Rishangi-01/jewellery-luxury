@@ -23,7 +23,7 @@ export default function LegacyBanner() {
         {/* Background image */}
         <div className="absolute inset-0 -z-30">
           <Image
-            src="/images/about/LegacyBanner.png"
+            src="/images/about/banner2.png"
             alt="Intricate gold and gemstone jewelry"
             fill
             sizes="100vw"
