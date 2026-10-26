@@ -12,7 +12,7 @@ const collections = [
     name: "Rings",
     description: "Discover timeless rings",
     image:
-      "/images/home/banner4.webp",
+      "/images/our-story/product2.png",
     alt: "Elegant diamond ring in warm golden light",
   },
   {
@@ -26,7 +26,7 @@ const collections = [
     name: "Earrings",
     description: "For every occasion",
     image:
-      "/images/home/banner3.webp",
+      "/images/our-story/product4.png",
     alt: "Statement earrings with sparkling stones",
   },
   {
