@@ -5,45 +5,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
+import { site } from "@/data";
 import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Sparkles,
 } from "lucide-react";
-
-const slides = [
-  {
-    eyebrow: "THE ART OF FINE JEWELRY",
-    title: ["Timeless", "Elegance", "For Modern", "Queens"],
-    description:
-      "Exquisite jewelry crafted for the romantic in all of us.",
-    button: "EXPLORE COLLECTION",
-    image:
-      "/images/hero.webp",
-    position: "center 35%",
-  },
-  {
-    eyebrow: "A TOUCH OF GOLD",
-    title: ["Beauty In", "Every", "Little", "Detail"],
-    description:
-      "Discover statement pieces that make every moment unforgettable.",
-    button: "DISCOVER THE EDIT",
-    image:
-      "/images/about/banner1.png",
-    position: "center 30%",
-  },
-  {
-    eyebrow: "MADE TO BE CHERISHED",
-    title: ["Your Story", "Deserves", "Something", "Beautiful"],
-    description:
-      "Find your signature style with our thoughtfully curated collection.",
-    button: "SHOP SIGNATURES",
-    image:
-      "/images/home/banner4.webp",
-    position: "center 30%",
-  },
-];
 
 const textVariants = {
   hidden: { opacity: 0, y: 35 },
@@ -55,6 +23,7 @@ const textVariants = {
 };
 
 export default function HeroSection() {
+  const slides = site.hero.slides;
   const [activeSlide, setActiveSlide] = useState(0);
   const currentSlide = slides[activeSlide];
 
@@ -66,7 +35,7 @@ export default function HeroSection() {
 
   return (
     <section
-      aria-label="Vélora featured collection"
+      aria-label={`${site.site.name} featured collection`}
       className="relative isolate min-h-[680px] overflow-hidden bg-[#080706]
         sm:min-h-[760px] lg:min-h-[min(850px,100svh)] w-[100%]"
     >
@@ -85,12 +54,15 @@ export default function HeroSection() {
         >
           <Image
             src={currentSlide.image}
-            alt="Vélora luxury fashion collection"
+            alt={site.site.description}
             fill
             priority={activeSlide === 0}
             sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: currentSlide.position }}
+            style={{
+              objectPosition:
+                activeSlide === 0 ? "center 35%" : "center 30%",
+            }}
           />
         </motion.div>
       </AnimatePresence>
@@ -168,7 +140,7 @@ export default function HeroSection() {
                   font-normal leading-[0.98] tracking-[-0.045em]
                   text-[#f6eddb]"
               >
-                {currentSlide.title.map((line, index) => (
+                {currentSlide.title.map((line) => (
                   <motion.span
                     key={`${activeSlide}-${line}`}
                     variants={textVariants}
@@ -186,7 +158,7 @@ export default function HeroSection() {
                   text-white/70 sm:mt-8 sm:max-w-[380px]
                   sm:text-base sm:leading-8"
               >
-                {currentSlide.description}
+                {currentSlide.text}
               </motion.p>
 
               {/* CTA */}
@@ -195,7 +167,7 @@ export default function HeroSection() {
                 className="mt-8 sm:mt-10"
               >
                 <Link
-                  href="/shop"
+                  href={site.nav.button.href}
                   className="group inline-flex min-h-[54px]
                     items-center justify-center gap-5
                     border border-[#c6a66d]/80 px-5 py-4
@@ -205,7 +177,7 @@ export default function HeroSection() {
                     hover:text-[#100d08]
                     sm:min-h-[60px] sm:px-7 sm:text-xs"
                 >
-                  {currentSlide.button}
+                  {site.nav.button.label}
 
                   <ArrowUpRight
                     size={17}

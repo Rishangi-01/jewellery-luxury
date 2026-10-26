@@ -102,7 +102,7 @@ export default function ProductExtraDetails() {
   return (
     <section
       className="relative overflow-hidden bg-[#faf8f3]
-      px-4 py-8 sm:px-6 sm:py-8 lg:px-10 lg:py-8 w-[100%]"
+      px-4 pb-8 pt-2 sm:px-6 sm:pb-8 sm:pt-2 lg:px-10 lg:pb-8 lg:pt-2 w-[100%]"
     >
       <div className="mx-auto max-w-[1400px]">
         <motion.div
@@ -132,7 +132,7 @@ export default function ProductExtraDetails() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`relative pb-4 text-[12px]
                     font-medium transition-colors duration-300
-                    sm:text-sm ${
+                    sm:text-sm lg:text-[18px] ${
                       isActive
                         ? "text-[#241e17]"
                         : "text-[#928779] hover:text-[#4e4030]"
@@ -173,7 +173,7 @@ export default function ProductExtraDetails() {
               >
                 <h2
                   className="mb-3 font-serif text-xl
-                  text-[#29221a] sm:text-2xl"
+                  text-[#29221a] sm:text-2xl lg:text-[3xl]"
                 >
                   {tabContent[activeTab].title}
                 </h2>
@@ -182,7 +182,7 @@ export default function ProductExtraDetails() {
                   <p
                     key={index}
                     className="mb-2 max-w-3xl text-sm
-                        leading-7 text-[#766c60] sm:text-[15px]"
+                        leading-7 text-[#766c60] sm:text-[15px] lg:text-[16px]"
                   >
                     {paragraph}
                   </p>
@@ -205,7 +205,7 @@ export default function ProductExtraDetails() {
           <div
             className="relative grid grid-cols-1
             lg:grid-cols-[0.78fr_1.22fr]
-            xl:bg-[url('/images/about/Woman-elegantly.png')]
+            xl:bg-[url('/images/about/Woman-elegantly.webp')]
             xl:bg-center bg-no-repeat"
             style={{backgroundSize: "100% 100%"}}
           >

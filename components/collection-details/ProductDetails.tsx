@@ -245,7 +245,7 @@ export default function ProductDetails() {
 
           <h1 className="font-serif text-3xl font-normal
             leading-tight tracking-[-0.035em] text-[#241d16]
-            sm:text-4xl lg:text-[42px]">
+            sm:text-4xl lg:text-[52px]">
             {product.name}
           </h1>
 
@@ -267,7 +267,7 @@ export default function ProductDetails() {
               {Array.from({ length: 5 }, (_, index) => (
                 <Star
                   key={index}
-                  size={15}
+                  size={16}
                   strokeWidth={1.5}
                   className={
                     index < Math.round(product.rating)
@@ -278,7 +278,7 @@ export default function ProductDetails() {
               ))}
             </div>
 
-            <span className="text-xs text-[#7c7163]">
+            <span className="text-xs text-[#7c7163] lg:text-[16px]">
               {product.rating.toFixed(1)}
             </span>
 
@@ -288,14 +288,14 @@ export default function ProductDetails() {
               href="#reviews"
               className="text-xs text-[#786c5e]
                 underline-offset-4 transition-colors
-                hover:text-[#a48650] hover:underline"
+                hover:text-[#a48650] hover:underline lg:text-[16px]"
             >
               {product.reviews} reviews
             </a>
           </div>
 
-          <p className="mt-6 max-w-xl text-sm leading-7
-            text-[#756b5f] sm:text-[15px] sm:leading-7">
+          <p className="mt-4 max-w-xl text-sm leading-7
+            text-[#756b5f] sm:text-[15px] sm:leading-7 lg:text-[16px]">
             {product.description}
           </p>
 
@@ -314,7 +314,7 @@ export default function ProductDetails() {
                     delay: 0.2 + index * 0.08,
                   }}
                   className="flex items-center gap-3 text-sm
-                    text-[#756b5f]"
+                    text-[#756b5f] lg:text-[18px]"
                 >
                   <span className="flex h-8 w-8 shrink-0
                     items-center justify-center rounded-full
@@ -327,7 +327,7 @@ export default function ProductDetails() {
             })}
           </div>
 
-          <div className="mt-8 border-t border-[#e4ddd1] pt-6">
+          <div className="mt-5 border-t border-[#e4ddd1] pt-6">
             <div className="flex flex-wrap items-center
               justify-between gap-3">
               <span className="text-sm font-medium text-[#33291f]">
@@ -340,9 +340,9 @@ export default function ProductDetails() {
                 className="inline-flex items-center gap-1.5
                   text-xs text-[#8c7146] underline
                   underline-offset-4 transition-colors
-                  hover:text-[#3a2d1e]"
+                  hover:text-[#3a2d1e] lg:text-[16px]"
               >
-                <Ruler size={14} />
+                <Ruler size={16} />
                 Size Guide
               </button>
             </div>
@@ -357,7 +357,7 @@ export default function ProductDetails() {
                   onClick={() => setSelectedSize(size)}
                   aria-pressed={selectedSize === size}
                   className={`flex h-11 w-11 items-center
-                    justify-center rounded-full border text-sm
+                    justify-center rounded-full border text-sm lg:text-[16px]
                     transition-all duration-300 ${
                       selectedSize === size
                         ? "border-[#191713] bg-[#191713] text-white shadow-md"
@@ -370,9 +370,9 @@ export default function ProductDetails() {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center
+          <div className="mt-5 flex flex-wrap items-center
             justify-between gap-3">
-            <span className="text-sm text-[#655a4c]">
+            <span className="text-sm text-[#655a4c] lg:text-[16px]">
               Quantity
             </span>
 

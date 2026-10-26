@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import { site } from "@/data";
 
 export default function LegacyBanner() {
   const shouldReduceMotion = useReducedMotion();
@@ -20,11 +21,10 @@ export default function LegacyBanner() {
           overflow-hidden border border-[#c6a66d]/30
           bg-[#100d09] shadow-[0_15px_50px_rgba(35,24,12,0.12)]"
       >
-        {/* Background image */}
         <div className="absolute inset-0 -z-30">
           <Image
-            src="/images/about/banner2.png"
-            alt="Intricate gold and gemstone jewelry"
+            src={site.cta.image}
+            alt={site.cta.text}
             fill
             sizes="100vw"
             className="object-cover object-[65%_50%]
@@ -33,7 +33,6 @@ export default function LegacyBanner() {
           />
         </div>
 
-        {/* Dark overlays */}
         <div className="absolute inset-0 -z-20 bg-black/25" />
 
         <div
@@ -47,7 +46,6 @@ export default function LegacyBanner() {
             from-black/35 via-transparent to-black/10"
         />
 
-        {/* Animated golden glow */}
         {!shouldReduceMotion && (
           <motion.div
             aria-hidden="true"
@@ -62,14 +60,12 @@ export default function LegacyBanner() {
           />
         )}
 
-        {/* Decorative border */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-2
             border border-white/10 sm:inset-3"
         />
 
-        {/* Content */}
         <div
           className="relative flex min-h-[330px] items-center
             px-7 py-12 sm:min-h-[370px] sm:px-12
@@ -77,7 +73,6 @@ export default function LegacyBanner() {
             lg:min-h-[430px] lg:px-20"
         >
           <div className="max-w-[510px]">
-            {/* Eyebrow */}
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -90,12 +85,11 @@ export default function LegacyBanner() {
                 className="text-[10px] font-medium uppercase
                   tracking-[0.28em] text-[#ddc18c] sm:text-xs"
               >
-                The Vélora Heritage
+                {site.cta.eyebrow}
               </span>
               <Sparkles size={14} className="text-[#ddc18c]" />
             </motion.div>
 
-            {/* Heading */}
             <motion.h2
               initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -105,24 +99,25 @@ export default function LegacyBanner() {
                 leading-[1.08] tracking-[-0.035em] text-[#f5ead4]
                 sm:text-5xl md:text-6xl"
             >
-              A Legacy of
-              <span className="mt-1 block italic text-[#d8bc87]">
-                Timeless Beauty
-              </span>
+              {site.cta.title.map((line, index) => (
+                <span
+                  key={line}
+                  className={index === 1 ? "mt-1 block italic text-[#d8bc87]" : "block"}
+                >
+                  {line}
+                </span>
+              ))}
             </motion.h2>
 
-            {/* Description */}
             <motion.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.35 }}
               className="mt-5 max-w-[390px] text-sm leading-7
-                text-white/75 sm:mt-6 sm:text-base sm:leading-8"
+                text-white/75 sm:mt-6 sm:text-base sm:leading-8 lg:text-lg"
             >
-              Each piece tells a story of elegance, passion, and
-              timeless beauty. Discover jewelry made to be treasured
-              for generations.
+              {site.cta.text}
             </motion.p>
 
             {/* CTA */}
@@ -134,7 +129,7 @@ export default function LegacyBanner() {
               className="mt-7 sm:mt-9"
             >
               <Link
-                href="/about"
+                href={site.cta.button.href}
                 className="group/button inline-flex min-h-12
                   items-center gap-4 border border-[#c5a46a]/80
                   bg-black/20 px-5 py-3 text-[10px] font-semibold
@@ -146,7 +141,7 @@ export default function LegacyBanner() {
                   focus-visible:ring-[#d8bc87] focus-visible:ring-offset-2
                   focus-visible:ring-offset-[#100d09] sm:px-6 sm:text-xs"
               >
-                Discover Our Story
+                {site.cta.button.label}
                 <ArrowUpRight
                   size={17}
                   strokeWidth={1.5}

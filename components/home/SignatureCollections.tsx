@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { site } from "@/data";
 
 const collections = [
   {
     name: "Rings",
     description: "Discover timeless rings",
-    href: "/collections",
     image:
       "/images/home/banner4.webp",
     alt: "Elegant diamond ring in warm golden light",
@@ -18,7 +18,6 @@ const collections = [
   {
     name: "Necklaces",
     description: "Grace in every detail",
-    href: "/collections",
     image:
       "/images/home/banner2.webp",
     alt: "Elegant necklace with a delicate pendant",
@@ -26,7 +25,6 @@ const collections = [
   {
     name: "Earrings",
     description: "For every occasion",
-    href: "/collections",
     image:
       "/images/home/banner3.webp",
     alt: "Statement earrings with sparkling stones",
@@ -34,10 +32,9 @@ const collections = [
   {
     name: "Bracelets",
     description: "Elegance that stays",
-    href: "/collections",
     image:
-      "/images/about/banner1.png",
-    alt: "Gold bracelet from the Vélora collection",
+      "/images/about/banner1.webp",
+    alt: `Gold bracelet from the ${site.site.name} collection`,
   },
 ];
 
@@ -94,7 +91,7 @@ export default function SignatureCollections() {
                 uppercase tracking-[0.28em] text-[#a28a60]
                 sm:text-xs sm:tracking-[0.32em]"
             >
-              THE VÉLORA SELECTION
+              THE {site.site.name} SELECTION
             </p>
 
             <h2
@@ -115,14 +112,14 @@ export default function SignatureCollections() {
           </div>
 
           <Link
-            href="/collections"
+            href={site.nav.button.href}
             className="group mb-1 hidden shrink-0 items-center
               gap-2 border-b border-[#a28a60]/60 pb-2
               text-[11px] font-semibold uppercase tracking-[0.14em]
               text-[#29231c] transition-colors hover:text-[#a28a60]
               sm:inline-flex"
           >
-            View All
+            {site.nav.button.label}
             <ArrowUpRight
               size={15}
               className="transition-transform duration-300
@@ -149,7 +146,7 @@ export default function SignatureCollections() {
               className="group min-w-0"
             >
               <Link
-                href={collection.href}
+                href={site.nav.button.href}
                 className="block focus-visible:outline-none
                   focus-visible:ring-2 focus-visible:ring-[#a28a60]
                   focus-visible:ring-offset-4"
@@ -211,7 +208,7 @@ export default function SignatureCollections() {
                         tracking-[-0.02em] text-[#29231c]
                         transition-colors duration-300
                         group-hover:text-[#9a7947]
-                        sm:text-2xl"
+                        sm:text-2xl lg:text-3xl"
                     >
                       {collection.name}
                     </h3>
@@ -227,7 +224,7 @@ export default function SignatureCollections() {
 
                   <p
                     className="mt-2 text-xs leading-5
-                      text-[#766d61] sm:text-sm"
+                      text-[#766d61] sm:text-sm lg:text-xl"
                   >
                     {collection.description}
                     <span className="ml-1.5 text-[#a28a60]">→</span>
@@ -247,7 +244,7 @@ export default function SignatureCollections() {
         {/* Mobile View All */}
         <div className="mt-9 flex justify-center sm:hidden">
           <Link
-            href="/collections"
+            href={site.nav.button.href}
             className="inline-flex items-center gap-2
               border border-[#b69a68] px-6 py-3
               text-[11px] font-semibold uppercase
@@ -255,7 +252,7 @@ export default function SignatureCollections() {
               transition-colors hover:bg-[#b69a68]
               hover:text-white"
           >
-            View All Collections
+            {site.nav.button.label}
             <ArrowRight size={15} />
           </Link>
         </div>

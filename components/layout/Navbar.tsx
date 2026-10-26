@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { site } from "@/data";
 import {
   Search,
   Heart,
@@ -12,14 +13,6 @@ import {
   X,
   ArrowUpRight,
 } from "lucide-react";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Shop", href: "/shop" },
-  { name: "About", href: "/about" },
-  { name: "Lookbook", href: "/lookbook" },
-  { name: "Contact", href: "/contact" },
-];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +54,7 @@ export default function Navbar() {
           {/* Brand */}
           <Link
             href="/"
-            aria-label="Vélora home"
+            aria-label={`${site.site.name} home`}
             className="group relative shrink-0"
           >
             <motion.span
@@ -71,7 +64,7 @@ export default function Navbar() {
                 tracking-[0.08em] text-[#d7c49c]
                 sm:text-[30px] lg:text-[35px]"
             >
-              VÉLORA
+              {site.site.name}
             </motion.span>
 
             <span className="absolute -bottom-1 left-0 h-px w-0
@@ -81,9 +74,9 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-6 md:flex lg:gap-9 xl:gap-11">
-            {navLinks.map((link, index) => (
+            {site.nav.links.map((link, index) => (
               <motion.div
-                key={link.name}
+                key={link.href}
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -96,9 +89,9 @@ export default function Navbar() {
                   className="group relative py-3 text-[13px]
                     font-medium tracking-wide text-white/80
                     transition-colors duration-300
-                    hover:text-[#e0cba3] lg:text-[15px]"
+                    hover:text-[#e0cba3] lg:text-[16px]"
                 >
-                  {link.name}
+                  {link.label}
                   <span className="absolute -bottom-0.5 left-0 h-px
                     w-0 bg-[#d7c49c] transition-all duration-300
                     group-hover:w-full" />
@@ -145,7 +138,6 @@ export default function Navbar() {
               </Link>
             </motion.div>
 
-            {/* Shopping bag */}
             <motion.div
               whileHover={{ scale: 1.12, y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -230,9 +222,9 @@ export default function Navbar() {
               className="overflow-hidden border-t border-white/10 md:hidden"
             >
               <div className="space-y-1 px-5 py-4">
-                {navLinks.map((link, index) => (
+                {site.nav.links.map((link, index) => (
                   <motion.div
-                    key={link.name}
+                    key={link.href}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.06 }}
@@ -245,7 +237,7 @@ export default function Navbar() {
                         text-sm tracking-wide text-white/80
                         transition-colors hover:text-[#d7c49c]"
                     >
-                      {link.name}
+                      {link.label}
                       <ArrowUpRight
                         size={16}
                         className="text-[#d7c49c]"

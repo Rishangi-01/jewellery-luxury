@@ -5,9 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ChevronRight } from "lucide-react";
+import { site } from "@/data";
 
 export default function CollectionHero() {
   const reduceMotion = useReducedMotion();
+  const pageLink = site.nav.links.find((link) => link.href === "/collections");
+  const homeLabel = site.nav.links.find((link) => link.href === "/")?.label;
+
+  if (!pageLink) {
+    throw new Error("Collections navigation link is missing from site data.");
+  }
 
   return (
     <section
@@ -17,8 +24,8 @@ export default function CollectionHero() {
     >
       <div className="absolute inset-0 -z-30">
         <Image
-          src="/images/about/banner2.png"
-          alt="Luxury gold and diamond jewelry on rich brown silk"
+          src={site.site.bannerImage}
+          alt={site.site.description}
           fill
           priority
           sizes="100vw"
@@ -78,7 +85,7 @@ export default function CollectionHero() {
               tracking-[-0.035em] text-[#fff8eb]
               drop-shadow-md sm:text-5xl md:text-6xl"
           >
-            Our Collection
+            {pageLink.label}
           </h1>
 
           <motion.p
@@ -86,9 +93,9 @@ export default function CollectionHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-3 text-xs leading-6 text-white/80
-              sm:mt-4 sm:text-sm md:text-base"
+              sm:mt-4 sm:text-sm md:text-base lg:text-[16px]"
           >
-            Discover pieces that speak your language.
+            {site.about.pageParagraphs[2]}
           </motion.p>
         </motion.div>
 
@@ -98,14 +105,14 @@ export default function CollectionHero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.45 }}
           className="mt-7 flex items-center gap-2
-            text-[10px] tracking-wide sm:mt-9 sm:text-xs"
+            text-[10px] tracking-wide sm:mt-9 sm:text-xs lg:text-[18px]"
         >
           <Link
             href="/"
             className="text-white/55 transition-colors
               hover:text-[#e3c58f]"
           >
-            Home
+            {homeLabel}
           </Link>
 
           <ChevronRight
@@ -117,7 +124,7 @@ export default function CollectionHero() {
             aria-current="page"
             className="text-[#e3c58f]"
           >
-            Shop
+            {pageLink.label}
           </span>
         </motion.nav>
       </div>

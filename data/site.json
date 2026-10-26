@@ -1,0 +1,1548 @@
+{
+  "Insurance": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Site": "InsuranceSite1",
+          "Header": "InsuranceHeader1",
+          "Footer": "InsuranceFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Hero",
+                "component": "InsuranceHero1"
+              },
+              {
+                "key": "Highlights",
+                "component": "InsuranceHighlights1"
+              },
+              {
+                "key": "About",
+                "component": "InsuranceAbout1"
+              },
+              {
+                "key": "Plans",
+                "component": "InsurancePlans1"
+              },
+              {
+                "key": "Process",
+                "component": "InsuranceProcess1"
+              },
+              {
+                "key": "Stats",
+                "component": "InsuranceStats1"
+              },
+              {
+                "key": "Testimonials",
+                "component": "InsuranceTestimonials1"
+              },
+              {
+                "key": "Cta",
+                "component": "InsuranceCta1"
+              },
+              {
+                "key": "Blog",
+                "component": "InsuranceBlog1"
+              }
+            ]
+          },
+          "about-us": {
+            "components": [
+              {
+                "key": "About",
+                "component": "InsuranceAbout1"
+              },
+              {
+                "key": "Stats",
+                "component": "InsuranceStats1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "InsuranceWhyChooseUs1"
+              }
+            ]
+          },
+          "insurance-plans": {
+            "components": [
+              {
+                "key": "Plans",
+                "component": "InsurancePlans1"
+              }
+            ]
+          },
+          "insurance-plan-detail": {
+            "expand": "items",
+            "components": [
+              {
+                "key": "PlanDetail",
+                "component": "InsurancePlanDetail1"
+              },
+              {
+                "key": "EnquiryForm",
+                "component": "InsuranceEnquiryForm1"
+              }
+            ]
+          },
+          "blogs": {
+            "components": [
+              {
+                "key": "Blog",
+                "component": "InsuranceBlog1"
+              }
+            ]
+          },
+          "blog-detail": {
+            "expand": "items",
+            "components": [
+              {
+                "key": "BlogDetail",
+                "component": "InsuranceBlogDetail1"
+              }
+            ]
+          },
+          "contact-us": {
+            "components": [
+              {
+                "key": "ContactPage",
+                "component": "InsuranceContactPage1"
+              },
+              {
+                "key": "EnquiryForm",
+                "component": "InsuranceEnquiryForm1"
+              }
+            ]
+          },
+          "enquire-now": {
+            "components": [
+              {
+                "key": "EnquirePage",
+                "component": "InsuranceEnquirePage1"
+              },
+              {
+                "key": "EnquiryForm",
+                "component": "InsuranceEnquiryForm1"
+              }
+            ]
+          },
+          "thank-you": {
+            "components": [
+              {
+                "key": "ThankYouPage",
+                "component": "InsuranceThankYouPage1"
+              }
+            ]
+          },
+          "faq": {
+            "components": [
+              {
+                "key": "FaqPage",
+                "component": "InsuranceFaqPage1"
+              }
+            ]
+          },
+          "privacy-policy": {
+            "components": [
+              {
+                "key": "PolicyPages",
+                "component": "InsurancePolicyPages1"
+              }
+            ]
+          },
+          "terms-and-conditions": {
+            "components": [
+              {
+                "key": "PolicyPages",
+                "component": "InsurancePolicyPages1"
+              }
+            ]
+          },
+          "cookie-policy": {
+            "components": [
+              {
+                "key": "PolicyPages",
+                "component": "InsurancePolicyPages1"
+              }
+            ]
+          },
+          "sitemap": {
+            "components": [
+              {
+                "key": "SitemapPage",
+                "component": "InsuranceSitemapPage1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Site": {
+        "variants": {
+          "InsuranceSite1": {
+            "bgImage": "/images/about/footer.webp",
+            "alt": "VÉLORA",
+            "name": "VÉLORA",
+            "description": "Jewelry created to celebrate your story, cherish your moments, and last for generations.",
+            "logo": "/images/logo.webp",
+            "logoWhite": "/images/logo-white.webp",
+            "addressLines": [
+              "123 Luxury Lane,",
+              "New York, NY 10001, USA"
+            ],
+            "emails": [
+              "hello@velora.com",
+              "hello@velora.com"
+            ],
+            "phones": [
+              "+1 (212) 555-0186",
+              "+1 (212) 555-0186"
+            ],
+            "callLabel": "Call Us",
+            "bannerImage": "/images/hero.webp",
+            "socials": [
+              {
+                "icon": "facebook",
+                "label": "Facebook",
+                "href": "https://facebook.com"
+              },
+              {
+                "icon": "instagram",
+                "label": "Instagram",
+                "href": "https://instagram.com"
+              },
+              {
+                "icon": "linkedin",
+                "label": "LinkedIn",
+                "href": "https://linkedin.com"
+              },
+              {
+                "icon": "youtube",
+                "label": "YouTube",
+                "href": "https://youtube.com"
+              }
+            ],
+            "hours": [
+              {
+                "days": "Monday – Saturday",
+                "daysShort": "Mon - Sat",
+                "time": "10:00 AM – 7:00 PM ET"
+              },
+              {
+                "days": "Sunday",
+                "daysShort": "Sunday",
+                "time": "Closed"
+              }
+            ]
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "InsuranceHeader1": {
+            "links": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "Collections",
+                "href": "/collections"
+              },
+              {
+                "label": "Our Story",
+                "href": "/our-story",
+                "dropdown": true
+              },
+              {
+                "label": "Lookbook",
+                "href": "/lookbook"
+              },
+              {
+                "label": "Contact",
+                "href": "/contact"
+              }
+            ],
+            "button": {
+              "label": "Our Collection",
+              "href": "/collections"
+            }
+          }
+        }
+      },
+      "Hero": {
+        "variants": {
+          "InsuranceHero1": {
+            "slides": [
+              {
+                "eyebrow": "THE ART OF FINE JEWELRY",
+                "title": [
+                  "Timeless Elegance",
+                  "For Modern Queens"
+                ],
+                "text": "Exquisite jewelry crafted for the romantic in all of us.",
+                "image": "/images/hero.webp"
+              },
+              {
+                "eyebrow": "A TOUCH OF GOLD",
+                "title": [
+                  "Beauty In Every",
+                  "Little Detail"
+                ],
+                "text": "Discover statement pieces that make every moment unforgettable.",
+                "image": "/images/about/banner1.webp"
+              },
+              {
+                "eyebrow": "MADE TO BE CHERISHED",
+                "title": [
+                  "Your Story Deserves",
+                  "Something Beautiful"
+                ],
+                "text": "Find your signature style with our thoughtfully curated collection.",
+                "image": "/images/home/banner4.webp"
+              }
+            ]
+          }
+        }
+      },
+      "Highlights": {
+        "variants": {
+          "InsuranceHighlights1": {
+            "items": [
+              {
+                "icon": "shield-check",
+                "title": "Complete",
+                "text": "Financial Security"
+              },
+              {
+                "icon": "heart-pulse",
+                "title": "Better",
+                "text": "Health & Wellness"
+              },
+              {
+                "icon": "home",
+                "title": "Safer",
+                "text": "Homes & Belongings"
+              },
+              {
+                "icon": "car",
+                "title": "Worry-Free",
+                "text": "Journeys"
+              },
+              {
+                "icon": "plane",
+                "title": "Global",
+                "text": "Travel Confidence"
+              },
+              {
+                "icon": "briefcase",
+                "title": "Stronger",
+                "text": "Business Protection"
+              }
+            ]
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "InsuranceAbout1": {
+            "eyebrow": "Our Story",
+            "title": "Heritage Meets",
+            "highlight": "Modern Elegance",
+            "mainImage": "/images/home/banner3.webp",
+            "mainImageAlt": "Artisan carefully crafting a piece of fine jewelry",
+            "familyImage": "/images/about-family.webp",
+            "familyImageAlt": "Happy insured family",
+            "homeText": "At VÉLORA, we believe jewelry is more than an accessory — it’s a reflection of your story, your strength, and your individuality.",
+            "experience": {
+              "value": "10+",
+              "label": [
+                "Years of",
+                "Excellence"
+              ]
+            },
+            "points": [
+              {
+                "icon": "shield-check",
+                "title": "Control Over Policy",
+                "text": "Stay in control with flexible and transparent insurance plans."
+              },
+              {
+                "icon": "users-three",
+                "title": "Trusted Insurance Agency",
+                "text": "Backed by experience, dedicated to your security and well-being."
+              }
+            ],
+            "button": {
+              "label": "Our Collection",
+              "href": "/collections"
+            },
+            "pageParagraphs": [
+              "At VÉLORA, we believe jewelry is more than an accessory — it’s a reflection of your story, your strength, and your individuality.",
+              "Founded with a vision to create timeless pieces, VÉLORA blends traditional craftsmanship with modern design, offering jewelry that celebrates every chapter of your life.",
+              "Discover pieces that speak your language.",
+              "Each piece tells a story of elegance, passion, and timeless beauty. Discover jewelry made to be treasured for generations."
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "InsuranceWhyChooseUs1": {
+            "eyebrow": "Why Choose Us",
+            "title": "Your Trusted Partner",
+            "titleLine2": "for a",
+            "highlight": "Safer Tomorrow",
+            "text": "We are committed to providing reliable insurance solutions that protect what matters most to you and your loved ones.",
+            "image": "/images/why-choose-us.webp",
+            "imageAlt": "Family reviewing their insurance plan together",
+            "items": [
+              {
+                "icon": "shield-check",
+                "title": [
+                  "Comprehensive",
+                  "Coverage"
+                ],
+                "text": [
+                  "A wide range of insurance plans",
+                  "to meet your every need under",
+                  "one roof."
+                ]
+              },
+              {
+                "icon": "users-three",
+                "title": [
+                  "Customer",
+                  "First Approach"
+                ],
+                "text": [
+                  "Your peace of mind is our",
+                  "priority. We offer personalized",
+                  "support at every step."
+                ]
+              },
+              {
+                "icon": "file-text",
+                "title": [
+                  "Hassle-Free",
+                  "Claims"
+                ],
+                "text": [
+                  "A simple and transparent",
+                  "claims process for a stress-free",
+                  "experience."
+                ]
+              },
+              {
+                "icon": "hand-coins",
+                "title": [
+                  "Affordable",
+                  "Plans"
+                ],
+                "text": [
+                  "Flexible and cost-effective",
+                  "options to fit your budget",
+                  "and goals."
+                ]
+              },
+              {
+                "icon": "shield-check",
+                "title": [
+                  "Trusted",
+                  "& Reliable"
+                ],
+                "text": [
+                  "Backed by a strong network",
+                  "and years of industry",
+                  "expertise."
+                ]
+              },
+              {
+                "icon": "headset",
+                "title": [
+                  "Dedicated",
+                  "Support"
+                ],
+                "text": [
+                  "Our experts are always here",
+                  "to guide you with the right",
+                  "advice and solutions."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Plans": {
+        "variants": {
+          "InsurancePlans1": {
+            "eyebrow": "Our Insurance Plans",
+            "title": "Protection for",
+            "highlight": "Every Stage of Life",
+            "text": "Explore our comprehensive range of insurance plans designed to keep you and your loved ones secure.",
+            "buttonLabel": "Learn More",
+            "items": [
+              {
+                "slug": "life-insurance",
+                "title": "Life Insurance",
+                "icon": "heart-pulse",
+                "homeIcon": "heart-pulse",
+                "text": "Financial security for your loved ones, today and always.",
+                "lines": [
+                  "Financial security for your loved",
+                  "ones, today and always."
+                ],
+                "homeText": [
+                  "Financial security",
+                  "for your loved ones,",
+                  "today and always."
+                ],
+                "image": "/images/life-insurance.webp",
+                "homeImage": "/images/plan-life.webp",
+                "detailImage": "/images/plan-detail-life.webp",
+                "relatedText": [
+                  "Financial security",
+                  "for your loved ones."
+                ],
+                "overview": [
+                  "Life insurance is a financial safety net that provides protection to your family in the event of an unforeseen situation. It ensures that your loved ones remain financially secure and can continue to meet their needs, even in your absence.",
+                  "With flexible plans and customizable coverage options, life insurance helps you plan for a more stable and worry-free future."
+                ]
+              },
+              {
+                "slug": "health-insurance",
+                "title": "Health Insurance",
+                "icon": "briefcase-medical",
+                "homeIcon": "heart-pulse",
+                "text": "Quality healthcare coverage for a healthier tomorrow.",
+                "lines": [
+                  "Quality healthcare coverage",
+                  "for a healthier tomorrow."
+                ],
+                "homeText": [
+                  "Quality healthcare",
+                  "coverage for a healthier",
+                  "tomorrow."
+                ],
+                "image": "/images/health-insurance.webp",
+                "homeImage": "/images/plan-health.webp",
+                "thumb": "/images/related-health.webp",
+                "relatedText": [
+                  "Quality healthcare",
+                  "for a healthier tomorrow."
+                ],
+                "overview": [
+                  "Health insurance covers your medical expenses when you need care the most. It protects your savings from the rising cost of hospitalisation, treatments and medicines, so you can focus on getting better.",
+                  "With flexible plans and customizable coverage options, health insurance helps you and your family stay prepared for every medical need."
+                ]
+              },
+              {
+                "slug": "home-insurance",
+                "title": "Home Insurance",
+                "icon": "home",
+                "homeIcon": "home",
+                "text": "Protect your home and belongings from unforeseen events.",
+                "lines": [
+                  "Protect your home and",
+                  "belongings from unforeseen",
+                  "events."
+                ],
+                "homeText": [
+                  "Protect your home",
+                  "and belongings from",
+                  "unforeseen events."
+                ],
+                "image": "/images/home-insurance.webp",
+                "homeImage": "/images/plan-home.webp",
+                "thumb": "/images/related-home.webp",
+                "relatedText": [
+                  "Protect your home",
+                  "and belongings."
+                ],
+                "overview": [
+                  "Home insurance safeguards your house and everything inside it against unforeseen events such as fire, theft and natural calamities. It ensures that the place you call home stays protected at all times.",
+                  "With flexible plans and customizable coverage options, home insurance gives you complete peace of mind for your most valuable asset."
+                ]
+              },
+              {
+                "slug": "motor-insurance",
+                "title": "Motor Insurance",
+                "icon": "car",
+                "homeIcon": "car",
+                "text": "Stay protected on every journey with comprehensive cover.",
+                "lines": [
+                  "Stay protected on every",
+                  "journey with comprehensive",
+                  "cover."
+                ],
+                "homeText": [
+                  "Stay protected on",
+                  "every journey with",
+                  "comprehensive cover."
+                ],
+                "image": "/images/motor-insurance.webp",
+                "homeImage": "/images/plan-motor.webp",
+                "thumb": "/images/related-motor.webp",
+                "relatedText": [
+                  "Stay protected on",
+                  "every journey."
+                ],
+                "overview": [
+                  "Motor insurance protects you and your vehicle against accidents, theft and third-party liabilities. It keeps you covered on every journey, whether it is a short drive or a long road trip.",
+                  "With flexible plans and customizable coverage options, motor insurance lets you drive with complete confidence."
+                ]
+              },
+              {
+                "slug": "travel-insurance",
+                "title": "Travel Insurance",
+                "icon": "plane",
+                "homeIcon": "plane",
+                "text": "Travel with confidence and enjoy worry-free journeys worldwide.",
+                "lines": [
+                  "Travel with confidence and",
+                  "enjoy worry-free journeys",
+                  "worldwide."
+                ],
+                "homeText": [
+                  "Travel with confidence",
+                  "and enjoy worry-free",
+                  "journeys worldwide."
+                ],
+                "image": "/images/travel-insurance.webp",
+                "homeImage": "/images/plan-travel.webp",
+                "thumb": "/images/related-travel.webp",
+                "relatedText": [
+                  "Travel with confidence",
+                  "worldwide."
+                ],
+                "overview": [
+                  "Travel insurance protects you from unexpected events during your trip, such as medical emergencies, flight delays, lost baggage and trip cancellations. It lets you explore the world without worry.",
+                  "With flexible plans and customizable coverage options, travel insurance keeps every journey safe and stress-free."
+                ]
+              },
+              {
+                "slug": "business-insurance",
+                "title": "Business Insurance",
+                "icon": "briefcase",
+                "homeIcon": "briefcase",
+                "text": "Tailored solutions to protect your business and ensure continuity.",
+                "lines": [
+                  "Tailored solutions to protect",
+                  "your business and ensure",
+                  "continuity."
+                ],
+                "homeText": [
+                  "Tailored solutions to",
+                  "protect your business",
+                  "and ensure continuity."
+                ],
+                "image": "/images/business-insurance.webp",
+                "homeImage": "/images/business-insurance.webp",
+                "relatedText": [
+                  "Protect your business",
+                  "and ensure continuity."
+                ],
+                "overview": [
+                  "Business insurance protects your company against financial losses caused by unexpected events such as property damage, liability claims and business interruptions. It keeps your operations running smoothly.",
+                  "With flexible plans and customizable coverage options, business insurance helps you grow with confidence and continuity."
+                ]
+              },
+              {
+                "slug": "child-insurance",
+                "title": "Child Insurance",
+                "icon": "users-three",
+                "homeIcon": "users-three",
+                "text": "Secure your child’s dreams with a strong financial foundation.",
+                "lines": [
+                  "Secure your child’s dreams",
+                  "with a strong financial",
+                  "foundation."
+                ],
+                "homeText": [
+                  "Secure your child’s",
+                  "dreams with a strong",
+                  "financial foundation."
+                ],
+                "image": "/images/child-insurance.webp",
+                "homeImage": "/images/child-insurance.webp",
+                "relatedText": [
+                  "Secure your child’s",
+                  "dreams."
+                ],
+                "overview": [
+                  "Child insurance helps you build a strong financial foundation for your child’s education, career and important milestones. It ensures their dreams stay protected, no matter what life brings.",
+                  "With flexible plans and customizable coverage options, child insurance helps you plan a brighter and more secure future for your little one."
+                ]
+              },
+              {
+                "slug": "retirement-plans",
+                "title": "Retirement Plans",
+                "icon": "hand-coins",
+                "homeIcon": "hand-coins",
+                "text": "Plan today for a financially independent and worry-free tomorrow.",
+                "lines": [
+                  "Plan today for a financially",
+                  "independent and worry-free",
+                  "tomorrow."
+                ],
+                "homeText": [
+                  "Plan today for a",
+                  "financially independent",
+                  "tomorrow."
+                ],
+                "image": "/images/retirement-plans.webp",
+                "homeImage": "/images/retirement-plans.webp",
+                "relatedText": [
+                  "Plan today for a",
+                  "worry-free tomorrow."
+                ],
+                "overview": [
+                  "Retirement plans help you build a steady income for your golden years. They ensure that you stay financially independent and continue to enjoy the lifestyle you have worked hard for.",
+                  "With flexible plans and customizable coverage options, retirement plans help you look forward to a stable and worry-free future."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "PlanDetail": {
+        "variants": {
+          "InsurancePlanDetail1": {
+            "bannerTitle": "Insurance Plan Detail",
+            "overviewEyebrow": "Overview",
+            "overviewTitle": "What is",
+            "featuresEyebrow": "Key Features",
+            "featuresTitle": "Features of Our",
+            "featuresSuffix": "Plans",
+            "features": [
+              {
+                "icon": "shield-check",
+                "title": "Financial Security",
+                "text": [
+                  "Protect your loved",
+                  "ones’ future."
+                ]
+              },
+              {
+                "icon": "coins",
+                "title": "Flexible Plans",
+                "text": [
+                  "Choose coverage",
+                  "as per your needs."
+                ]
+              },
+              {
+                "icon": "heart-pulse",
+                "title": "Tax Benefits",
+                "text": [
+                  "Avail attractive",
+                  "tax advantages."
+                ]
+              },
+              {
+                "icon": "file-text",
+                "title": "Customizable Coverage",
+                "text": [
+                  "Plans designed to",
+                  "fit your goals."
+                ]
+              }
+            ],
+            "whyEyebrow": "Why Choose Us",
+            "whyTitle": "Why Choose Our",
+            "whySuffix": "Plan?",
+            "why": [
+              {
+                "icon": "users-three",
+                "title": "Trusted by Thousands",
+                "text": "Backed by years of experience and a strong customer base."
+              },
+              {
+                "icon": "headset",
+                "title": "Expert Guidance",
+                "text": "Get personalized advice from our insurance experts."
+              },
+              {
+                "icon": "hand-coins",
+                "title": "Affordable Options",
+                "text": "Plans available for every budget and lifestyle."
+              },
+              {
+                "icon": "shield-check",
+                "title": "Hassle-Free Process",
+                "text": "Simple documentation and quick policy issuance."
+              }
+            ],
+            "formTitle": "Enquire Now",
+            "formText": "Get the best {plan} plan for your needs. Fill out the form and we’ll get back to you shortly.",
+            "relatedTitle": "Related Insurance Plans"
+          }
+        }
+      },
+      "Process": {
+        "variants": {
+          "InsuranceProcess1": {
+            "eyebrow": "How It Works",
+            "title": "A Simple Process",
+            "highlight": "for Complete Protection",
+            "text": "Getting insured with Surevia is quick, easy and hassle-free. Follow these simple steps and secure your future with the right insurance plan.",
+            "button": {
+              "label": "Contact Us",
+              "href": "/contact-us"
+            },
+            "steps": [
+              {
+                "icon": "file-search",
+                "title": "Explore Options",
+                "text": [
+                  "Browse our insurance",
+                  "plans and choose the",
+                  "one that fits your",
+                  "needs."
+                ]
+              },
+              {
+                "icon": "file-user",
+                "title": "Share Your Details",
+                "text": [
+                  "Provide your basic",
+                  "information securely",
+                  "and quickly."
+                ]
+              },
+              {
+                "icon": "file-check",
+                "title": "Get a Tailored Plan",
+                "text": [
+                  "Receive a customized",
+                  "plan as per your",
+                  "requirements with",
+                  "clear terms."
+                ]
+              },
+              {
+                "icon": "shield-check",
+                "title": "Stay Protected",
+                "text": [
+                  "Complete the process",
+                  "and enjoy financial",
+                  "security for a",
+                  "brighter tomorrow."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Stats": {
+        "variants": {
+          "InsuranceStats1": {
+            "items": [
+              {
+                "icon": "users-three",
+                "value": "10+",
+                "label": "Years of Excellence"
+              },
+              {
+                "icon": "file-text",
+                "value": "50K+",
+                "label": "Happy Customers"
+              },
+              {
+                "icon": "shield-badge",
+                "value": "25+",
+                "label": "Master Artisans"
+              },
+              {
+                "icon": "star",
+                "value": "100%",
+                "label": "Ethically Sourced"
+              }
+            ]
+          }
+        }
+      },
+      "Testimonials": {
+        "variants": {
+          "InsuranceTestimonials1": {
+            "eyebrow": "Client Testimonials",
+            "title": "What Our",
+            "highlight": "Customers Say",
+            "text": "Real stories from real people who trust us for a safer and more secure tomorrow.",
+            "items": [
+              {
+                "name": "Priya Sharma",
+                "city": "New Delhi",
+                "rating": 5,
+                "image": "/images/testimonial-1.webp",
+                "quote": "“The entire process was smooth and hassle-free. The team explained everything clearly and helped me choose the right plan for my family. Highly recommended!”"
+              },
+              {
+                "name": "Rahul Mehta",
+                "city": "Mumbai",
+                "rating": 5,
+                "image": "/images/testimonial-2.webp",
+                "quote": "“I appreciate the transparent process and quick support. Their team was professional, knowledgeable and always available to answer my questions. Truly a reliable insurance partner.”"
+              },
+              {
+                "name": "Neha Kapoor",
+                "city": "Bengaluru",
+                "rating": 5,
+                "image": "/images/testimonial-3.webp",
+                "quote": "“From consultation to claim support, the experience has been excellent. The team is supportive, responsive and genuinely cares about their customers. I feel secure with them.”"
+              },
+              {
+                "name": "Kavita Iyer",
+                "city": "Chennai",
+                "rating": 5,
+                "image": "/images/retirement-plans.webp",
+                "quote": "“Planning our retirement felt overwhelming until we spoke to the Surevia team. They found a plan that fits our budget and gives us real peace of mind for the years ahead.”"
+              }
+            ]
+          }
+        }
+      },
+      "Cta": {
+        "variants": {
+          "InsuranceCta1": {
+            "eyebrow": "The Vélora Heritage",
+            "title": [
+              "A Legacy of",
+              "Timeless Beauty"
+            ],
+            "text": "Each piece tells a story of elegance, passion, and timeless beauty. Discover jewelry made to be treasured for generations.",
+            "image": "/images/about/banner2.webp",
+            "button": {
+              "label": "Discover Our Story",
+              "href": "/our-story"
+            }
+          }
+        }
+      },
+      "Blog": {
+        "variants": {
+          "InsuranceBlog1": {
+            "eyebrow": "Our Latest Blogs",
+            "title": "Insights & Tips for a",
+            "highlight": "Safer Tomorrow",
+            "text": "Expert advice, helpful guides and the latest updates from the world of insurance.",
+            "buttonLabel": "Read More",
+            "homeCount": 3,
+            "categoryLabel": "Showing posts in",
+            "allPostsLabel": "View all posts",
+            "posts": [
+              {
+                "slug": "how-life-insurance-secures-your-familys-future",
+                "category": "Life Insurance",
+                "date": "2026-08-15",
+                "title": "How Life Insurance Secures Your Family’s Future",
+                "titleLines": [
+                  "How Life Insurance Secures",
+                  "Your Family’s Future"
+                ],
+                "text": "Discover how life insurance provides financial stability and peace of mind for your loved ones during uncertain times.",
+                "image": "/images/blog-1.webp",
+                "detail": {
+                  "image": "/images/blog-detail.webp",
+                  "imageAlt": "Hands sheltering a paper family",
+                  "comments": 3,
+                  "intro": "Life insurance is one of the simplest ways to make sure the people who depend on you stay financially secure, even if you are no longer there to provide for them. It turns an uncertain future into a plan your family can rely on.",
+                  "sections": [
+                    {
+                      "title": "1. Replace Lost",
+                      "highlight": "Income",
+                      "text": "If your family relies on your earnings, a life cover pays out a lump sum or regular income that helps them meet everyday expenses such as rent, groceries, and school fees without disrupting the life they are used to."
+                    },
+                    {
+                      "title": "2. Clear Loans and",
+                      "highlight": "Liabilities",
+                      "text": "Home loans, car loans, and other debts do not disappear with you. The right sum assured lets your family settle outstanding liabilities instead of inheriting them at the most difficult time."
+                    },
+                    {
+                      "title": "3. Protect Long-Term",
+                      "highlight": "Goals",
+                      "text": "From your child’s higher education to your partner’s retirement, the goals you are saving for today can stay on track. Choose a cover amount and policy term that match the milestones you want to protect."
+                    }
+                  ],
+                  "tip": {
+                    "title": "Tip: Start Early",
+                    "text": "Premiums are usually lower when you are younger and healthier, so buying life cover early can lock in protection at a more affordable cost."
+                  }
+                }
+              },
+              {
+                "slug": "why-health-insurance-is-essential-for-everyone",
+                "category": "Health Insurance",
+                "date": "2026-08-12",
+                "title": "Why Health Insurance is Essential for Everyone",
+                "titleLines": [
+                  "Why Health Insurance is",
+                  "Essential for Everyone"
+                ],
+                "text": "Understand the key benefits of health insurance and how it helps you stay prepared for unexpected medical expenses.",
+                "image": "/images/blog-2.webp",
+                "detail": {
+                  "image": "/images/blog-2.webp",
+                  "imageAlt": "Doctor talking with a patient at a desk",
+                  "comments": 5,
+                  "intro": "A medical emergency rarely gives notice, and the cost of treatment can strain even careful savings. Health insurance lets you focus on recovery rather than on how the bills will be paid.",
+                  "sections": [
+                    {
+                      "title": "1. Manage Rising",
+                      "highlight": "Medical Costs",
+                      "text": "Hospital stays, surgeries, and diagnostic tests become more expensive every year. A health plan covers a large share of these costs so that one illness does not undo years of saving."
+                    },
+                    {
+                      "title": "2. Get Care",
+                      "highlight": "Without Delay",
+                      "text": "Many plans offer cashless treatment at network hospitals, which means you can be admitted and treated without arranging a large payment first. Check the hospital list near your home before you buy."
+                    },
+                    {
+                      "title": "3. Cover the",
+                      "highlight": "Whole Family",
+                      "text": "A family floater plan protects your spouse, children, and sometimes parents under a single sum insured. Review the waiting periods and exclusions so you know exactly what is covered and from when."
+                    }
+                  ],
+                  "tip": {
+                    "title": "Tip: Read the Waiting Periods",
+                    "text": "Most policies apply a waiting period to pre-existing conditions and certain treatments. Knowing these before you buy helps you avoid surprises at claim time."
+                  }
+                }
+              },
+              {
+                "slug": "travel-insurance-your-companion-for-a-worry-free-trip",
+                "category": "Travel Insurance",
+                "date": "2026-08-10",
+                "title": "Travel Insurance: Your Companion for a Worry-Free Trip",
+                "titleLines": [
+                  "Travel Insurance: Your",
+                  "Companion for a Worry-Free Trip"
+                ],
+                "text": "Learn why travel insurance is important and how it protects you from unexpected events during your journey.",
+                "image": "/images/blog-3.webp",
+                "detail": {
+                  "image": "/images/blog-3.webp",
+                  "imageAlt": "Travellers watching a plane from an airport terminal",
+                  "comments": 2,
+                  "intro": "A trip takes weeks of planning, but a missed flight, a lost bag, or a sudden illness abroad can change it in minutes. Travel insurance is a small addition to your budget that keeps those setbacks from becoming expensive problems.",
+                  "sections": [
+                    {
+                      "title": "1. Medical Help",
+                      "highlight": "Away from Home",
+                      "text": "Treatment in another country can be costly and hard to arrange. Travel cover pays for emergency medical care and, where needed, evacuation, so you are not left negotiating bills in an unfamiliar place."
+                    },
+                    {
+                      "title": "2. Delays and",
+                      "highlight": "Cancellations",
+                      "text": "If your trip is cancelled or cut short for a covered reason, the policy can reimburse non-refundable bookings. Many plans also compensate for long flight delays and missed connections."
+                    },
+                    {
+                      "title": "3. Lost Baggage and",
+                      "highlight": "Documents",
+                      "text": "Losing your luggage or passport is stressful enough without the cost of replacing them. Cover for baggage and travel documents helps you get essentials quickly and continue your journey."
+                    }
+                  ],
+                  "tip": {
+                    "title": "Tip: Buy When You Book",
+                    "text": "Purchasing cover at the time you book your trip means cancellation benefits apply from day one, not just from the day you depart."
+                  }
+                }
+              },
+              {
+                "slug": "home-insurance-protect-what-matters-most",
+                "category": "Home Insurance",
+                "date": "2026-08-08",
+                "title": "Home Insurance: Protect What Matters Most",
+                "titleLines": [
+                  "Home Insurance: Protect",
+                  "What Matters Most"
+                ],
+                "text": "See how home insurance shields your house and belongings from fire, theft, and natural calamities.",
+                "image": "/images/blog-4.webp",
+                "detail": {
+                  "image": "/images/blog-4.webp",
+                  "imageAlt": "Modern family home at dusk",
+                  "comments": 4,
+                  "intro": "Your home is likely the most valuable thing you own, and everything inside it took years to build up. Home insurance protects both the structure and your belongings against events you cannot control.",
+                  "sections": [
+                    {
+                      "title": "1. Cover the",
+                      "highlight": "Structure",
+                      "text": "Fire, storms, floods, and other calamities can cause damage that is expensive to repair. Structure cover pays towards rebuilding or restoring your home so you are not starting again from nothing."
+                    },
+                    {
+                      "title": "2. Protect Your",
+                      "highlight": "Belongings",
+                      "text": "Furniture, appliances, electronics, and valuables can be insured against theft and damage. Keep a simple list of what you own and its approximate value to make any claim faster."
+                    },
+                    {
+                      "title": "3. Choose the Right",
+                      "highlight": "Sum Insured",
+                      "text": "Insure the structure for what it would cost to rebuild, not its market price, and review the amount whenever you renovate. Being under-insured can reduce what you receive at claim time."
+                    }
+                  ],
+                  "tip": {
+                    "title": "Tip: Renters Need Cover Too",
+                    "text": "If you rent, you can still insure your belongings. Contents-only cover is usually inexpensive and protects everything you have brought into the home."
+                  }
+                }
+              },
+              {
+                "slug": "motor-insurance-drive-with-complete-confidence",
+                "category": "Motor Insurance",
+                "date": "2026-08-05",
+                "title": "Motor Insurance: Drive with Complete Confidence",
+                "titleLines": [
+                  "Motor Insurance: Drive",
+                  "with Complete Confidence"
+                ],
+                "text": "Understand third-party and comprehensive cover, and how the right add-ons keep you protected on every journey.",
+                "image": "/images/blog-5.webp",
+                "detail": {
+                  "image": "/images/blog-5.webp",
+                  "imageAlt": "Car driving along a winding road at sunset",
+                  "comments": 6,
+                  "intro": "Every drive carries some risk, however careful you are. Motor insurance protects you from the cost of accidents, theft, and damage, and keeps you on the right side of the law.",
+                  "sections": [
+                    {
+                      "title": "1. Third-Party or",
+                      "highlight": "Comprehensive",
+                      "text": "Third-party cover pays for injury or damage you cause to others and is the legal minimum in many places. Comprehensive cover adds protection for your own vehicle against accidents, theft, fire, and natural events."
+                    },
+                    {
+                      "title": "2. Add-Ons That",
+                      "highlight": "Matter",
+                      "text": "Zero depreciation, roadside assistance, and engine protection can make a real difference when you claim. Choose add-ons based on your car’s age, where you drive, and how much you would want to pay out of pocket."
+                    },
+                    {
+                      "title": "3. Keep Your",
+                      "highlight": "No-Claim Bonus",
+                      "text": "Each claim-free year usually earns a discount on your next premium. Renew on time and think twice before claiming for very small repairs, so the bonus keeps building."
+                    }
+                  ],
+                  "tip": {
+                    "title": "Tip: Renew Before Expiry",
+                    "text": "A lapsed policy can mean losing your no-claim bonus and driving uninsured. Set a reminder a few weeks before your renewal date."
+                  }
+                }
+              },
+              {
+                "slug": "business-insurance-safeguard-what-you-have-built",
+                "category": "Business Insurance",
+                "date": "2026-08-02",
+                "title": "Business Insurance: Safeguard What You’ve Built",
+                "titleLines": [
+                  "Business Insurance: Safeguard",
+                  "What You’ve Built"
+                ],
+                "text": "Learn how the right cover protects your assets, your people, and your income when something goes wrong.",
+                "image": "/images/blog-6.webp",
+                "detail": {
+                  "image": "/images/blog-6.webp",
+                  "imageAlt": "Business owner meeting with an insurance advisor",
+                  "comments": 7,
+                  "intro": "A business takes years to build and can be set back by a single unexpected event. Business insurance helps you absorb the shock and keep trading while you recover.",
+                  "sections": [
+                    {
+                      "title": "1. Protect Your",
+                      "highlight": "Assets",
+                      "text": "Premises, equipment, and stock are the foundation of your operations. Property cover helps you repair or replace them after fire, theft, or damage so work can resume sooner."
+                    },
+                    {
+                      "title": "2. Cover Your",
+                      "highlight": "Liabilities",
+                      "text": "A customer injury, a faulty product, or a professional error can lead to claims against you. Liability cover pays for legal costs and compensation that could otherwise threaten the business."
+                    },
+                    {
+                      "title": "3. Keep Income",
+                      "highlight": "Flowing",
+                      "text": "If you have to close temporarily, business interruption cover can replace lost income and help with fixed costs such as rent and salaries until you are back on your feet."
+                    }
+                  ],
+                  "tip": {
+                    "title": "Tip: Review Cover as You Grow",
+                    "text": "New staff, new premises, or new services all change your risks. Revisit your policy every year so your cover grows with the business."
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "BlogDetail": {
+        "variants": {
+          "InsuranceBlogDetail1": {
+            "bannerTitle": "Blogs Detail",
+            "author": "By Admin",
+            "commentsLabel": "Comments",
+            "latestTitle": "Latest Blogs",
+            "categoriesTitle": "Categories"
+          }
+        }
+      },
+      "EnquiryForm": {
+        "variants": {
+          "InsuranceEnquiryForm1": {
+            "name": "Full Name *",
+            "email": "Email Address *",
+            "phone": "Phone Number *",
+            "plan": "Select Insurance Plan *",
+            "planShort": "Select Plan*",
+            "message": "Your Message (Optional)",
+            "submit": "Submit Enquiry",
+            "note": "Your information is safe with us. We never share your data with third parties."
+          }
+        }
+      },
+      "EnquirePage": {
+        "variants": {
+          "InsuranceEnquirePage1": {
+            "eyebrow": "Get in Touch",
+            "title": [
+              "We’re Here to Help",
+              "You Find the Right"
+            ],
+            "highlight": "Insurance Plan",
+            "text": "Whether you have a question, need guidance, or want a personalized quote, our team is ready to assist you. Fill out the form and we’ll connect with you shortly.",
+            "points": [
+              {
+                "icon": "headset",
+                "title": "Expert Guidance",
+                "text": [
+                  "Get advice from our experienced",
+                  "insurance consultants."
+                ]
+              },
+              {
+                "icon": "clock",
+                "title": "Quick Response",
+                "text": [
+                  "We value your time and respond",
+                  "as quickly as possible."
+                ]
+              },
+              {
+                "icon": "shield-check",
+                "title": "Personalized Solutions",
+                "text": [
+                  "Tailored plans to match your",
+                  "unique needs and goals."
+                ]
+              }
+            ],
+            "formTitle": "Send Us an",
+            "formHighlight": "Enquiry",
+            "formText": "Fill in your details and our team will get back to you shortly."
+          }
+        }
+      },
+      "ContactPage": {
+        "variants": {
+          "InsuranceContactPage1": {
+            "eyebrow": "Get in Touch",
+            "title": [
+              "Let’s Start",
+              "a"
+            ],
+            "highlight": "Conversation",
+            "text": "Have a question about a piece, your order, or a special request? Our team is here to help you find something extraordinary.",
+            "cards": [
+              {
+                "icon": "phone-solid",
+                "title": "Call Us",
+                "field": "phones"
+              },
+              {
+                "icon": "mail-solid",
+                "title": "Email Us",
+                "field": "emails"
+              },
+              {
+                "icon": "pin-solid",
+                "title": "Visit Us",
+                "field": "address"
+              }
+            ],
+            "formTitle": "Send Us a",
+            "formHighlight": "Message",
+            "formText": "We’ll get back to you within 24 hours.",
+            "location": {
+              "mapCard": {
+                "title": "Visit Us",
+                "field": "address"
+              }
+            }
+          }
+        }
+      },
+      "ThankYouPage": {
+        "variants": {
+          "InsuranceThankYouPage1": {
+            "pageTitle": "Thank You",
+            "title": "Thank",
+            "highlight": "You!",
+            "subtitle": "Your Enquiry Has Been Submitted Successfully.",
+            "text": [
+              "We have received your details and our team will get back to you shortly",
+              "with the best insurance options for your needs."
+            ],
+            "primaryButton": {
+              "label": "Back to Home",
+              "href": "/"
+            },
+            "secondaryButton": {
+              "label": "Explore Insurance Plans",
+              "href": "/insurance-plans"
+            },
+            "points": [
+              {
+                "icon": "headset",
+                "title": "Expert Support",
+                "text": [
+                  "Our team is ready",
+                  "to assist you."
+                ]
+              },
+              {
+                "icon": "clock",
+                "title": "Quick Response",
+                "text": [
+                  "We’ll get back to you",
+                  "shortly."
+                ]
+              },
+              {
+                "icon": "file-text",
+                "title": "Personalized Plans",
+                "text": [
+                  "Tailored solutions",
+                  "for your needs."
+                ]
+              },
+              {
+                "icon": "shield-check",
+                "title": "Trusted Guidance",
+                "text": [
+                  "Make confident",
+                  "decisions with us."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "FaqPage": {
+        "variants": {
+          "InsuranceFaqPage1": {
+            "title": "Frequently Asked Questions",
+            "intro": "Answers to common questions about choosing insurance, claims, tax benefits, and policy add-ons.",
+            "items": [
+              {
+                "question": "How do I choose the best insurance plan for my family?",
+                "answer": "Our certified advisors assess your family size, current medical history, liabilities, and long-term financial goals to recommend the most cost-effective and comprehensive coverage."
+              },
+              {
+                "question": "How does Surevia help during insurance claim settlements?",
+                "answer": "We provide dedicated end-to-end claim assistance: from filing initial paperwork and coordinating directly with hospital/insurer TPA desks to ensuring full settlement disbursement without delays."
+              },
+              {
+                "question": "Are tax benefits available under Indian insurance laws?",
+                "answer": "Yes, premiums paid towards life insurance qualify for deductions under Section 80C, while health insurance premiums qualify under Section 80D of the Income Tax Act."
+              },
+              {
+                "question": "Can I customize policy add-ons and riders?",
+                "answer": "Absolutely. You can enhance your coverage with riders like Critical Illness, Accidental Disability, Zero Depreciation, and Maternity Coverage according to your needs."
+              }
+            ]
+          }
+        }
+      },
+      "PolicyPages": {
+        "variants": {
+          "InsurancePolicyPages1": {
+            "contactPrompt": "Questions? Contact us at",
+            "privacy": {
+              "intro": "Your trust matters to us. This policy explains how Surevia handles information you choose to share when you visit our website or contact our team.",
+              "sections": [
+                {
+                  "title": "Information you share",
+                  "text": "When you submit an enquiry or contact us, we may receive details such as your name, phone number, email address, and the insurance information you include in your message. Please avoid sending sensitive personal or financial information through general website forms."
+                },
+                {
+                  "title": "How we use information",
+                  "text": "We use enquiry details to respond to you, understand the cover you are asking about, and provide relevant guidance. If you ask us to help you explore a plan, we may use the details you provide to coordinate that request with the relevant insurance provider."
+                },
+                {
+                  "title": "Sharing and protection",
+                  "text": "We do not offer personal information for sale. Information may be shared with a relevant insurer or service provider when needed to respond to a request you make, or where disclosure is required by law. We take reasonable care in handling enquiry information, but no method of transmission or storage can be guaranteed completely secure."
+                },
+                {
+                  "title": "Your choices",
+                  "text": "You can choose not to provide information, though we may then be unable to respond to an enquiry. To ask about information you have sent us or request an update, email {email}."
+                },
+                {
+                  "title": "Insurance information",
+                  "text": "Website content is general information, not a substitute for an insurer’s policy wording or a personalized financial recommendation. The insurer’s documents and terms govern any cover you purchase."
+                }
+              ]
+            },
+            "terms": {
+              "intro": "These terms apply when you access the Surevia website. By using the site, you agree to use it lawfully and in a way that does not interfere with other visitors.",
+              "sections": [
+                {
+                  "title": "Website information",
+                  "text": "We aim to keep website information useful and current, but plan descriptions and other content are provided for general information and may change. They are not an offer of insurance, a guarantee of eligibility, or personal financial advice."
+                },
+                {
+                  "title": "Insurance applications and cover",
+                  "text": "Insurance products are subject to the insurer’s eligibility rules, underwriting, policy wording, exclusions, limits, and final approval. Always review the insurer’s official documents before applying or making a decision. A request sent through this website does not itself create insurance cover."
+                },
+                {
+                  "title": "Acceptable use",
+                  "text": "You must not misuse this website, attempt to gain unauthorized access, disrupt its operation, or submit information that is unlawful or belongs to another person without permission."
+                },
+                {
+                  "title": "Content and external websites",
+                  "text": "Website text, branding, and materials belong to Surevia or their respective owners. Links to other websites are provided for convenience; we do not control and are not responsible for their content or practices."
+                },
+                {
+                  "title": "Changes and contact",
+                  "text": "We may update these terms or website content as our services change. Continued use of the site after an update means you accept the revised terms. For questions, contact {email}."
+                }
+              ]
+            },
+            "cookies": {
+              "intro": "Cookies are small files that a website can store in your browser. This page describes how cookies may support your visit to the Surevia website and how you can manage them.",
+              "sections": [
+                {
+                  "title": "Why cookies may be used",
+                  "text": "Cookies and similar browser storage can help a website work reliably, remember a preference, understand how pages are used, or support embedded services. The specific cookies in use can vary as the website and its features change."
+                },
+                {
+                  "title": "Managing cookies",
+                  "text": "Most browsers let you review, block, or delete cookies in their privacy or site settings. Blocking some cookies may affect how parts of a website work. Changes made in your browser apply to that browser and device."
+                },
+                {
+                  "title": "Third-party services",
+                  "text": "If pages include content or tools provided by another company, that provider may use its own cookies under its own policy. Review the provider’s information for details about its practices."
+                },
+                {
+                  "title": "Updates",
+                  "text": "We may revise this page when website features or cookie practices change. Questions about this policy can be sent to {email}."
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SitemapPage": {
+        "variants": {
+          "InsuranceSitemapPage1": {
+            "pagesTitle": "Pages",
+            "policiesTitle": "Policies"
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "InsuranceFooter1": {
+            "about": "Jewelry created to celebrate your story, cherish your moments, and last for generations.",
+            "columns": [
+              {
+                "title": "Quick Links",
+                "source": "links",
+                "links": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "Collections",
+                    "href": "/collections"
+                  },
+                  {
+                    "label": "Our Story",
+                    "href": "/our-story"
+                  },
+                  {
+                    "label": "Lookbook",
+                    "href": "/lookbook"
+                  },
+                  {
+                    "label": "Contact",
+                    "href": "/contact"
+                  },
+                  {
+                    "label": "Cart",
+                    "href": "/cart"
+                  }
+                ]
+              },
+              {
+                "title": "Shop",
+                "source": "plans",
+                "links": [
+                    {
+                    "label": "Rings",
+                    "href": "/collections"
+                  },
+                  {
+                    "label": "Necklaces",
+                    "href": "/collections"
+                  },
+                  {
+                    "label": "Earrings",
+                    "href": "/collections"
+                  },
+                  {
+                    "label": "Bracelets",
+                    "href": "/collections"
+                  },
+                  {
+                    "label": "Royal Bangle",
+                    "href": "/collections"
+                  },
+                  {
+                    "label": "Classic Gold Chain",
+                    "href": "/collections"
+                  }
+                ]
+              }
+            ],
+            "contactTitle": "Get In Touch",
+            "contact": [
+              {
+                "icon": "pin-solid",
+                "field": "address"
+              },
+              {
+                "icon": "phone-solid",
+                "field": "phone"
+              },
+              {
+                "icon": "mail-solid",
+                "field": "email"
+              },
+              {
+                "icon": "clock",
+                "field": "hoursShort"
+              }
+            ],
+            "copyright": "Copyright © 2026. All Rights Reserved. Powered By Lestow.",
+            "bottomLinks": [
+              {
+                "label": "Terms & Conditions",
+                "href": "#"
+              },
+              {
+                "label": "Privacy Policy",
+                "href": "#"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

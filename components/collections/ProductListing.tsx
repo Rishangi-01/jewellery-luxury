@@ -66,7 +66,7 @@ const products: Product[] = [
     materials: ["Gold"],
     price: 1499,
     image:
-      "/images/about/banner1.png",
+      "/images/about/banner1.webp",
   },
   {
     id: 5,
@@ -531,7 +531,7 @@ export default function ProductListing() {
           </button>
         </div>
 
-        {/* Mobile sort control */}
+
         <div className="mb-5 lg:hidden">
           <label htmlFor="sort-products-mobile" className="sr-only">
             Sort products
@@ -556,7 +556,6 @@ export default function ProductListing() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[245px_minmax(0,1fr)]
           lg:gap-7 xl:grid-cols-[275px_minmax(0,1fr)] xl:gap-10">
 
-          {/* Desktop filters */}
           <aside className="hidden border-r border-[#e4ded3]
             pr-6 lg:block xl:pr-8">
             <div className="sticky top-24">
@@ -564,10 +563,9 @@ export default function ProductListing() {
             </div>
           </aside>
 
-          {/* Product area */}
           <div className="min-w-0">
             <div className="mb-5 hidden items-center justify-between lg:flex">
-              <p className="text-xs text-[#887d6f]">
+              <p className="text-xs text-[#887d6f] lg:text-[16px]">
                 Showing{" "}
                 <span className="font-medium text-[#29231c]">
                   {filteredProducts.length === 0
@@ -585,7 +583,7 @@ export default function ProductListing() {
               </p>
             </div>
 
-            {/* Product grid */}
+
             {visibleProducts.length > 0 ? (
               <motion.div
                 layout
@@ -630,7 +628,7 @@ export default function ProductListing() {
                             />
                           </Link>
 
-                          {/* Soft image overlay */}
+
                           <div className="pointer-events-none absolute inset-0
                             bg-gradient-to-t from-black/20
                             via-transparent to-black/[0.04]
@@ -646,7 +644,7 @@ export default function ProductListing() {
                             </span>
                           )}
 
-                          {/* Wishlist */}
+
                           <button
                             onClick={() => toggleWishlist(product.id)}
                             aria-label={
@@ -674,7 +672,7 @@ export default function ProductListing() {
                             />
                           </button>
 
-                          {/* Quick view / shopping action */}
+
                           <Link
                             href={`/collections/collection-details`}
                             className="absolute bottom-0 left-0 right-0
@@ -695,17 +693,17 @@ export default function ProductListing() {
                             <h3 className="line-clamp-2 text-sm
                               font-medium leading-5 text-[#29231c]
                               transition-colors hover:text-[#9b7a49]
-                              sm:text-base">
+                              sm:text-base lg:text-xl">
                               {product.name}
                             </h3>
                           </Link>
 
                           <p className="mt-2 text-sm font-semibold
-                            text-[#393027]">
+                            text-[#393027] lg:text-xl">
                             {formatPrice(product.price)}
                           </p>
 
-                          <p className="mt-1 text-[10px] text-[#a09688]">
+                          <p className="mt-1 text-[10px] text-[#a09688] lg:text-lg">
                             Inclusive of taxes
                           </p>
                         </div>
@@ -738,7 +736,7 @@ export default function ProductListing() {
               </div>
             )}
 
-            {/* Pagination */}
+
             {filteredProducts.length > 0 && (
               <div className="mt-12 flex flex-wrap items-center
                 justify-center gap-2 sm:mt-16">
@@ -798,7 +796,7 @@ export default function ProductListing() {
         </div>
       </div>
 
-      {/* Mobile filter drawer */}
+
       <AnimatePresence>
         {mobileFiltersOpen && (
           <>
