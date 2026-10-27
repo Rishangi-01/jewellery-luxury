@@ -42,7 +42,6 @@ export default function ProductDetails() {
   const [activeImage, setActiveImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState(product.initialSize);
   const [wishlist, setWishlist] = useState(false);
-  const [quantity, setQuantity] = useState(1);
   const [cartCount, setCartCount] = useState(0);
   const [cartMessage, setCartMessage] = useState(false);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
@@ -56,14 +55,9 @@ export default function ProductDetails() {
     );
   };
 
-  const addToCart = () => {
-    setCartCount((count) => count + quantity);
-    setCartMessage(true);
-  };
-
   return (
     <section className="relative overflow-hidden bg-[#faf8f3]
-      px-4 pt-24 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-10 lg:pb-16 lg:pt-32 w-[100%]">
+      px-4 pt-24 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-10 lg:pb-12 lg:pt-32 w-[100%]">
 
       <div
         aria-hidden="true"
@@ -125,7 +119,7 @@ export default function ProductDetails() {
             ))}
           </div>
 
-          <div className="group relative aspect-[4/5]
+          <div className="group relative aspect-[7.2/5]
             overflow-hidden rounded-md bg-[#e8e0d4]
             shadow-[0_8px_35px_rgba(37,28,18,0.08)]">
 
@@ -141,7 +135,7 @@ export default function ProductDetails() {
                 exit={{ opacity: 0, scale: 0.99 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="absolute inset-0"
-              >
+              > 
                 <Image
                   src={product.images[activeImage].src}
                   alt={product.images[activeImage].alt}
@@ -234,16 +228,6 @@ export default function ProductDetails() {
             {product.name}
           </h1>
 
-          <motion.p
-            key={product.price}
-            initial={reduceMotion ? false : { opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-4 text-xl font-semibold tracking-tight
-              text-[#29221a] sm:text-2xl"
-          >
-            {formatPrice(product.price)}
-          </motion.p>
-
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
             <div
               className="flex items-center gap-0.5 text-[#a48650]"
@@ -315,148 +299,6 @@ export default function ProductDetails() {
             })}
           </div>
 
-          <div className="mt-5 border-t border-[#e4ddd1] pt-6">
-            <div className="flex flex-wrap items-center
-              justify-between gap-3">
-              <span className="text-sm font-medium text-[#33291f]">
-                {copy.selectSize}
-              </span>
-
-              <button
-                type="button"
-                onClick={() => setShowSizeGuide(true)}
-                className="inline-flex items-center gap-1.5
-                  text-xs text-[#8c7146] underline
-                  underline-offset-4 transition-colors
-                  hover:text-[#3a2d1e] lg:text-[16px]"
-              >
-                <Ruler size={16} />
-                {copy.sizeGuide}
-              </button>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2.5">
-              {product.sizes.map((size) => (
-                <motion.button
-                  key={size}
-                  type="button"
-                  whileHover={reduceMotion ? undefined : { y: -2 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.95 }}
-                  onClick={() => setSelectedSize(size)}
-                  aria-pressed={selectedSize === size}
-                  className={`flex h-11 w-11 items-center
-                    justify-center rounded-full border text-sm lg:text-[16px]
-                    transition-all duration-300 ${
-                      selectedSize === size
-                        ? "border-[#191713] bg-[#191713] text-white shadow-md"
-                        : "border-[#e0d8cc] bg-transparent text-[#5e5448] hover:border-[#a78953]"
-                    }`}
-                >
-                  {size}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-5 flex flex-wrap items-center
-            justify-between gap-3">
-            <span className="text-sm text-[#655a4c] lg:text-[16px]">
-              {copy.quantity}
-            </span>
-
-            <div className="flex h-10 items-center
-              border border-[#dfd7ca]">
-              <button
-                type="button"
-                onClick={() => setQuantity((value) => Math.max(1, value - 1))}
-                disabled={quantity === 1}
-                aria-label={copy.decreaseQuantity}
-                className="flex h-full w-10 items-center
-                  justify-center text-[#655a4c]
-                  transition-colors hover:bg-[#eee8dd]
-                  disabled:opacity-40"
-              >
-                <Minus size={14} />
-              </button>
-
-              <span
-                aria-live="polite"
-                className="w-8 text-center text-sm text-[#29221a]"
-              >
-                {quantity}
-              </span>
-
-              <button
-                type="button"
-                onClick={() => setQuantity((value) => Math.min(10, value + 1))}
-                disabled={quantity === 10}
-                aria-label={copy.increaseQuantity}
-                className="flex h-full w-10 items-center
-                  justify-center text-[#655a4c]
-                  transition-colors hover:bg-[#eee8dd]
-                  disabled:opacity-40"
-              >
-                <Plus size={14} />
-              </button>
-            </div>
-          </div>
-
-          <div className="mt-6 flex flex-col gap-3">
-            <motion.button
-              type="button"
-              whileHover={reduceMotion ? undefined : { y: -2 }}
-              whileTap={reduceMotion ? undefined : { scale: 0.99 }}
-              onClick={addToCart}
-              className="group flex min-h-[52px] w-full
-                items-center justify-center gap-3
-                rounded-[4px] border border-[#151512]
-                bg-[#151512] px-5 py-4 text-xs
-                font-semibold uppercase tracking-[0.16em]
-                text-white shadow-sm transition-colors
-                duration-300 hover:border-[#8e754c]
-                hover:bg-[#8e754c]"
-            >
-              {cartMessage ? (
-                <>
-                  <Check size={17} />
-                  {copy.addedToCart}
-                </>
-              ) : (
-                <>
-                  <ShoppingBag
-                    size={16}
-                    className="transition-transform duration-300
-                      group-hover:-translate-y-0.5"
-                  />
-                  {copy.addToCart}
-                </>
-              )}
-            </motion.button>
-
-            <motion.button
-              type="button"
-              whileHover={reduceMotion ? undefined : { y: -2 }}
-              whileTap={reduceMotion ? undefined : { scale: 0.99 }}
-              onClick={() => setWishlist((value) => !value)}
-              aria-pressed={wishlist}
-              className={`flex min-h-[50px] w-full
-                items-center justify-center gap-2.5
-                rounded-[4px] border px-5 py-3.5 text-xs
-                font-semibold uppercase tracking-[0.15em]
-                transition-all duration-300 ${
-                  wishlist
-                    ? "border-[#bda16f] bg-[#eee5d5] text-[#8c7146]"
-                    : "border-[#bfb6a9] bg-transparent text-[#4c4338] hover:border-[#8e754c] hover:bg-[#f2ede4]"
-                }`}
-            >
-              <Heart
-                size={17}
-                className={wishlist ? "fill-[#a78953]" : ""}
-              />
-              {wishlist ? copy.addedToWishlist : copy.addToWishlist}
-            </motion.button>
-          </div>
-
           <AnimatePresence>
             {cartMessage && (
               <motion.div
@@ -472,11 +314,6 @@ export default function ProductDetails() {
                 <div className="flex-1">
                   <p className="font-medium">
                     {copy.addedConfirmation}
-                  </p>
-                  <p className="mt-1 text-xs leading-5 text-[#796b58]">
-                    {quantity} × {product.name} · Size {selectedSize}
-                    {" · "}
-                    {formatPrice(product.price * quantity)}
                   </p>
                   <p className="mt-1 text-[10px] text-[#8c7b62]">
                     {copy.cartCount.replace("{count}", cartCount.toString())}

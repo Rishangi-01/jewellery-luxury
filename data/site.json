@@ -178,454 +178,419 @@
       }
     },
     "commerce": {
-          "cart": {
-            "items": [
-              {
-                "id": 1,
-                "name": "Eternal Diamond Ring",
-                "variant": "Size: 6",
-                "price": 2499,
-                "quantity": 1,
-                "image": "/images/home/banner4.webp"
-              },
-              {
-                "id": 2,
-                "name": "Golden Bloom Necklace",
-                "price": 1899,
-                "quantity": 1,
-                "image": "/images/home/banner4.webp"
-              },
-              {
-                "id": 3,
-                "name": "Pearl Drop Earrings",
-                "price": 1299,
-                "quantity": 1,
-                "image": "/images/home/banner4.webp"
-              }
-            ],
-            "shipping": {
-              "freeAbove": 3000,
-              "fee": 99
+      "productDetails": {
+        "product": {
+          "name": "Eternal Diamond Ring",
+          "price": 2499,
+          "rating": 4.8,
+          "reviews": 24,
+          "description": "A symbol of everlasting love, this exquisite diamond ring features a brilliant-cut center stone set in 18k gold, designed to shine for a lifetime. Crafted in premium white gold, this elegant piece is perfect for engagements, anniversaries or special occasions.",
+          "features": [
+            {
+              "label": "18k Gold",
+              "icon": "gem"
             },
-            "gift": {
-              "image": "/images/about/banner2.webp",
-              "imageAlt": "Luxury jewelry gift wrapped in an elegant presentation box",
-              "eyebrow": "A Little Something Special",
-              "title": "Luxury in Every Detail",
-              "description": "Complimentary gift wrapping with every order.",
-              "signoff": "Beautifully yours"
+            {
+              "label": "Certified Diamond",
+              "icon": "shield"
             },
-            "copy": {
-              "product": "Product",
-              "price": "Price",
-              "quantity": "Quantity",
-              "total": "Total",
-              "remove": "Remove",
-              "decreaseQuantity": "Decrease {name} quantity",
-              "increaseQuantity": "Increase {name} quantity",
-              "itemTotal": "Item total",
-              "priceEach": "each",
-              "orderSummary": "Order Summary",
-              "subtotal": "Subtotal",
-              "shipping": "Shipping",
-              "free": "Free",
-              "freeShippingProgress": "Add {amount} more to qualify for free shipping.",
-              "total": "Total",
-              "checkout": "Proceed to Checkout",
-              "checkoutHref": "/checkout",
-              "continueShopping": "Continue Shopping",
-              "continueShoppingHref": "/collections",
-              "emptyTitle": "Your cart is waiting",
-              "emptyDescription": "Discover a piece that feels uniquely yours.",
-              "exploreCollections": "Explore Collections",
-              "collectionsHref": "/collections"
-            }
-          },
-          "productDetails": {
-            "product": {
-              "name": "Eternal Diamond Ring",
-              "price": 2499,
-              "rating": 4.8,
-              "reviews": 24,
-              "description": "A symbol of everlasting love, this exquisite diamond ring features a brilliant-cut center stone set in 18k gold, designed to shine for a lifetime.",
-              "features": [
-                { "label": "18k Gold", "icon": "gem" },
-                { "label": "Certified Diamond", "icon": "shield" },
-                { "label": "Lifetime Warranty", "icon": "returns" },
-                { "label": "Free Shipping", "icon": "truck" }
-              ],
-              "sizes": ["5", "6", "7", "8", "9"],
-              "initialSize": "7",
-              "images": [
-                {
-                  "src": "/images/home/banner3.webp",
-                  "alt": "Eternal diamond ring front view"
-                },
-                {
-                  "src": "/images/about/banner1.webp",
-                  "alt": "Diamond ring side detail"
-                },
-                {
-                  "src": "/images/home/banner2.webp",
-                  "alt": "Luxury jewelry close-up"
-                }
-              ]
+            {
+              "label": "Lifetime Warranty",
+              "icon": "returns"
             },
-            "copy": {
-              "collection": "The Signature Collection",
-              "reviews": "{count} reviews",
-              "ratingAria": "Rated {rating} out of 5",
-              "selectSize": "Select Ring Size",
-              "sizeGuide": "Size Guide",
-              "quantity": "Quantity",
-              "decreaseQuantity": "Decrease quantity",
-              "increaseQuantity": "Increase quantity",
-              "addToCart": "Add to Cart",
-              "addedToCart": "Added to Cart",
-              "addToWishlist": "Add to Wishlist",
-              "addedToWishlist": "Added to Wishlist",
-              "removeFromWishlist": "Remove from wishlist",
-              "addProductToWishlist": "Add to wishlist",
-              "addedConfirmation": "Added to your shopping bag",
-              "cartCount": "Demo cart items added: {count}",
-              "dismissConfirmation": "Dismiss confirmation",
-              "previousImage": "Previous product image",
-              "nextImage": "Next product image",
-              "viewImage": "View image {index}",
-              "findFit": "Find your perfect fit",
-              "sizeGuideTitle": "Ring Size Guide",
-              "closeSizeGuide": "Close size guide",
-              "sizeGuideDescription": "Select your preferred size. Ring sizing can vary by region, so please confirm the sizing system before ordering.",
-              "sizeColumn": "Size",
-              "fitColumn": "Fit",
-              "selectedSize": "Currently selected",
-              "availableSize": "Available",
-              "sizeGuideNote": "This sample guide uses placeholder size labels. Replace these with your jeweler's verified size chart.",
-              "done": "Done"
+            {
+              "label": "Free Shipping",
+              "icon": "truck"
             }
-          },
-          "productExtraDetails": {
-            "tabs": [
-              { "id": "description", "label": "Description" },
-              { "id": "specifications", "label": "Specifications" },
-              { "id": "shipping", "label": "Shipping & Returns" }
-            ],
-            "tabListLabel": "Product information",
-            "tabContent": {
-              "description": {
-                "title": "Crafted to Last a Lifetime",
-                "paragraphs": [
-                  "This elegant ring showcases a brilliant round-cut diamond, carefully set in a handcrafted 18k gold band. Designed for those who appreciate fine craftsmanship and timeless beauty."
-                ]
-              },
-              "specifications": {
-                "title": "The Details That Matter",
-                "paragraphs": [
-                  "Metal: 18k gold",
-                  "Stone: Brilliant-cut diamond",
-                  "Style: Timeless solitaire",
-                  "Finish: High-polish finish",
-                  "Please refer to the individual product certificate for verified stone specifications."
-                ]
-              },
-              "shipping": {
-                "title": "A Beautiful Experience, From Start to Finish",
-                "paragraphs": [
-                  "Enjoy complimentary shipping on eligible orders. Each piece is carefully packaged for a memorable unboxing experience.",
-                  "For delivery timelines, return eligibility, and warranty terms, please consult your store's shipping and returns policy."
-                ]
-              }
+          ],
+          "sizes": [
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "initialSize": "7",
+          "images": [
+            {
+              "src": "/images/home/banner3.webp",
+              "alt": "Eternal diamond ring front view"
             },
-            "completeLook": {
-              "backgroundImage": "/images/about/Woman-elegantly.webp",
-              "title": "Complete The Look",
-              "description": "Discover pieces that pair beautifully with your selection.",
-              "viewAll": "View All",
-              "href": "/collections",
-              "items": [
-                {
-                  "name": "Matching Necklace",
-                  "price": 1899,
-                  "category": "Necklaces",
-                  "image": "/images/our-story/product2.webp",
-                  "imageAlt": "Matching necklace",
-                  "description": "An elegant necklace to complement your ring."
-                },
-                {
-                  "name": "Diamond Earrings",
-                  "price": 1299,
-                  "category": "Earrings",
-                  "image": "/images/our-story/product3.webp",
-                  "imageAlt": "Diamond earrings",
-                  "description": "Refined sparkle for every occasion."
-                },
-                {
-                  "name": "Elegant Bracelet",
-                  "price": 1799,
-                  "category": "Bracelets",
-                  "image": "/images/our-story/product4.webp",
-                  "imageAlt": "Elegant bracelet",
-                  "description": "A delicate finishing touch in gold."
-                }
-              ],
-              "exploreItem": "Explore {name}",
-              "addToWishlist": "Add {name} to wishlist",
-              "removeFromWishlist": "Remove {name} from wishlist"
-            }
-          },
-          "productListing": {
-            "products": [
-              {
-                "id": 1,
-                "name": "Eternal Diamond Ring",
-                "category": "Rings",
-                "materials": ["Gold", "Diamond"],
-                "price": 3499,
-                "image": "/images/our-story/product3.webp"
-              },
-              {
-                "id": 2,
-                "name": "Golden Bloom Necklace",
-                "category": "Necklaces",
-                "materials": ["Gold", "Diamond"],
-                "price": 4999,
-                "image": "/images/our-story/product4.webp",
-                "badge": "Bestseller"
-              },
-              {
-                "id": 3,
-                "name": "Pearl Drop Earrings",
-                "category": "Earrings",
-                "materials": ["Gold", "Silver"],
-                "price": 2199,
-                "image": "/images/our-story/product5.webp"
-              },
-              {
-                "id": 4,
-                "name": "Royal Bangle",
-                "category": "Bracelets",
-                "materials": ["Gold"],
-                "price": 1499,
-                "image": "/images/about/banner1.webp"
-              },
-              {
-                "id": 5,
-                "name": "Solitaire Ring",
-                "category": "Rings",
-                "materials": ["Gold", "Diamond", "Platinum"],
-                "price": 3299,
-                "image": "/images/our-story/product2.webp"
-              },
-              {
-                "id": 6,
-                "name": "Celestial Earrings",
-                "category": "Earrings",
-                "materials": ["Gold", "Diamond"],
-                "price": 3299,
-                "image": "/images/home/banner4.webp"
-              },
-              {
-                "id": 7,
-                "name": "Golden Halo Ring",
-                "category": "Rings",
-                "materials": ["Gold"],
-                "price": 2599,
-                "image": "/images/our-story/product4.webp"
-              },
-              {
-                "id": 8,
-                "name": "Classic Gold Chain",
-                "category": "Necklaces",
-                "materials": ["Gold"],
-                "price": 1899,
-                "image": "/images/our-story/product5.webp"
-              },
-              {
-                "id": 9,
-                "name": "Golden Charm Bracelet",
-                "category": "Bracelets",
-                "materials": ["Gold", "Diamond"],
-                "price": 2899,
-                "image": "/images/home/banner4.webp"
-              }
-            ],
-            "categories": ["Rings", "Necklaces", "Earrings", "Bracelets"],
-            "materials": ["Gold", "Diamond", "Platinum", "Silver"],
-            "pageSize": 6,
-            "minimumPrice": 0,
-            "maxPrice": 50000,
-            "priceStep": 500,
-            "defaultSort": "featured",
-            "sortOptions": [
-              { "value": "featured", "label": "Best Selling" },
-              { "value": "price-low", "label": "Price: Low to High" },
-              { "value": "price-high", "label": "Price: High to Low" },
-              { "value": "name", "label": "Name: A to Z" }
-            ],
-            "copy": {
-              "filters": "Filters",
-              "clearAll": "Clear all",
-              "category": "Category",
-              "priceRange": "Price Range",
-              "maximumPrice": "Maximum price",
-              "materials": "Material",
-              "sortBy": "Sort By",
-              "sortProducts": "Sort products",
-              "sort": "Sort",
-              "productsCount": "{count} products",
-              "showing": "Showing",
-              "of": "of",
-              "crafted": "Crafted to be cherished",
-              "viewProduct": "View Product",
-              "viewProductAria": "View {name}",
-              "addToWishlist": "Add {name} to wishlist",
-              "removeFromWishlist": "Remove {name} from wishlist",
-              "inclusiveTaxes": "Inclusive of taxes",
-              "noProducts": "No pieces found",
-              "emptyDescription": "Try changing your filters to discover more of our collection.",
-              "clearFilters": "Clear Filters",
-              "previousPage": "Previous page",
-              "page": "Page {page}",
-              "nextPage": "Next page",
-              "closeFilters": "Close filters",
-              "productFilters": "Product filters",
-              "showProducts": "Show {count} Products",
-              "resetFilters": "Reset Filters",
-              "minimumPrice": "₹0",
-              "collectionHref": "/collections/collection-details"
-            }
-          },
-          "wishlist": {
-            "items": [
-              {
-                "id": 1,
-                "name": "Eternal Diamond Ring",
-                "price": 2499,
-                "image": "/images/home/banner4.webp"
-              },
-              {
-                "id": 2,
-                "name": "Golden Bloom Necklace",
-                "price": 1899,
-                "image": "/images/home/banner4.webp"
-              },
-              {
-                "id": 3,
-                "name": "Pearl Drop Earrings",
-                "price": 1299,
-                "image": "/images/home/banner4.webp"
-              },
-              {
-                "id": 4,
-                "name": "Royal Bangle",
-                "price": 1499,
-                "image": "/images/home/banner4.webp"
-              }
-            ],
-            "copy": {
-              "title": "My Wishlist",
-              "description": "Your favorite pieces, always within reach.",
-              "piece": "piece",
-              "pieces": "pieces",
-              "productHref": "/collections/collection-details",
-              "viewItem": "View {name}",
-              "addToCart": "Add to Cart",
-              "addedToCart": "Added to Cart",
-              "removeItem": "Remove {name} from wishlist",
-              "deleteItem": "Delete {name} from wishlist",
-              "emptyTitle": "A little room for something beautiful",
-              "emptyDescription": "Save your favorite jewelry here and return whenever you are ready to make it yours.",
-              "exploreCollection": "Explore Collection",
-              "exploreHref": "/collections",
-              "continueShopping": "Continue Shopping",
-              "continueShoppingHref": "/collections"
-            }
-          },
-          "collectionEditorial": {
-            "eyebrow": "Discover Your Style",
-            "title": "Curated Collections",
-            "description": "Jewelry for every version of you, crafted to make every moment feel extraordinary.",
-            "viewAll": {
-              "label": "Our Collection",
-              "href": "/collections"
+            {
+              "src": "/images/about/banner1.webp",
+              "alt": "Diamond ring side detail"
             },
-            "editLabel": "VÉLORA EDIT",
-            "collectionAriaLabel": "Explore {title}: {subtitle}",
-            "discoverLabel": "Discover Collection",
-            "collections": [
-              {
-                "id": "modern-muse",
-                "title": "Modern Muse",
-                "subtitle": "A fearless take on timeless classics.",
-                "image": "/images/home/banner4.webp",
-                "position": "center 35%",
-                "number": "01"
-              },
-              {
-                "id": "bridal-edit",
-                "title": "The Bridal Edit",
-                "subtitle": "For your most unforgettable moments.",
-                "image": "/images/home/banner4.webp",
-                "position": "center 40%",
-                "number": "02"
-              },
-              {
-                "id": "everyday-elegance",
-                "title": "Everyday Elegance",
-                "subtitle": "Make every day extraordinary.",
-                "image": "/images/home/banner4.webp",
-                "position": "center 40%",
-                "number": "03"
-              },
-              {
-                "id": "evening-glam",
-                "title": "Evening Glam",
-                "subtitle": "Bold. Beautiful. Unforgettable.",
-                "image": "/images/home/banner4.webp",
-                "position": "center 35%",
-                "number": "04"
-              }
+            {
+              "src": "/images/home/banner2.webp",
+              "alt": "Luxury jewelry close-up"
+            }
+          ]
+        },
+        "copy": {
+          "collection": "The Signature Collection",
+          "reviews": "{count} reviews",
+          "ratingAria": "Rated {rating} out of 5",
+          "selectSize": "Select Ring Size",
+          "sizeGuide": "Size Guide",
+          "quantity": "Quantity",
+          "decreaseQuantity": "Decrease quantity",
+          "increaseQuantity": "Increase quantity",
+          "addToCart": "Add to Cart",
+          "addedToCart": "Added to Cart",
+          "addToWishlist": "Add to Wishlist",
+          "addedToWishlist": "Added to Wishlist",
+          "removeFromWishlist": "Remove from wishlist",
+          "addProductToWishlist": "Add to wishlist",
+          "addedConfirmation": "Added to your shopping bag",
+          "cartCount": "Demo cart items added: {count}",
+          "dismissConfirmation": "Dismiss confirmation",
+          "previousImage": "Previous product image",
+          "nextImage": "Next product image",
+          "viewImage": "View image {index}",
+          "findFit": "Find your perfect fit",
+          "sizeGuideTitle": "Ring Size Guide",
+          "closeSizeGuide": "Close size guide",
+          "sizeGuideDescription": "Select your preferred size. Ring sizing can vary by region, so please confirm the sizing system before ordering.",
+          "sizeColumn": "Size",
+          "fitColumn": "Fit",
+          "selectedSize": "Currently selected",
+          "availableSize": "Available",
+          "sizeGuideNote": "This sample guide uses placeholder size labels. Replace these with your jeweler's verified size chart.",
+          "done": "Done"
+        }
+      },
+      "productExtraDetails": {
+        "tabs": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "specifications",
+            "label": "Specifications"
+          },
+          {
+            "id": "shipping",
+            "label": "Shipping & Returns"
+          }
+        ],
+        "tabListLabel": "Product information",
+        "tabContent": {
+          "description": {
+            "title": "Crafted to Last a Lifetime",
+            "paragraphs": [
+              "This elegant ring showcases a brilliant round-cut diamond, carefully set in a handcrafted 18k gold band. Designed for those who appreciate fine craftsmanship and timeless beauty."
             ]
           },
-          "signatureCollections": {
-            "eyebrow": "THE VÉLORA SELECTION",
-            "title": "Our Signature Collections",
-            "viewAll": {
-              "label": "Our Collection",
-              "href": "/collections"
-            },
-            "collections": [
-              {
-                "name": "Rings",
-                "description": "Discover timeless rings",
-                "image": "/images/our-story/product2.webp",
-                "alt": "Elegant diamond ring in warm golden light",
-                "number": "01"
-              },
-              {
-                "name": "Necklaces",
-                "description": "Grace in every detail",
-                "image": "/images/home/banner2.webp",
-                "alt": "Elegant necklace with a delicate pendant",
-                "number": "02"
-              },
-              {
-                "name": "Earrings",
-                "description": "For every occasion",
-                "image": "/images/our-story/product4.webp",
-                "alt": "Statement earrings with sparkling stones",
-                "number": "03"
-              },
-              {
-                "name": "Bracelets",
-                "description": "Elegance that stays",
-                "image": "/images/about/banner1.webp",
-                "alt": "Gold bracelet from the VÉLORA collection",
-                "number": "04"
-              }
+          "specifications": {
+            "title": "The Details That Matter",
+            "paragraphs": [
+              "Metal: 18k gold",
+              "Stone: Brilliant-cut diamond",
+              "Style: Timeless solitaire",
+              "Finish: High-polish finish",
+              "Please refer to the individual product certificate for verified stone specifications."
+            ]
+          },
+          "shipping": {
+            "title": "A Beautiful Experience, From Start to Finish",
+            "paragraphs": [
+              "Enjoy complimentary shipping on eligible orders. Each piece is carefully packaged for a memorable unboxing experience.",
+              "For delivery timelines, return eligibility, and warranty terms, please consult your store's shipping and returns policy."
             ]
           }
         },
+        "completeLook": {
+          "backgroundImage": "/images/about/Woman-elegantly.webp",
+          "title": "Complete The Look",
+          "description": "Discover pieces that pair beautifully with your selection.",
+          "viewAll": "View All",
+          "href": "/collections",
+          "items": [
+            {
+              "name": "Matching Necklace",
+              "price": 1899,
+              "category": "Necklaces",
+              "image": "/images/our-story/product2.webp",
+              "imageAlt": "Matching necklace",
+              "description": "An elegant necklace to complement your ring."
+            },
+            {
+              "name": "Diamond Earrings",
+              "price": 1299,
+              "category": "Earrings",
+              "image": "/images/our-story/product3.webp",
+              "imageAlt": "Diamond earrings",
+              "description": "Refined sparkle for every occasion."
+            },
+            {
+              "name": "Elegant Bracelet",
+              "price": 1799,
+              "category": "Bracelets",
+              "image": "/images/our-story/product4.webp",
+              "imageAlt": "Elegant bracelet",
+              "description": "A delicate finishing touch in gold."
+            }
+          ],
+          "exploreItem": "Explore {name}",
+          "addToWishlist": "Add {name} to wishlist",
+          "removeFromWishlist": "Remove {name} from wishlist"
+        }
+      },
+      "productListing": {
+        "products": [
+          {
+            "id": 1,
+            "name": "Eternal Diamond Ring",
+            "category": "Rings",
+            "materials": [
+              "Gold",
+              "Diamond"
+            ],
+            "price": 3499,
+            "image": "/images/our-story/product3.webp"
+          },
+          {
+            "id": 2,
+            "name": "Golden Bloom Necklace",
+            "category": "Necklaces",
+            "materials": [
+              "Gold",
+              "Diamond"
+            ],
+            "price": 4999,
+            "image": "/images/our-story/product4.webp",
+            "badge": "Bestseller"
+          },
+          {
+            "id": 3,
+            "name": "Pearl Drop Earrings",
+            "category": "Earrings",
+            "materials": [
+              "Gold",
+              "Silver"
+            ],
+            "price": 2199,
+            "image": "/images/our-story/product5.webp"
+          },
+          {
+            "id": 4,
+            "name": "Royal Bangle",
+            "category": "Bracelets",
+            "materials": [
+              "Gold"
+            ],
+            "price": 1499,
+            "image": "/images/about/banner1.webp"
+          },
+          {
+            "id": 5,
+            "name": "Solitaire Ring",
+            "category": "Rings",
+            "materials": [
+              "Gold",
+              "Diamond",
+              "Platinum"
+            ],
+            "price": 3299,
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 6,
+            "name": "Celestial Earrings",
+            "category": "Earrings",
+            "materials": [
+              "Gold",
+              "Diamond"
+            ],
+            "price": 3299,
+            "image": "/images/home/banner4.webp"
+          },
+          {
+            "id": 7,
+            "name": "Golden Halo Ring",
+            "category": "Rings",
+            "materials": [
+              "Gold"
+            ],
+            "price": 2599,
+            "image": "/images/our-story/product4.webp"
+          },
+          {
+            "id": 8,
+            "name": "Classic Gold Chain",
+            "category": "Necklaces",
+            "materials": [
+              "Gold"
+            ],
+            "price": 1899,
+            "image": "/images/our-story/product5.webp"
+          },
+          {
+            "id": 9,
+            "name": "Golden Charm Bracelet",
+            "category": "Bracelets",
+            "materials": [
+              "Gold",
+              "Diamond"
+            ],
+            "price": 2899,
+            "image": "/images/home/banner4.webp"
+          }
+        ],
+        "categories": [
+          "Rings",
+          "Necklaces",
+          "Earrings",
+          "Bracelets"
+        ],
+        "materials": [
+          "Gold",
+          "Diamond",
+          "Platinum",
+          "Silver"
+        ],
+        "pageSize": 6,
+        "minimumPrice": 0,
+        "maxPrice": 50000,
+        "priceStep": 500,
+        "defaultSort": "featured",
+        "sortOptions": [
+          {
+            "value": "featured",
+            "label": "Best Selling"
+          },
+          {
+            "value": "price-low",
+            "label": "Price: Low to High"
+          },
+          {
+            "value": "price-high",
+            "label": "Price: High to Low"
+          },
+          {
+            "value": "name",
+            "label": "Name: A to Z"
+          }
+        ],
+        "copy": {
+          "filters": "Filters",
+          "clearAll": "Clear all",
+          "category": "Category",
+          "priceRange": "Price Range",
+          "maximumPrice": "Maximum price",
+          "materials": "Material",
+          "sortBy": "Sort By",
+          "sortProducts": "Sort products",
+          "sort": "Sort",
+          "productsCount": "{count} products",
+          "showing": "Showing",
+          "of": "of",
+          "crafted": "Crafted to be cherished",
+          "viewProduct": "View Product",
+          "viewProductAria": "View {name}",
+          "addToWishlist": "Add {name} to wishlist",
+          "removeFromWishlist": "Remove {name} from wishlist",
+          "inclusiveTaxes": "Inclusive of taxes",
+          "noProducts": "No pieces found",
+          "emptyDescription": "Try changing your filters to discover more of our collection.",
+          "clearFilters": "Clear Filters",
+          "previousPage": "Previous page",
+          "page": "Page {page}",
+          "nextPage": "Next page",
+          "closeFilters": "Close filters",
+          "productFilters": "Product filters",
+          "showProducts": "Show {count} Products",
+          "resetFilters": "Reset Filters",
+          "minimumPrice": "₹0",
+          "collectionHref": "/collections/collection-details"
+        }
+      },
+      "collectionEditorial": {
+        "eyebrow": "Discover Your Style",
+        "title": "Curated Collections",
+        "description": "Jewelry for every version of you, crafted to make every moment feel extraordinary.",
+        "viewAll": {
+          "label": "Our Collection",
+          "href": "/collections"
+        },
+        "editLabel": "VÉLORA EDIT",
+        "collectionAriaLabel": "Explore {title}: {subtitle}",
+        "discoverLabel": "Discover Collection",
+        "collections": [
+          {
+            "id": "modern-muse",
+            "title": "Modern Muse",
+            "subtitle": "A fearless take on timeless classics.",
+            "image": "/images/home/banner4.webp",
+            "position": "center 35%",
+            "number": "01"
+          },
+          {
+            "id": "bridal-edit",
+            "title": "The Bridal Edit",
+            "subtitle": "For your most unforgettable moments.",
+            "image": "/images/home/banner2.webp",
+            "position": "center 40%",
+            "number": "02"
+          },
+          {
+            "id": "everyday-elegance",
+            "title": "Everyday Elegance",
+            "subtitle": "Make every day extraordinary.",
+            "image": "/images/home/ValentineDay-Gift.webp",
+            "position": "center 40%",
+            "number": "03"
+          },
+          {
+            "id": "evening-glam",
+            "title": "Evening Glam",
+            "subtitle": "Bold. Beautiful. Unforgettable.",
+            "image": "/images/home/Reasons-Buy.webp",
+            "position": "center 35%",
+            "number": "04"
+          }
+        ]
+      },
+      "signatureCollections": {
+        "eyebrow": "THE VÉLORA SELECTION",
+        "title": "Our Signature Collections",
+        "viewAll": {
+          "label": "Our Collection",
+          "href": "/collections"
+        },
+        "collections": [
+          {
+            "name": "Rings",
+            "description": "Discover timeless rings",
+            "image": "/images/our-story/product2.webp",
+            "alt": "Elegant diamond ring in warm golden light",
+            "number": "01"
+          },
+          {
+            "name": "Necklaces",
+            "description": "Grace in every detail",
+            "image": "/images/home/banner2.webp",
+            "alt": "Elegant necklace with a delicate pendant",
+            "number": "02"
+          },
+          {
+            "name": "Earrings",
+            "description": "For every occasion",
+            "image": "/images/our-story/product4.webp",
+            "alt": "Statement earrings with sparkling stones",
+            "number": "03"
+          },
+          {
+            "name": "Bracelets",
+            "description": "Elegance that stays",
+            "image": "/images/about/banner1.webp",
+            "alt": "Gold bracelet from the VÉLORA collection",
+            "number": "04"
+          }
+        ]
+      }
+    },
     "sections": {
       "Site": {
         "variants": {
@@ -1932,7 +1897,7 @@
                 "title": "Shop",
                 "source": "plans",
                 "links": [
-                    {
+                  {
                     "label": "Rings",
                     "href": "/collections"
                   },

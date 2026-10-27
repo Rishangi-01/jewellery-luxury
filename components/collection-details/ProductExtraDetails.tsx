@@ -277,43 +277,6 @@ export default function ProductExtraDetails() {
                           {item.category}
                         </span>
 
-                        <button
-                          type="button"
-                          aria-label={
-                            isWishlisted
-                              ? completeLook.removeFromWishlist.replace(
-                                  "{name}",
-                                  item.name
-                                )
-                              : completeLook.addToWishlist.replace(
-                                  "{name}",
-                                  item.name
-                                )
-                          }
-                          aria-pressed={isWishlisted}
-                          onClick={(event) => {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            toggleWishlist(item.name);
-                          }}
-                          className="absolute right-2 top-2
-                            flex h-8 w-8 items-center
-                            justify-center rounded-full
-                            border border-white/20 bg-black/40
-                            text-white backdrop-blur-md
-                            transition-all hover:bg-white
-                            hover:text-[#17120d] sm:right-2.5 sm:top-2.5"
-                        >
-                          <Heart
-                            size={15}
-                            className={
-                              isWishlisted
-                                ? "fill-[#d6bd91] text-[#d6bd91]"
-                                : ""
-                            }
-                          />
-                        </button>
-
                         <span
                           className="absolute bottom-2
                           right-2 flex h-8 w-8 translate-y-2
@@ -337,13 +300,6 @@ export default function ProductExtraDetails() {
                         >
                           {item.name}
                         </a>
-
-                        <p
-                          className="mt-1 text-sm font-medium
-                          tracking-wide text-[#d6bd91]"
-                        >
-                          {formatPrice(item.price)}
-                        </p>
                       </div>
                     </motion.article>
                   );

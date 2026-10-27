@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -13,6 +12,15 @@ import {
   X,
   ArrowUpRight,
 } from "lucide-react";
+
+const textVariants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" as const },
+  },
+};
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,13 +52,16 @@ export default function Navbar() {
             className="absolute -right-10 -top-16 h-36 w-80
               rounded-full bg-amber-600/10 blur-[65px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b
-            from-white/[0.035] to-transparent" />
+          <div
+            className="absolute inset-0 bg-gradient-to-b
+            from-white/[0.035] to-transparent"
+          />
         </div>
 
-        <div className="relative flex min-h-[68px] items-center
-          justify-between gap-4 px-4 sm:min-h-[82px] sm:px-7 lg:px-12">
-
+        <div
+          className="relative flex min-h-[68px] items-center
+          justify-between gap-4 px-4 sm:min-h-[82px] sm:px-7 lg:px-12"
+        >
           {/* Brand */}
           <Link
             href="/"
@@ -67,12 +78,13 @@ export default function Navbar() {
               {site.site.name}
             </motion.span>
 
-            <span className="absolute -bottom-1 left-0 h-px w-0
+            <span
+              className="absolute -bottom-1 left-0 h-px w-0
               bg-[#d7c49c] transition-all duration-500
-              group-hover:w-full" />
+              group-hover:w-full"
+            />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden items-center gap-6 md:flex lg:gap-9 xl:gap-11">
             {site.nav.links.map((link, index) => (
               <motion.div
@@ -92,18 +104,17 @@ export default function Navbar() {
                     hover:text-[#e0cba3] lg:text-[16px]"
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 h-px
+                  <span
+                    className="absolute -bottom-0.5 left-0 h-px
                     w-0 bg-[#d7c49c] transition-all duration-300
-                    group-hover:w-full" />
+                    group-hover:w-full"
+                  />
                 </Link>
               </motion.div>
             ))}
           </div>
 
-          {/* Action Icons */}
           <div className="flex shrink-0 items-center gap-3 sm:gap-5">
-
-            {/* Search */}
             <motion.button
               type="button"
               whileHover={{ scale: 1.12 }}
@@ -121,40 +132,26 @@ export default function Navbar() {
               )}
             </motion.button>
 
-            {/* Wishlist */}
-            <motion.div
-              whileHover={{ scale: 1.12, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
               <Link
-                href="/wishlist"
-                aria-label="Wishlist"
-                className="relative block text-white/90
-                  transition-colors hover:text-[#e0cba3]"
+                href={site.nav.button.href}
+                className="group inline-flex min-h-[44px]
+                                items-center justify-center gap-5
+                                border border-[#c6a66d]/80 px-5 py-3 rounded-xs
+                                text-[10px] font-semibold tracking-[0.15em]
+                                text-[#f6eddb] transition-all duration-300
+                                hover:border-[#e4c68c] hover:bg-[#c6a66d]
+                                hover:text-[#100d08]
+                                sm:min-h-[40px] sm:px-7 sm:text-xs"
               >
-                <Heart size={22} strokeWidth={1.7} />
-                <span className="absolute -right-1 -top-1 h-2 w-2
-                  rounded-full bg-[#d6a66b] ring-2 ring-[#080807]" />
-              </Link>
-            </motion.div>
+                {site.nav.button.label}
 
-            <motion.div
-              whileHover={{ scale: 1.12, y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Link
-                href="/cart"
-                aria-label="Shopping bag"
-                className="relative block text-white/90
-                  transition-colors hover:text-[#e0cba3]"
-              >
-                <ShoppingBag size={23} strokeWidth={1.7} />
-                <span className="absolute -right-1 -top-1 h-2 w-2
-                  rounded-full bg-[#b96948] ring-2 ring-[#080807]" />
+                <ArrowUpRight
+                  size={17}
+                  className="transition-transform duration-300
+                                  group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
               </Link>
-            </motion.div>
 
-            {/* Mobile menu button */}
             <button
               type="button"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -181,8 +178,7 @@ export default function Navbar() {
                 const query = String(formData.get("q") || "").trim();
 
                 if (query) {
-                  window.location.href =
-                    `/shop?q=${encodeURIComponent(query)}`;
+                  window.location.href = `/shop?q=${encodeURIComponent(query)}`;
                 }
               }}
               className="relative overflow-hidden border-t
@@ -238,10 +234,7 @@ export default function Navbar() {
                         transition-colors hover:text-[#d7c49c]"
                     >
                       {link.label}
-                      <ArrowUpRight
-                        size={16}
-                        className="text-[#d7c49c]"
-                      />
+                      <ArrowUpRight size={16} className="text-[#d7c49c]" />
                     </Link>
                   </motion.div>
                 ))}

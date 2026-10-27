@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -7,8 +6,6 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import {
   Heart,
-  ChevronDown,
-  ChevronUp,
   SlidersHorizontal,
   X,
   ArrowRight,
@@ -18,18 +15,9 @@ import {
 } from "lucide-react";
 import { productListingData } from "@/data";
 
-const { products, categories, materials, sortOptions, copy } =
-  productListingData;
+const { products, categories, materials, copy } = productListingData;
 type Category = (typeof categories)[number];
 type Material = (typeof materials)[number];
-
-function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(price);
-}
 
 export default function ProductListing() {
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
@@ -40,12 +28,6 @@ export default function ProductListing() {
   const [wishlist, setWishlist] = useState<number[]>([]);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  const [expanded, setExpanded] = useState({
-    category: true,
-    material: true,
-    price: true,
-  });
-
   const filteredProducts = useMemo(() => {
     const result = products.filter((product) => {
       const categoryMatch =
@@ -55,7 +37,7 @@ export default function ProductListing() {
       const materialMatch =
         selectedMaterials.length === 0 ||
         selectedMaterials.some((material) =>
-          product.materials.includes(material)
+          product.materials.includes(material),
         );
 
       const priceMatch = product.price <= priceRange;
@@ -82,37 +64,19 @@ export default function ProductListing() {
 
   const totalPages = Math.max(
     1,
-    Math.ceil(filteredProducts.length / productListingData.pageSize)
+    Math.ceil(filteredProducts.length / productListingData.pageSize),
   );
 
   const visibleProducts = filteredProducts.slice(
     (currentPage - 1) * productListingData.pageSize,
-    currentPage * productListingData.pageSize
+    currentPage * productListingData.pageSize,
   );
-
-  function toggleCategory(category: Category) {
-    setSelectedCategories((previous) =>
-      previous.includes(category)
-        ? previous.filter((item) => item !== category)
-        : [...previous, category]
-    );
-    setCurrentPage(1);
-  }
-
-  function toggleMaterial(material: Material) {
-    setSelectedMaterials((previous) =>
-      previous.includes(material)
-        ? previous.filter((item) => item !== material)
-        : [...previous, material]
-    );
-    setCurrentPage(1);
-  }
 
   function toggleWishlist(id: number) {
     setWishlist((previous) =>
       previous.includes(id)
         ? previous.filter((item) => item !== id)
-        : [...previous, id]
+        : [...previous, id],
     );
   }
 
@@ -124,342 +88,13 @@ export default function ProductListing() {
     setCurrentPage(1);
   }
 
-  const filterPanel = (
-    <div className="space-y-7">
-      {/* Filter heading */}
-      <div className="flex items-center justify-between">
-        <h2 className="font-serif text-xl text-[#241d16]">
-          {copy.filters}
-        </h2>
-
-        <button
-          onClick={resetFilters}
-          className="text-[10px] uppercase tracking-widest
-            text-[#9c8154] hover:text-[#4b3922]"
-        >
-          {copy.clearAll}
-        </button>
-      </div>
-
-      <div className="h-px bg-[#dfd8cb]" />
-
-      {/* Categories */}
-      <div>
-        <button
-          onClick={() =>
-            setExpanded((previous) => ({
-              ...previous,
-              category: !previous.category,
-            }))
-          }
-          className="flex w-full items-center justify-between"
-          aria-expanded={expanded.category}
-        >
-          <span className="text-sm font-semibold text-[#28221b]">
-            {copy.category}
-          </span>
-          {expanded.category ? (
-            <ChevronUp size={17} />
-          ) : (
-            <ChevronDown size={17} />
-          )}
-        </button>
-
-        <AnimatePresence initial={false}>
-          {expanded.category && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <div className="space-y-3.5 pt-5">
-                {categories.map((category) => {
-                  const checked = selectedCategories.includes(category);
-                  const count = products.filter(
-                    (product) => product.category === category
-                  ).length;
-
-                  return (
-                    <label
-                      key={category}
-                      className="flex cursor-pointer items-center
-                        justify-between gap-3 text-sm text-[#6e655a]
-                        transition-colors hover:text-[#9a7847]"
-                    >
-                      <span className="flex items-center gap-2.5">
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={() => toggleCategory(category)}
-                          className="peer sr-only"
-                        />
-                        <span
-                          className={`flex h-[17px] w-[17px]
-                            items-center justify-center rounded-[3px]
-                            border transition-colors ${
-                              checked
-                                ? "border-[#a78953] bg-[#a78953] text-white"
-                                : "border-[#c9c0b2] bg-transparent"
-                            }`}
-                        >
-                          {checked && <Check size={12} />}
-                        </span>
-                        {category}
-                      </span>
-                      <span className="text-xs text-[#a49a8d]">
-                        ({count})
-                      </span>
-                    </label>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Price range */}
-      <div>
-        <button
-          onClick={() =>
-            setExpanded((previous) => ({
-              ...previous,
-              price: !previous.price,
-            }))
-          }
-          className="mb-5 flex w-full items-center justify-between"
-          aria-expanded={expanded.price}
-        >
-          <span className="text-sm font-semibold text-[#28221b]">
-            {copy.priceRange}
-          </span>
-          {expanded.price ? (
-            <ChevronUp size={17} />
-          ) : (
-            <ChevronDown size={17} />
-          )}
-        </button>
-
-        <AnimatePresence initial={false}>
-          {expanded.price && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <input
-                type="range"
-                min={productListingData.minimumPrice}
-                max={productListingData.maxPrice}
-                step={productListingData.priceStep}
-                value={priceRange}
-                onChange={(event) => {
-                  setPriceRange(Number(event.target.value));
-                  setCurrentPage(1);
-                }}
-                aria-label={copy.maximumPrice}
-                className="w-full cursor-pointer accent-[#a78953]"
-              />
-
-              <div className="mt-2 flex justify-between text-xs
-                text-[#766c60]">
-                <span>{copy.minimumPrice}</span>
-                <span>{formatPrice(priceRange)}</span>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Materials */}
-      <div>
-        <button
-          onClick={() =>
-            setExpanded((previous) => ({
-              ...previous,
-              material: !previous.material,
-            }))
-          }
-          className="flex w-full items-center justify-between"
-          aria-expanded={expanded.material}
-        >
-          <span className="text-sm font-semibold text-[#28221b]">
-            {copy.materials}
-          </span>
-          {expanded.material ? (
-            <ChevronUp size={17} />
-          ) : (
-            <ChevronDown size={17} />
-          )}
-        </button>
-
-        <AnimatePresence initial={false}>
-          {expanded.material && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <div className="space-y-3.5 pt-5">
-                {materials.map((material) => {
-                  const checked = selectedMaterials.includes(material);
-
-                  return (
-                    <label
-                      key={material}
-                      className="flex cursor-pointer items-center
-                        gap-2.5 text-sm text-[#6e655a]
-                        hover:text-[#9a7847]"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => toggleMaterial(material)}
-                        className="peer sr-only"
-                      />
-                      <span
-                        className={`flex h-[17px] w-[17px]
-                          items-center justify-center rounded-[3px]
-                          border transition-colors ${
-                            checked
-                              ? "border-[#a78953] bg-[#a78953] text-white"
-                              : "border-[#c9c0b2]"
-                          }`}
-                      >
-                        {checked && <Check size={12} />}
-                      </span>
-                      {material}
-                    </label>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Sort */}
-      <div>
-        <label
-          htmlFor="sort-products"
-          className="mb-3 block text-sm font-semibold text-[#28221b]"
-        >
-          {copy.sortBy}
-        </label>
-
-        <div className="relative">
-          <select
-            id="sort-products"
-            value={sortBy}
-            onChange={(event) => {
-              setSortBy(event.target.value);
-              setCurrentPage(1);
-            }}
-            className="w-full appearance-none rounded-[3px]
-              border border-[#ded6c9] bg-transparent
-              px-3 py-3 pr-9 text-sm text-[#6e655a]
-              outline-none transition-colors
-              focus:border-[#a78953]"
-          >
-            {sortOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <ChevronDown
-            size={16}
-            className="pointer-events-none absolute right-3
-              top-1/2 -translate-y-1/2 text-[#7b705f]"
-          />
-        </div>
-      </div>
-
-      <button
-        onClick={resetFilters}
-        className="w-full border border-[#bda16f]/70
-          px-4 py-3 text-xs font-semibold uppercase
-          tracking-[0.14em] text-[#8b7046]
-          transition-colors hover:bg-[#bda16f]
-          hover:text-white"
-      >
-        {copy.resetFilters}
-      </button>
-    </div>
-  );
-
   return (
-    <section className="min-h-screen bg-[#faf8f3] px-4 py-8
-      sm:px-6 sm:py-10 lg:px-10 lg:py-12 w-[100%]">
+    <section
+      className="min-h-screen bg-[#faf8f3] px-4 py-8
+      sm:px-6 sm:py-10 lg:px-10 lg:py-12 w-[100%]"
+    >
       <div className="mx-auto max-w-[1600px]">
-
-        {/* Mobile toolbar */}
-        <div className="mb-6 flex items-center justify-between
-          gap-3 lg:hidden">
-          <button
-            onClick={() => setMobileFiltersOpen(true)}
-            className="inline-flex items-center gap-2 border
-              border-[#ded6c9] px-4 py-2.5 text-sm
-              text-[#29231c]"
-          >
-            <SlidersHorizontal size={16} />
-            {copy.filters}
-          </button>
-
-          <span className="text-xs text-[#766c60]">
-            {copy.productsCount.replace(
-              "{count}",
-              filteredProducts.length.toString()
-            )}
-          </span>
-
-          <button
-            onClick={() =>
-              document.getElementById("sort-products-mobile")?.focus()
-            }
-            className="inline-flex items-center gap-2 text-sm text-[#29231c]"
-          >
-            <ArrowUpDown size={16} />
-            {copy.sort}
-          </button>
-        </div>
-
-
-        <div className="mb-5 lg:hidden">
-          <label htmlFor="sort-products-mobile" className="sr-only">
-            {copy.sortProducts}
-          </label>
-          <select
-            id="sort-products-mobile"
-            value={sortBy}
-            onChange={(event) => {
-              setSortBy(event.target.value);
-              setCurrentPage(1);
-            }}
-            className="w-full border border-[#ded6c9] bg-transparent
-              px-3 py-2.5 text-sm text-[#6e655a] outline-none"
-          >
-            {sortOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[245px_minmax(0,1fr)]
-          lg:gap-7 xl:grid-cols-[275px_minmax(0,1fr)] xl:gap-10">
-
-          <aside className="hidden border-r border-[#e4ded3]
-            pr-6 lg:block xl:pr-8">
-            <div className="sticky top-24">
-              {filterPanel}
-            </div>
-          </aside>
-
+        <div>
           <div className="min-w-0">
             <div className="mb-5 hidden items-center justify-between lg:flex">
               <p className="text-xs text-[#887d6f] lg:text-[16px]">
@@ -471,22 +106,23 @@ export default function ProductListing() {
                   {"–"}
                   {Math.min(
                     currentPage * productListingData.pageSize,
-                    filteredProducts.length
+                    filteredProducts.length,
                   )}
                 </span>{" "}
                 {copy.of}{" "}
                 {copy.productsCount.replace(
                   "{count}",
-                  filteredProducts.length.toString()
+                  filteredProducts.length.toString(),
                 )}
               </p>
 
-              <p className="text-[10px] uppercase tracking-[0.16em]
-                text-[#a18a63]">
+              <p
+                className="text-[10px] uppercase tracking-[0.16em]
+                text-[#a18a63]"
+              >
                 {copy.crafted}
               </p>
             </div>
-
 
             {visibleProducts.length > 0 ? (
               <motion.div
@@ -512,14 +148,16 @@ export default function ProductListing() {
                         }}
                         className="group min-w-0"
                       >
-                        <div className="relative aspect-square
+                        <div
+                          className="relative aspect-square
                           overflow-hidden rounded-[3px]
-                          bg-[#eae4d9]">
+                          bg-[#eae4d9]"
+                        >
                           <Link
                             href={copy.collectionHref}
                             aria-label={copy.viewProductAria.replace(
                               "{name}",
-                              product.name
+                              product.name,
                             )}
                             className="absolute inset-0 z-0"
                           >
@@ -535,57 +173,24 @@ export default function ProductListing() {
                             />
                           </Link>
 
-
-                          <div className="pointer-events-none absolute inset-0
+                          <div
+                            className="pointer-events-none absolute inset-0
                             bg-gradient-to-t from-black/20
                             via-transparent to-black/[0.04]
                             opacity-60 transition-opacity
-                            group-hover:opacity-100" />
+                            group-hover:opacity-100"
+                          />
 
                           {product.badge && (
-                            <span className="absolute left-2 top-2
+                            <span
+                              className="absolute left-2 top-2
                               bg-[#f8f1e3] px-2 py-1 text-[9px]
                               uppercase tracking-wider text-[#81683e]
-                              sm:left-3 sm:top-3 sm:text-[10px]">
+                              sm:left-3 sm:top-3 sm:text-[10px]"
+                            >
                               {product.badge}
                             </span>
                           )}
-
-
-                          <button
-                            onClick={() => toggleWishlist(product.id)}
-                            aria-label={
-                              isWishlisted
-                                ? copy.removeFromWishlist.replace(
-                                    "{name}",
-                                    product.name
-                                  )
-                                : copy.addToWishlist.replace(
-                                    "{name}",
-                                    product.name
-                                  )
-                            }
-                            aria-pressed={isWishlisted}
-                            className="absolute right-2 top-2 z-10 flex
-                              h-9 w-9 items-center justify-center
-                              rounded-full bg-[#faf8f3]/90
-                              text-[#33291d] shadow-sm
-                              transition-all duration-300
-                              hover:bg-white sm:right-3 sm:top-3
-                              sm:h-10 sm:w-10"
-                          >
-                            <Heart
-                              size={18}
-                              strokeWidth={1.7}
-                              className={`transition-colors ${
-                                isWishlisted
-                                  ? "fill-[#a77c48] text-[#a77c48]"
-                                  : ""
-                              }`}
-                            />
-                          </button>
-
-
                           <Link
                             href={copy.collectionHref}
                             className="absolute bottom-0 left-0 right-0
@@ -594,7 +199,7 @@ export default function ProductListing() {
                               py-3 text-[10px] font-medium uppercase
                               tracking-[0.15em] text-[#f8f1e3]
                               transition-transform duration-300
-                              group-hover:translate-y-0"
+                              group-hover:translate-y-0 lg:text-xl"
                           >
                             <ShoppingBag size={14} />
                             {copy.viewProduct}
@@ -603,20 +208,17 @@ export default function ProductListing() {
 
                         <div className="pt-3">
                           <Link href={copy.collectionHref}>
-                            <h3 className="line-clamp-2 text-sm
+                            <h3
+                              className="text-sm
                               font-medium leading-5 text-[#29231c]
                               transition-colors hover:text-[#9b7a49]
-                              sm:text-base lg:text-xl">
+                              sm:text-base lg:text-3xl"
+                            >
                               {product.name}
                             </h3>
                           </Link>
 
-                          <p className="mt-2 text-sm font-semibold
-                            text-[#393027] lg:text-xl">
-                            {formatPrice(product.price)}
-                          </p>
-
-                          <p className="mt-1 text-[10px] text-[#a09688] lg:text-lg">
+                          <p className="mt-1 text-[10px] text-[#a09688] lg:text-xl">
                             {copy.inclusiveTaxes}
                           </p>
                         </div>
@@ -626,12 +228,11 @@ export default function ProductListing() {
                 </AnimatePresence>
               </motion.div>
             ) : (
-              <div className="flex min-h-72 flex-col items-center
-                justify-center px-5 text-center">
-                <SlidersHorizontal
-                  size={28}
-                  className="mb-4 text-[#b39a70]"
-                />
+              <div
+                className="flex min-h-72 flex-col items-center
+                justify-center px-5 text-center"
+              >
+                <SlidersHorizontal size={28} className="mb-4 text-[#b39a70]" />
                 <h3 className="font-serif text-2xl text-[#29231c]">
                   {copy.noProducts}
                 </h3>
@@ -649,10 +250,11 @@ export default function ProductListing() {
               </div>
             )}
 
-
             {filteredProducts.length > 0 && (
-              <div className="mt-12 flex flex-wrap items-center
-                justify-center gap-2 sm:mt-16">
+              <div
+                className="mt-12 flex flex-wrap items-center
+                justify-center gap-2 sm:mt-16"
+              >
                 <button
                   onClick={() =>
                     setCurrentPage((page) => Math.max(1, page - 1))
@@ -667,35 +269,30 @@ export default function ProductListing() {
                   <ArrowRight size={17} className="rotate-180" />
                 </button>
 
-                {Array.from({ length: totalPages }, (_, index) => index + 1)
-                  .map((page) => (
-                    <button
-                      key={page}
-                      onClick={() => setCurrentPage(page)}
-                      aria-label={copy.page.replace(
-                        "{page}",
-                        page.toString()
-                      )}
-                      aria-current={
-                        currentPage === page ? "page" : undefined
-                      }
-                      className={`flex h-10 w-10 items-center
+                {Array.from(
+                  { length: totalPages },
+                  (_, index) => index + 1,
+                ).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    aria-label={copy.page.replace("{page}", page.toString())}
+                    aria-current={currentPage === page ? "page" : undefined}
+                    className={`flex h-10 w-10 items-center
                         justify-center rounded-full text-sm
                         transition-all duration-300 ${
                           currentPage === page
                             ? "bg-[#11110f] text-white shadow-md"
                             : "text-[#655b4f] hover:bg-[#eae3d7]"
                         }`}
-                    >
-                      {page}
-                    </button>
-                  ))}
+                  >
+                    {page}
+                  </button>
+                ))}
 
                 <button
                   onClick={() =>
-                    setCurrentPage((page) =>
-                      Math.min(totalPages, page + 1)
-                    )
+                    setCurrentPage((page) => Math.min(totalPages, page + 1))
                   }
                   disabled={currentPage === totalPages}
                   aria-label={copy.nextPage}
@@ -711,64 +308,6 @@ export default function ProductListing() {
           </div>
         </div>
       </div>
-
-
-      <AnimatePresence>
-        {mobileFiltersOpen && (
-          <>
-            <motion.button
-              type="button"
-              aria-label={copy.closeFilters}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileFiltersOpen(false)}
-              className="fixed inset-0 z-[60] bg-black/45"
-            />
-
-            <motion.div
-              role="dialog"
-              aria-modal="true"
-              aria-label={copy.productFilters}
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="fixed inset-y-0 left-0 z-[70]
-                w-[min(88vw,360px)] overflow-y-auto
-                bg-[#faf8f3] p-6 shadow-2xl"
-            >
-              <div className="mb-7 flex items-center justify-between">
-                <h2 className="font-serif text-2xl text-[#29231c]">
-                  {copy.filters}
-                </h2>
-                <button
-                  onClick={() => setMobileFiltersOpen(false)}
-                  aria-label={copy.closeFilters}
-                  className="flex h-10 w-10 items-center justify-center
-                    text-[#29231c] hover:bg-[#eee8dd]"
-                >
-                  <X size={21} />
-                </button>
-              </div>
-
-              {filterPanel}
-
-              <button
-                onClick={() => setMobileFiltersOpen(false)}
-                className="mt-6 w-full bg-[#15130f] px-4 py-4
-                  text-xs font-semibold uppercase tracking-widest
-                  text-white transition-colors hover:bg-[#8b7046]"
-              >
-                {copy.showProducts.replace(
-                  "{count}",
-                  filteredProducts.length.toString()
-                )}
-              </button>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
