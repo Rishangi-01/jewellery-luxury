@@ -178,7 +178,7 @@ export default function Navbar() {
                 const query = String(formData.get("q") || "").trim();
 
                 if (query) {
-                  window.location.href = `/shop?q=${encodeURIComponent(query)}`;
+                  window.location.href = `/collections`;
                 }
               }}
               className="relative overflow-hidden border-t

@@ -1886,10 +1886,6 @@
                   {
                     "label": "Contact",
                     "href": "/contact"
-                  },
-                  {
-                    "label": "Your Cart",
-                    "href": "/cart"
                   }
                 ]
               },
@@ -1915,10 +1911,6 @@
                   },
                   {
                     "label": "Royal Bangle",
-                    "href": "/collections"
-                  },
-                  {
-                    "label": "Classic Gold Chain",
                     "href": "/collections"
                   }
                 ]
