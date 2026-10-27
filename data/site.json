@@ -180,11 +180,11 @@
     "commerce": {
       "productDetails": {
         "product": {
-          "name": "Eternal Diamond Ring",
+          "name": "Eternal Premium Diamond Ring",
           "price": 2499,
           "rating": 4.8,
           "reviews": 24,
-          "description": "A symbol of everlasting love, this exquisite diamond ring features a brilliant-cut center stone set in 18k gold, designed to shine for a lifetime. Crafted in premium white gold, this elegant piece is perfect for engagements, anniversaries or special occasions.",
+          "description": "A symbol of everlasting love, this exquisite diamond ring features a brilliant-cut center stone set in 18k gold, designed to shine for a lifetime. Crafted in premium white gold, this elegant piece is perfect for engagements, anniversaries or special occasions. This elegant ring showcases a brilliant round-cut diamond, carefully set in a handcrafted 18k gold band. Designed for those who appreciate fine craftsmanship and timeless beauty.",
           "features": [
             {
               "label": "18k Gold",
@@ -599,8 +599,8 @@
             "alt": "VÉLORA",
             "name": "VÉLORA",
             "description": "Jewelry created to celebrate your story, cherish your moments, and last for generations.",
-            "logo": "/images/logo.webp",
-            "logoWhite": "/images/logo-white.webp",
+            "logo": "/images/Velora-jewelleryLogo.webp",
+            "logoWhite": "/images/Velora-jewelleryLogo.webp",
             "addressLines": [
               "123 Luxury Lane,",
               "New York, NY 10001, USA"

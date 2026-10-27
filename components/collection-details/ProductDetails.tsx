@@ -74,50 +74,8 @@ export default function ProductDetails() {
           initial={reduceMotion ? false : { opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-[54px_minmax(0,1fr)]
-            items-start gap-3 sm:grid-cols-[72px_minmax(0,1fr)]
-            sm:gap-4 lg:grid-cols-[76px_minmax(0,1fr)]
-            lg:gap-5"
+          className="items-start"
         >
-          <div className="flex flex-col gap-3 sm:gap-4">
-            {product.images.map((image, index) => (
-              <motion.button
-                key={image.src}
-                type="button"
-                onClick={() => setActiveImage(index)}
-                whileHover={reduceMotion ? undefined : { scale: 1.04 }}
-                whileTap={reduceMotion ? undefined : { scale: 0.96 }}
-                aria-label={copy.viewImage.replace(
-                  "{index}",
-                  (index + 1).toString()
-                )}
-                aria-pressed={activeImage === index}
-                className={`group relative aspect-[3/4]
-                  overflow-hidden rounded-md border-2
-                  bg-[#e9e1d5] transition-all duration-300 ${
-                    activeImage === index
-                      ? "border-[#aa8954] shadow-[0_4px_18px_rgba(170,137,84,0.18)]"
-                      : "border-transparent opacity-75 hover:opacity-100"
-                  }`}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="76px"
-                  className="object-cover transition-transform
-                    duration-500 group-hover:scale-110"
-                />
-                {activeImage === index && (
-                  <motion.span
-                    layoutId="active-thumbnail"
-                    className="absolute inset-0 border border-[#aa8954]"
-                    transition={{ duration: 0.25 }}
-                  />
-                )}
-              </motion.button>
-            ))}
-          </div>
 
           <div className="group relative aspect-[7.2/5]
             overflow-hidden rounded-md bg-[#e8e0d4]
@@ -183,28 +141,7 @@ export default function ProductDetails() {
                 <ChevronRight size={18} />
               </button>
             </div>
-
-            <motion.button
-              type="button"
-              whileTap={reduceMotion ? undefined : { scale: 0.88 }}
-              onClick={() => setWishlist((value) => !value)}
-              aria-label={
-                wishlist ? copy.removeFromWishlist : copy.addProductToWishlist
-              }
-              aria-pressed={wishlist}
-              className="absolute right-3 top-3 flex h-10 w-10
-                items-center justify-center rounded-full
-                border border-white/40 bg-[#faf8f3]/90
-                text-[#2b241c] shadow-sm backdrop-blur-md
-                transition-colors hover:bg-white sm:right-4 sm:top-4"
-            >
-              <Heart
-                size={19}
-                className={`transition-colors duration-300 ${
-                  wishlist ? "fill-[#a78953] text-[#a78953]" : ""
-                }`}
-              />
-            </motion.button>
+            
           </div>
         </motion.div>
 
@@ -212,7 +149,7 @@ export default function ProductDetails() {
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
-          className="flex flex-col pt-1 sm:pt-2 lg:pt-1"
+          className="flex flex-col pt-1 sm:pt-2 lg:pt-1 justify-center"
         >
           <div className="mb-3 flex items-center gap-3">
             <span className="h-px w-7 bg-[#b3996c]" />
@@ -224,80 +161,14 @@ export default function ProductDetails() {
 
           <h1 className="font-serif text-3xl font-normal
             leading-tight tracking-[-0.035em] text-[#241d16]
-            sm:text-4xl lg:text-[52px]">
+            sm:text-4xl lg:text-[63px]">
             {product.name}
           </h1>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
-            <div
-              className="flex items-center gap-0.5 text-[#a48650]"
-              aria-label={copy.ratingAria.replace(
-                "{rating}",
-                product.rating.toString()
-              )}
-            >
-              {Array.from({ length: 5 }, (_, index) => (
-                <Star
-                  key={index}
-                  size={16}
-                  strokeWidth={1.5}
-                  className={
-                    index < Math.round(product.rating)
-                      ? "fill-[#a48650]"
-                      : ""
-                  }
-                />
-              ))}
-            </div>
-
-            <span className="text-xs text-[#7c7163] lg:text-[16px]">
-              {product.rating.toFixed(1)}
-            </span>
-
-            <span className="h-3 w-px bg-[#d8d0c3]" />
-
-            <a
-              href="#reviews"
-              className="text-xs text-[#786c5e]
-                underline-offset-4 transition-colors
-                hover:text-[#a48650] hover:underline lg:text-[16px]"
-            >
-              {copy.reviews.replace("{count}", product.reviews.toString())}
-            </a>
-          </div>
-
           <p className="mt-4 max-w-xl text-sm leading-7
-            text-[#756b5f] sm:text-[15px] sm:leading-7 lg:text-[16px]">
+            text-[#756b5f] sm:text-[15px] sm:leading-7 lg:text-[18px]">
             {product.description}
           </p>
-
-          <div className="mt-6 grid grid-cols-1 gap-4
-            sm:grid-cols-2 sm:gap-x-6 sm:gap-y-4">
-            {product.features.map((feature, index) => {
-              const Icon = featureIcons[feature.icon];
-
-              return (
-                <motion.div
-                  key={feature.label}
-                  initial={reduceMotion ? false : { opacity: 0, x: 12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: 0.2 + index * 0.08,
-                  }}
-                  className="flex items-center gap-3 text-sm
-                    text-[#756b5f] lg:text-[18px]"
-                >
-                  <span className="flex h-8 w-8 shrink-0
-                    items-center justify-center rounded-full
-                    border border-[#e2d8c6] text-[#a48650]">
-                    <Icon size={16} strokeWidth={1.5} />
-                  </span>
-                  {feature.label}
-                </motion.div>
-              );
-            })}
-          </div>
 
           <AnimatePresence>
             {cartMessage && (

@@ -16,7 +16,7 @@ export default function BrandStory() {
       id="our-story"
       className="relative overflow-hidden bg-[#faf8f3]
         px-4 py-8 text-[#211c16] sm:px-6 sm:py-8
-        lg:px-10 lg:pb-8 lg:pt-24 w-[100%]"
+        lg:px-10 lg:pb-8 lg:pt-16 w-[100%]"
     >
       <div
         aria-hidden="true"

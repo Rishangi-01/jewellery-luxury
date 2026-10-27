@@ -164,7 +164,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Expandable Search */}
+        
         <AnimatePresence>
           {searchOpen && (
             <motion.form

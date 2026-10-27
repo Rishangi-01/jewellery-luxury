@@ -58,7 +58,12 @@ export default function Footer() {
           bg-[#b18b4e]/[0.07] blur-[100px]"
       />
 
-      <div className="absolute inset-0 -z-30">
+      <div
+        className="mx-auto max-w-[1300px] px-6 pb-8 pt-12
+        sm:px-10 sm:pb-8 sm:pt-16 lg:px-14 lg:pt-16 xl:px-20"
+      >
+
+      <div className="absolute inset-0 -z-30 bottom-[4rem]">
         <Image
           src={site.site.bgImage}
           alt={site.site.alt}
@@ -70,10 +75,6 @@ export default function Footer() {
         />
       </div>
 
-      <div
-        className="mx-auto max-w-[1600px] px-6 pb-12 pt-14
-        sm:px-10 sm:pb-14 sm:pt-16 lg:px-14 lg:pt-20 xl:px-20"
-      >
         <motion.div
           variants={{
             hidden: {},

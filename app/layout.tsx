@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: site.site.name,
   description: site.site.description,
-  // icons: {
-  //   icon: "/favicon.png",
-  // },
+  icons: {
+    icon: "/favicon.webp",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
