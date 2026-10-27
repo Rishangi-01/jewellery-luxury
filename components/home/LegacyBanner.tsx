@@ -11,7 +11,7 @@ export default function LegacyBanner() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-[#f8f5ef] px-0 py-8 sm:px-0 sm:py-8 lg:px-0 w-[100%]">
+    <section className="bg-[#f8f5ef] px-0 pt-8 pb-0 sm:px-0 sm:pt-8 sm:pb-0 lg:px-0 w-[100%]">
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}

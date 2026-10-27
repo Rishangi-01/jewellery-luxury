@@ -185,6 +185,10 @@
           "rating": 4.8,
           "reviews": 24,
           "description": "A symbol of everlasting love, this exquisite diamond ring features a brilliant-cut center stone set in 18k gold, designed to shine for a lifetime. Crafted in premium white gold, this elegant piece is perfect for engagements, anniversaries or special occasions. This elegant ring showcases a brilliant round-cut diamond, carefully set in a handcrafted 18k gold band. Designed for those who appreciate fine craftsmanship and timeless beauty.",
+          "enquiryNow": {
+            "label": "Our Collection",
+            "href": "/collections"
+          },
           "features": [
             {
               "label": "18k Gold",
@@ -260,82 +264,46 @@
         }
       },
       "productExtraDetails": {
-        "tabs": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "specifications",
-            "label": "Specifications"
-          },
-          {
-            "id": "shipping",
-            "label": "Shipping & Returns"
-          }
-        ],
-        "tabListLabel": "Product information",
-        "tabContent": {
-          "description": {
-            "title": "Crafted to Last a Lifetime",
-            "paragraphs": [
-              "This elegant ring showcases a brilliant round-cut diamond, carefully set in a handcrafted 18k gold band. Designed for those who appreciate fine craftsmanship and timeless beauty."
-            ]
-          },
-          "specifications": {
-            "title": "The Details That Matter",
-            "paragraphs": [
-              "Metal: 18k gold",
-              "Stone: Brilliant-cut diamond",
-              "Style: Timeless solitaire",
-              "Finish: High-polish finish",
-              "Please refer to the individual product certificate for verified stone specifications."
-            ]
-          },
-          "shipping": {
-            "title": "A Beautiful Experience, From Start to Finish",
-            "paragraphs": [
-              "Enjoy complimentary shipping on eligible orders. Each piece is carefully packaged for a memorable unboxing experience.",
-              "For delivery timelines, return eligibility, and warranty terms, please consult your store's shipping and returns policy."
-            ]
-          }
+        "eyebrow": "The Details",
+        "title": "Product Specifications",
+        "image": {
+          "src": "/images/home/banner3.webp",
+          "alt": "Eternal diamond ring in white gold"
         },
-        "completeLook": {
-          "backgroundImage": "/images/about/Woman-elegantly.webp",
-          "title": "Complete The Look",
-          "description": "Discover pieces that pair beautifully with your selection.",
-          "viewAll": "View All",
-          "href": "/collections",
-          "items": [
-            {
-              "name": "Matching Necklace",
-              "price": 1899,
-              "category": "Necklaces",
-              "image": "/images/our-story/product2.webp",
-              "imageAlt": "Matching necklace",
-              "description": "An elegant necklace to complement your ring."
-            },
-            {
-              "name": "Diamond Earrings",
-              "price": 1299,
-              "category": "Earrings",
-              "image": "/images/our-story/product3.webp",
-              "imageAlt": "Diamond earrings",
-              "description": "Refined sparkle for every occasion."
-            },
-            {
-              "name": "Elegant Bracelet",
-              "price": 1799,
-              "category": "Bracelets",
-              "image": "/images/our-story/product4.webp",
-              "imageAlt": "Elegant bracelet",
-              "description": "A delicate finishing touch in gold."
-            }
-          ],
-          "exploreItem": "Explore {name}",
-          "addToWishlist": "Add {name} to wishlist",
-          "removeFromWishlist": "Remove {name} from wishlist"
-        }
+        "specifications": [
+          {
+            "label": "Diamond Type",
+            "value": "Lab-Grown Diamond"
+          },
+          {
+            "label": "Carat Weight",
+            "value": "1 Carat (ct.)"
+          },
+          {
+            "label": "Cut",
+            "value": "Round Brilliant Cut"
+          },
+          {
+            "label": "Color",
+            "value": "F (Near Colorless)"
+          },
+          {
+            "label": "Clarity",
+            "value": "VS1"
+          },
+          {
+            "label": "Metal Type",
+            "value": "White Gold (18K)"
+          },
+          {
+            "label": "Ring Size",
+            "value": "Available in All Sizes"
+          },
+          {
+            "label": "Certification",
+            "value": "IGI Certified"
+          }
+        ]
       },
       "productListing": {
         "products": [
@@ -670,8 +638,8 @@
                 "dropdown": true
               },
               {
-                "label": "Lookbook",
-                "href": "/lookbook"
+                "label": "Gallery",
+                "href": "/gallery"
               },
               {
                 "label": "Contact",
@@ -679,8 +647,8 @@
               }
             ],
             "button": {
-              "label": "Our Collection",
-              "href": "/collections"
+              "label": "Enquiry Now",
+              "href": "/enquiry-now"
             }
           }
         }
@@ -1880,8 +1848,8 @@
                     "href": "/our-story"
                   },
                   {
-                    "label": "Lookbook",
-                    "href": "/lookbook"
+                    "label": "Gallery",
+                    "href": "/gallery"
                   },
                   {
                     "label": "Contact",
@@ -1935,17 +1903,7 @@
                 "field": "hoursShort"
               }
             ],
-            "copyright": "Copyright © 2026. All Rights Reserved. Powered By Lestow.",
-            "bottomLinks": [
-              {
-                "label": "Terms & Conditions",
-                "href": "#"
-              },
-              {
-                "label": "Privacy Policy",
-                "href": "#"
-              }
-            ]
+            "copyright": "Copyright © 2026. All Rights Reserved. Powered By Lestow."
           }
         }
       }

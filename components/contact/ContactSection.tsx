@@ -194,30 +194,7 @@ export default function ContactSection() {
                   </motion.div>
                 );
               })}
-
-              <div className="flex gap-4">
-                <div className="flex h-11 w-11 shrink-0
-                  items-center justify-center border
-                  border-[#e5ddd0] bg-white/50">
-                  <Clock3
-                    size={18}
-                    strokeWidth={1.5}
-                    className="text-[#78664a]"
-                  />
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-medium">
-                    Customer Care
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-5 text-[#81776b]">
-                    {hours.days}
-                  </p>
-                  <p className="mt-1 text-sm text-[#81776b]">
-                    {hours.time}
-                  </p>
-                </div>
-              </div>
+              
             </div>
 
             <div className="mt-9 border-t border-[#e5ddd0] pt-6">

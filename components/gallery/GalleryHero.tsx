@@ -7,18 +7,18 @@ import { motion, useReducedMotion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { site } from "@/data";
 
-export default function LookbookHero() {
+export default function GalleryHero() {
   const reduceMotion = useReducedMotion();
-  const pageLink = site.nav.links.find((link) => link.href === "/lookbook");
+  const pageLink = site.nav.links.find((link) => link.href === "/gallery");
   const homeLabel = site.nav.links.find((link) => link.href === "/")?.label;
 
   if (!pageLink) {
-    throw new Error("Lookbook navigation link is missing from site data.");
+    throw new Error("Gallery navigation link is missing from site data.");
   }
 
   return (
     <section
-      aria-labelledby="lookbook-heading"
+      aria-labelledby="gallery-heading"
       className="relative isolate mt-0 overflow-hidden
         border-y border-[#c8aa78]/25 bg-[#21170f] w-[100%]"
     >
@@ -80,7 +80,7 @@ export default function LookbookHero() {
           />
 
           <h1
-            id="lookbook-heading"
+            id="gallery-heading"
             className="font-serif text-4xl font-normal
               tracking-[-0.035em] text-[#fff8eb]
               drop-shadow-md sm:text-5xl md:text-6xl"

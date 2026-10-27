@@ -1,26 +1,21 @@
-
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
-  Heart,
-  Star,
   ShieldCheck,
   Gem,
   Truck,
   RotateCcw,
-  Ruler,
-  ShoppingBag,
   Check,
-  Minus,
-  Plus,
   X,
   ChevronLeft,
   ChevronRight,
+  ArrowRight,
 } from "lucide-react";
 import { productDetailsData } from "@/data";
+import Link from "next/link";
 
 const product = productDetailsData.product;
 const copy = productDetailsData.copy;
@@ -49,51 +44,49 @@ export default function ProductDetails() {
   const reduceMotion = useReducedMotion();
 
   const changeImage = (direction: number) => {
-    setActiveImage((current) =>
-      (current + direction + product.images.length) %
-      product.images.length
+    setActiveImage(
+      (current) =>
+        (current + direction + product.images.length) % product.images.length,
     );
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#faf8f3]
-      px-4 pt-24 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-10 lg:pb-12 lg:pt-32 w-[100%]">
-
+    <section
+      className="relative overflow-hidden bg-[#faf8f3]
+      px-4 pt-24 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-10 lg:pb-12 lg:pt-32 w-[100%]"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 top-20
           h-96 w-96 rounded-full bg-[#d7bd91]/10 blur-[100px]"
       />
 
-      <div className="relative mx-auto grid max-w-[1400px]
+      <div
+        className="relative mx-auto grid max-w-[1400px]
         grid-cols-1 gap-8 md:grid-cols-2
         md:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]
-        lg:gap-12 xl:gap-16">
-
+        lg:gap-12 xl:gap-16"
+      >
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="items-start"
         >
-
-          <div className="group relative aspect-[7.2/5]
+          <div
+            className="group relative aspect-[7.2/5]
             overflow-hidden rounded-md bg-[#e8e0d4]
-            shadow-[0_8px_35px_rgba(37,28,18,0.08)]">
-
+            shadow-[0_8px_35px_rgba(37,28,18,0.08)]"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeImage}
-                initial={
-                  reduceMotion
-                    ? false
-                    : { opacity: 0, scale: 1.025 }
-                }
+                initial={reduceMotion ? false : { opacity: 0, scale: 1.025 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.99 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="absolute inset-0"
-              > 
+              >
                 <Image
                   src={product.images[activeImage].src}
                   alt={product.images[activeImage].alt}
@@ -107,17 +100,21 @@ export default function ProductDetails() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="absolute bottom-4 left-4
+            <div
+              className="absolute bottom-4 left-4
               rounded-full border border-white/20
               bg-black/45 px-3 py-1.5 text-[10px]
-              tracking-[0.15em] text-white backdrop-blur-md">
+              tracking-[0.15em] text-white backdrop-blur-md"
+            >
               {String(activeImage + 1).padStart(2, "0")}
               {" / "}
               {String(product.images.length).padStart(2, "0")}
             </div>
 
-            <div className="absolute bottom-3 right-3
-              flex gap-2 sm:bottom-4 sm:right-4">
+            <div
+              className="absolute bottom-3 right-3
+              flex gap-2 sm:bottom-4 sm:right-4"
+            >
               <button
                 type="button"
                 onClick={() => changeImage(-1)}
@@ -141,7 +138,6 @@ export default function ProductDetails() {
                 <ChevronRight size={18} />
               </button>
             </div>
-            
           </div>
         </motion.div>
 
@@ -153,22 +149,43 @@ export default function ProductDetails() {
         >
           <div className="mb-3 flex items-center gap-3">
             <span className="h-px w-7 bg-[#b3996c]" />
-            <span className="text-[10px] font-medium uppercase
-              tracking-[0.23em] text-[#a18759]">
+            <span
+              className="text-[10px] font-medium uppercase
+              tracking-[0.23em] text-[#a18759]"
+            >
               {copy.collection}
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-normal
+          <h1
+            className="font-serif text-3xl font-normal
             leading-tight tracking-[-0.035em] text-[#241d16]
-            sm:text-4xl lg:text-[63px]">
+            sm:text-4xl lg:text-[63px]"
+          >
             {product.name}
           </h1>
 
-          <p className="mt-4 max-w-xl text-sm leading-7
-            text-[#756b5f] sm:text-[15px] sm:leading-7 lg:text-[18px]">
+          <p
+            className="mt-4 max-w-xl text-sm leading-7
+            text-[#756b5f] sm:text-[15px] sm:leading-7 lg:text-[18px]"
+          >
             {product.description}
           </p>
+
+          <div className="mt-9 flex">
+            <Link
+              href={product.enquiryNow.href}
+              className="inline-flex items-center gap-2
+                        border border-[#b69a68] px-6 py-3
+                        text-[11px] font-semibold uppercase
+                        tracking-[0.16em] text-[#29231c]
+                        transition-colors hover:bg-[#b69a68]
+                        hover:text-white"
+            >
+              {product.enquiryNow.label}
+              <ArrowRight size={15} />
+            </Link>
+          </div>
 
           <AnimatePresence>
             {cartMessage && (
@@ -183,9 +200,7 @@ export default function ProductDetails() {
               >
                 <Check size={18} className="mt-0.5 shrink-0" />
                 <div className="flex-1">
-                  <p className="font-medium">
-                    {copy.addedConfirmation}
-                  </p>
+                  <p className="font-medium">{copy.addedConfirmation}</p>
                   <p className="mt-1 text-[10px] text-[#8c7b62]">
                     {copy.cartCount.replace("{count}", cartCount.toString())}
                   </p>
@@ -219,7 +234,9 @@ export default function ProductDetails() {
               role="dialog"
               aria-modal="true"
               aria-labelledby="size-guide-title"
-              initial={reduceMotion ? false : { opacity: 0, y: 18, scale: 0.97 }}
+              initial={
+                reduceMotion ? false : { opacity: 0, y: 18, scale: 0.97 }
+              }
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.98 }}
               onClick={(event) => event.stopPropagation()}
@@ -229,12 +246,17 @@ export default function ProductDetails() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-[10px] uppercase
-                    tracking-[0.2em] text-[#a48650]">
+                  <p
+                    className="text-[10px] uppercase
+                    tracking-[0.2em] text-[#a48650]"
+                  >
                     {copy.findFit}
                   </p>
-                  <h2 id="size-guide-title" className="mt-2
-                    font-serif text-2xl text-[#29221a]">
+                  <h2
+                    id="size-guide-title"
+                    className="mt-2
+                    font-serif text-2xl text-[#29221a]"
+                  >
                     {copy.sizeGuideTitle}
                   </h2>
                 </div>
@@ -268,9 +290,7 @@ export default function ProductDetails() {
                   <tbody>
                     {product.sizes.map((size) => (
                       <tr key={size} className="border-t border-[#e4ddd1]">
-                        <td className="px-4 py-3 text-[#29221a]">
-                          {size}
-                        </td>
+                        <td className="px-4 py-3 text-[#29221a]">{size}</td>
                         <td className="px-4 py-3 text-[#756b5f]">
                           {selectedSize === size
                             ? copy.selectedSize

@@ -62,21 +62,15 @@ export default function Navbar() {
           className="relative flex min-h-[68px] items-center
           justify-between gap-4 px-4 sm:min-h-[82px] sm:px-7 lg:px-12"
         >
-          {/* Brand */}
+          
           <Link
             href="/"
             aria-label={`${site.site.name} home`}
             className="group relative shrink-0"
           >
-            <motion.span
-              whileHover={{ letterSpacing: "0.14em" }}
-              transition={{ duration: 0.3 }}
-              className="block font-serif text-[25px] font-medium
-                tracking-[0.08em] text-[#d7c49c]
-                sm:text-[30px] lg:text-[35px]"
-            >
-              {site.site.name}
-            </motion.span>
+            <div className="flex flex-col h-[60px] ">
+              <img src={site.site.logo} alt={site.site.name} className="h-full w-full object-contain" />
+            </div>
 
             <span
               className="absolute -bottom-1 left-0 h-px w-0
@@ -115,23 +109,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex shrink-0 items-center gap-3 sm:gap-5">
-            <motion.button
-              type="button"
-              whileHover={{ scale: 1.12 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setSearchOpen((prev) => !prev)}
-              aria-label="Toggle search"
-              aria-expanded={searchOpen}
-              className="text-white/90 transition-colors
-                hover:text-[#e0cba3]"
-            >
-              {searchOpen ? (
-                <X size={22} strokeWidth={1.7} />
-              ) : (
-                <Search size={22} strokeWidth={1.8} />
-              )}
-            </motion.button>
-
+            
               <Link
                 href={site.nav.button.href}
                 className="group inline-flex min-h-[44px]
@@ -141,7 +119,7 @@ export default function Navbar() {
                                 text-[#f6eddb] transition-all duration-300
                                 hover:border-[#e4c68c] hover:bg-[#c6a66d]
                                 hover:text-[#100d08]
-                                sm:min-h-[40px] sm:px-7 sm:text-xs"
+                                sm:min-h-[40px] sm:px-7 sm:text-xs lg:text-[16px]"
               >
                 {site.nav.button.label}
 
@@ -164,50 +142,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        
-        <AnimatePresence>
-          {searchOpen && (
-            <motion.form
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onSubmit={(event) => {
-                event.preventDefault();
-                const formData = new FormData(event.currentTarget);
-                const query = String(formData.get("q") || "").trim();
-
-                if (query) {
-                  window.location.href = `/collections`;
-                }
-              }}
-              className="relative overflow-hidden border-t
-                border-white/10"
-            >
-              <div className="flex items-center gap-3 px-5 py-4 sm:px-8">
-                <Search size={19} className="text-[#d7c49c]" />
-                <input
-                  name="q"
-                  type="search"
-                  autoFocus
-                  placeholder="Search collections, clothing..."
-                  aria-label="Search products"
-                  className="w-full bg-transparent text-sm
-                    text-white outline-none placeholder:text-white/40"
-                />
-                <button
-                  type="submit"
-                  aria-label="Submit search"
-                  className="text-[#d7c49c] hover:text-white"
-                >
-                  <ArrowUpRight size={21} />
-                </button>
-              </div>
-            </motion.form>
-          )}
-        </AnimatePresence>
-
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div

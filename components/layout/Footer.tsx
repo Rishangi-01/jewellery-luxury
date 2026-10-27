@@ -63,7 +63,7 @@ export default function Footer() {
         sm:px-10 sm:pb-8 sm:pt-16 lg:px-14 lg:pt-16 xl:px-20"
       >
 
-      <div className="absolute inset-0 -z-30 bottom-[4rem]">
+      <div className="absolute inset-0 -z-30">
         <Image
           src={site.site.bgImage}
           alt={site.site.alt}
@@ -86,7 +86,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="grid grid-cols-1 gap-10 sm:grid-cols-2
-            sm:gap-x-8 lg:grid-cols-[1.05fr_0.7fr_0.7fr_1fr]
+            sm:gap-x-8 lg:grid-cols-[1.1fr_0.7fr_0.7fr]
             lg:gap-10 xl:gap-14"
         >
           <motion.div variants={reveal} className="space-y-5">
@@ -95,13 +95,9 @@ export default function Footer() {
               aria-label={`${site.site.name} home`}
               className="group inline-block"
             >
-              <span
-                className="font-serif text-3xl tracking-[0.1em]
-                text-[#d6bf91] transition-colors duration-300
-                group-hover:text-[#f1dfb7] sm:text-4xl"
-              >
-                {site.site.name}
-              </span>
+              <div className="flex flex-col h-[60px] ">
+                <img src={site.site.logo} alt={site.site.name} className="h-full w-full object-contain" />
+              </div>
             </Link>
 
             <p
@@ -110,6 +106,32 @@ export default function Footer() {
             >
               {site.footer.about}
             </p>
+            <div className="mt-7 flex items-center gap-3">
+              {site.site.socials.map(({ icon, label, href }) => {
+                const Icon = socialIcons[icon];
+
+                return (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    whileHover={
+                      reduceMotion ? undefined : { y: -3, scale: 1.06 }
+                    }
+                    whileTap={reduceMotion ? undefined : { scale: 0.95 }}
+                    className="flex h-9 w-9 items-center justify-center
+                      rounded-full border border-white/15
+                      text-white/60 transition-colors duration-300
+                      hover:border-[#c6a66d]/70 hover:bg-[#c6a66d]/10
+                      hover:text-[#e4c994]"
+                  >
+                    <Icon size={15} strokeWidth={1.7} />
+                  </motion.a>
+                );
+              })}
+            </div>
           </motion.div>
 
           {site.footer.columns.map((group) => (
@@ -148,109 +170,6 @@ export default function Footer() {
             </motion.div>
           ))}
 
-          <motion.div variants={reveal} className="min-w-0">
-            <h3
-              className="text-[11px] font-semibold uppercase
-              tracking-[0.19em] text-[#d6bf91] lg:text-lg"
-            >
-              Join Our Newsletter
-            </h3>
-
-            <p
-              className="mt-4 max-w-sm text-sm leading-6
-              text-white/50 lg:text-[16px]"
-            >
-              Be the first to discover new collections, exclusive previews, and
-              stories from {site.site.name}.
-            </p>
-
-            <form onSubmit={handleSubscribe} className="mt-5">
-              <label htmlFor="footer-email" className="sr-only">
-                Your email address
-              </label>
-
-              <div
-                className="group flex min-h-[54px] items-center
-                border border-white/15 bg-white/[0.025]
-                transition-colors duration-300
-                focus-within:border-[#c6a66d]/80
-                hover:border-white/30"
-              >
-                <input
-                  id="footer-email"
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(event) => {
-                    setEmail(event.target.value);
-                    setError("");
-                    setSubscribed(false);
-                  }}
-                  placeholder="Your email address"
-                  autoComplete="email"
-                  required
-                  className="min-w-0 flex-1 bg-transparent
-                    px-4 py-3 text-sm text-white outline-none
-                    placeholder:text-white/35 lg:text-md"
-                />
-
-                <motion.button
-                  type="submit"
-                  aria-label="Subscribe to newsletter"
-                  whileHover={reduceMotion ? undefined : { x: 2 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.94 }}
-                  className="mr-2 flex h-10 w-10 shrink-0
-                    items-center justify-center text-[#d6bf91]
-                    transition-colors hover:text-white"
-                >
-                  {subscribed ? (
-                    <CheckCircle2 size={20} />
-                  ) : (
-                    <ArrowRight size={21} />
-                  )}
-                </motion.button>
-              </div>
-
-              {error && (
-                <p role="alert" className="mt-2 text-xs text-red-300">
-                  {error}
-                </p>
-              )}
-
-              {subscribed && (
-                <p role="status" className="mt-2 text-xs text-[#d6bf91]">
-                  Thank you! Your email has been validated.
-                </p>
-              )}
-            </form>
-
-            <div className="mt-7 flex items-center gap-3">
-              {site.site.socials.map(({ icon, label, href }) => {
-                const Icon = socialIcons[icon];
-
-                return (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={label}
-                    whileHover={
-                      reduceMotion ? undefined : { y: -3, scale: 1.06 }
-                    }
-                    whileTap={reduceMotion ? undefined : { scale: 0.95 }}
-                    className="flex h-9 w-9 items-center justify-center
-                      rounded-full border border-white/15
-                      text-white/60 transition-colors duration-300
-                      hover:border-[#c6a66d]/70 hover:bg-[#c6a66d]/10
-                      hover:text-[#e4c994]"
-                  >
-                    <Icon size={15} strokeWidth={1.7} />
-                  </motion.a>
-                );
-              })}
-            </div>
-          </motion.div>
         </motion.div>
       </div>
 
@@ -260,22 +179,9 @@ export default function Footer() {
           gap-4 px-6 py-5 sm:px-10 md:flex-row
           md:items-center md:justify-between lg:px-14 xl:px-20"
         >
-          <p className="text-xs text-white/45 lg:text-[16px]">
+          <p className="text-xs text-white/45 lg:text-[16px] mx-auto">
             {site.footer.copyright}
           </p>
-
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            {site.footer.bottomLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-xs text-white/45 transition-colors
-                  hover:text-[#d6bf91] lg:text-[16px]"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
