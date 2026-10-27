@@ -228,7 +228,7 @@ export default function HeroSection() {
 
         
         <div className="flex flex-1 items-center justify-center gap-2 px-2 sm:gap-3">
-          {slides.map((slide, index) => (
+          {/* {slides.map((slide, index) => (
             <button
               key={slide.eyebrow}
               type="button"
@@ -245,7 +245,7 @@ export default function HeroSection() {
                 }`}
               />
             </button>
-          ))}
+          ))} */}
         </div>
 
         
