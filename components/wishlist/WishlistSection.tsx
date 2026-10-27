@@ -17,6 +17,7 @@ import {
   Sparkles,
   Check,
 } from "lucide-react";
+import { wishlistSectionData } from "@/data";
 
 type WishlistItem = {
   id: number;
@@ -24,33 +25,6 @@ type WishlistItem = {
   price: number;
   image: string;
 };
-
-const initialWishlist: WishlistItem[] = [
-  {
-    id: 1,
-    name: "Eternal Diamond Ring",
-    price: 2499,
-    image: "/images/home/banner4.webp",
-  },
-  {
-    id: 2,
-    name: "Golden Bloom Necklace",
-    price: 1899,
-    image: "/images/home/banner4.webp",
-  },
-  {
-    id: 3,
-    name: "Pearl Drop Earrings",
-    price: 1299,
-    image: "/images/home/banner4.webp",
-  },
-  {
-    id: 4,
-    name: "Royal Bangle",
-    price: 1499,
-    image: "/images/home/banner4.webp",
-  },
-];
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-IN", {
@@ -61,10 +35,11 @@ const formatPrice = (price: number) =>
 
 export default function WishlistSection() {
   const [wishlist, setWishlist] =
-    useState<WishlistItem[]>(initialWishlist);
+    useState<WishlistItem[]>(wishlistSectionData.items);
 
   const [addedItems, setAddedItems] = useState<number[]>([]);
   const reduceMotion = useReducedMotion();
+  const copy = wishlistSectionData.copy;
 
   const removeFromWishlist = (id: number) => {
     setWishlist((current) =>
@@ -101,12 +76,12 @@ export default function WishlistSection() {
             <div>
               <h1 className="font-serif text-4xl
                 tracking-[-0.04em] sm:text-5xl">
-                My Wishlist
+                {copy.title}
               </h1>
 
               <p className="mt-2 text-sm
                 text-[#82796e] sm:text-base">
-                Your favorite pieces, always within reach.
+                {copy.description}
               </p>
             </div>
 
@@ -122,7 +97,8 @@ export default function WishlistSection() {
                 className="text-[#a88a59]"
               />
               <span className="text-xs tabular-nums">
-                {wishlist.length} {wishlist.length === 1 ? "piece" : "pieces"}
+                {wishlist.length}{" "}
+                {wishlist.length === 1 ? copy.piece : copy.pieces}
               </span>
             </motion.div>
           </div>
@@ -165,8 +141,11 @@ export default function WishlistSection() {
                       sm:gap-6 sm:py-6 md:gap-7"
                   >
                     <Link
-                      href={`/product/${item.id}`}
-                      aria-label={`View ${item.name}`}
+                      href={copy.productHref.replace(
+                        "{id}",
+                        item.id.toString()
+                      )}
+                      aria-label={copy.viewItem.replace("{name}", item.name)}
                       className="relative block h-36 w-full
                         shrink-0 overflow-hidden
                         border border-[#e4dace] bg-[#eee7dc]
@@ -191,7 +170,10 @@ export default function WishlistSection() {
                     <div className="flex min-w-0 flex-1 flex-col
                       items-start justify-center">
                       <Link
-                        href={`/product/${item.id}`}
+                        href={copy.productHref.replace(
+                          "{id}",
+                          item.id.toString()
+                        )}
                         className="font-serif text-lg
                           transition-colors duration-300
                           hover:text-[#a88a59] sm:text-xl"
@@ -225,12 +207,12 @@ export default function WishlistSection() {
                           {isAdded ? (
                             <>
                               <Check size={13} />
-                              Added to Cart
+                              {copy.addedToCart}
                             </>
                           ) : (
                             <>
                               <ShoppingBag size={13} />
-                              Add to Cart
+                              {copy.addToCart}
                             </>
                           )}
                         </motion.button>
@@ -248,7 +230,10 @@ export default function WishlistSection() {
                               : { scale: 0.88 }
                           }
                           onClick={() => removeFromWishlist(item.id)}
-                          aria-label={`Remove ${item.name} from wishlist`}
+                          aria-label={copy.removeItem.replace(
+                            "{name}",
+                            item.name
+                          )}
                           className="flex h-10 w-10
                             items-center justify-center
                             text-[#82796e] transition-colors
@@ -277,7 +262,10 @@ export default function WishlistSection() {
                           : { scale: 0.9 }
                       }
                       onClick={() => removeFromWishlist(item.id)}
-                      aria-label={`Delete ${item.name} from wishlist`}
+                      aria-label={copy.deleteItem.replace(
+                        "{name}",
+                        item.name
+                      )}
                       className="absolute right-0 top-5
                         flex h-8 w-8 items-center
                         justify-center text-[#82796e]
@@ -306,24 +294,23 @@ export default function WishlistSection() {
             </div>
 
             <h2 className="mt-6 font-serif text-2xl sm:text-3xl">
-              A little room for something beautiful
+              {copy.emptyTitle}
             </h2>
 
             <p className="mt-3 max-w-md text-sm
               leading-6 text-[#82796e]">
-              Save your favorite jewelry here and return
-              whenever you are ready to make it yours.
+              {copy.emptyDescription}
             </p>
 
             <Link
-              href="/shop"
+              href={copy.exploreHref}
               className="group mt-7 inline-flex
                 items-center gap-3 bg-[#11110f]
                 px-7 py-4 text-[10px] uppercase
                 tracking-[0.16em] text-white
                 transition-colors hover:bg-[#a18453]"
             >
-              Explore Collection
+              {copy.exploreCollection}
               <ArrowRight
                 size={14}
                 className="transition-transform
@@ -342,7 +329,7 @@ export default function WishlistSection() {
               justify-between gap-4 sm:mt-9"
           >
             <Link
-              href="/shop"
+              href={copy.continueShoppingHref}
               className="group inline-flex items-center gap-2
                 text-[10px] uppercase tracking-[0.14em]
                 text-[#82796e] transition-colors
@@ -353,7 +340,7 @@ export default function WishlistSection() {
                 className="rotate-180 transition-transform
                   group-hover:-translate-x-1"
               />
-              Continue Shopping
+              {copy.continueShopping}
             </Link>
           </motion.div>
         )}

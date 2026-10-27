@@ -5,38 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { site } from "@/data";
-
-const collections = [
-  {
-    name: "Rings",
-    description: "Discover timeless rings",
-    image:
-      "/images/our-story/product2.png",
-    alt: "Elegant diamond ring in warm golden light",
-  },
-  {
-    name: "Necklaces",
-    description: "Grace in every detail",
-    image:
-      "/images/home/banner2.webp",
-    alt: "Elegant necklace with a delicate pendant",
-  },
-  {
-    name: "Earrings",
-    description: "For every occasion",
-    image:
-      "/images/our-story/product4.png",
-    alt: "Statement earrings with sparkling stones",
-  },
-  {
-    name: "Bracelets",
-    description: "Elegance that stays",
-    image:
-      "/images/about/banner1.webp",
-    alt: `Gold bracelet from the ${site.site.name} collection`,
-  },
-];
+import { signatureCollectionsData } from "@/data";
 
 const containerVariants = {
   hidden: {},
@@ -60,6 +29,8 @@ const cardVariants = {
 };
 
 export default function SignatureCollections() {
+  const { collections, viewAll } = signatureCollectionsData;
+
   return (
     <section
       id="collections"
@@ -67,7 +38,7 @@ export default function SignatureCollections() {
         px-5 py-16 sm:px-8 sm:py-8 lg:px-12 lg:py-8
         xl:px-16 w-[100%]"
     >
-      {/* Subtle background detail */}
+      
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32
@@ -76,7 +47,7 @@ export default function SignatureCollections() {
       />
 
       <div className="relative mx-auto max-w-[1500px]">
-        {/* Section heading */}
+
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +62,7 @@ export default function SignatureCollections() {
                 uppercase tracking-[0.28em] text-[#a28a60]
                 sm:text-xs sm:tracking-[0.32em]"
             >
-              THE {site.site.name} SELECTION
+              {signatureCollectionsData.eyebrow}
             </p>
 
             <h2
@@ -99,7 +70,7 @@ export default function SignatureCollections() {
                 tracking-[-0.035em] text-[#211b16]
                 sm:text-4xl lg:text-5xl"
             >
-              Our Signature Collections
+              {signatureCollectionsData.title}
             </h2>
 
             <motion.div
@@ -112,14 +83,14 @@ export default function SignatureCollections() {
           </div>
 
           <Link
-            href={site.nav.button.href}
+            href={viewAll.href}
             className="group mb-1 hidden shrink-0 items-center
               gap-2 border-b border-[#a28a60]/60 pb-2
               text-[11px] font-semibold uppercase tracking-[0.14em]
               text-[#29231c] transition-colors hover:text-[#a28a60]
               sm:inline-flex"
           >
-            {site.nav.button.label}
+            {viewAll.label}
             <ArrowUpRight
               size={15}
               className="transition-transform duration-300
@@ -129,7 +100,7 @@ export default function SignatureCollections() {
           </Link>
         </motion.div>
 
-        {/* Collection cards */}
+        
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -139,19 +110,19 @@ export default function SignatureCollections() {
             sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10
             lg:grid-cols-4 lg:gap-x-6 xl:gap-x-8"
         >
-          {collections.map((collection, index) => (
+          {collections.map((collection) => (
             <motion.article
               key={collection.name}
               variants={cardVariants}
               className="group min-w-0"
             >
               <Link
-                href={site.nav.button.href}
+                href={viewAll.href}
                 className="block focus-visible:outline-none
                   focus-visible:ring-2 focus-visible:ring-[#a28a60]
                   focus-visible:ring-offset-4"
               >
-                {/* Image */}
+
                 <div
                   className="relative aspect-[1.08/1] overflow-hidden
                     rounded-[3px] bg-[#e8e0d4]
@@ -168,7 +139,7 @@ export default function SignatureCollections() {
                       group-hover:scale-[1.07]"
                   />
 
-                  {/* Warm image overlay */}
+                  
                   <div
                     className="absolute inset-0 bg-gradient-to-t
                       from-[#21160b]/35 via-transparent to-transparent
@@ -176,7 +147,7 @@ export default function SignatureCollections() {
                       group-hover:opacity-100"
                   />
 
-                  {/* Hover icon */}
+                  
                   <motion.span
                     initial={{ opacity: 0, y: 8 }}
                     whileHover={{ opacity: 1, y: 0 }}
@@ -196,11 +167,11 @@ export default function SignatureCollections() {
                       tracking-[0.18em] text-white/90
                       drop-shadow-md"
                   >
-                    0{index + 1}
+                    {collection.number}
                   </span>
                 </div>
 
-                {/* Card text */}
+                
                 <div className="pt-4 sm:pt-5">
                   <div className="flex items-center justify-between gap-2">
                     <h3
@@ -241,10 +212,10 @@ export default function SignatureCollections() {
           ))}
         </motion.div>
 
-        {/* Mobile View All */}
+        
         <div className="mt-9 flex justify-center sm:hidden">
           <Link
-            href={site.nav.button.href}
+            href={viewAll.href}
             className="inline-flex items-center gap-2
               border border-[#b69a68] px-6 py-3
               text-[11px] font-semibold uppercase
@@ -252,7 +223,7 @@ export default function SignatureCollections() {
               transition-colors hover:bg-[#b69a68]
               hover:text-white"
           >
-            {site.nav.button.label}
+            {viewAll.label}
             <ArrowRight size={15} />
           </Link>
         </div>

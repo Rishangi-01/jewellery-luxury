@@ -19,7 +19,7 @@ import {
   ShoppingBag,
   Sparkles,
 } from "lucide-react";
-import { site } from "@/data";
+import { cartSectionData, site } from "@/data";
 
 type CartItem = {
   id: number;
@@ -30,31 +30,6 @@ type CartItem = {
   image: string;
 };
 
-const initialItems: CartItem[] = [
-  {
-    id: 1,
-    name: "Eternal Diamond Ring",
-    variant: "Size: 6",
-    price: 2499,
-    quantity: 1,
-    image: "/images/home/banner4.webp",
-  },
-  {
-    id: 2,
-    name: "Golden Bloom Necklace",
-    price: 1899,
-    quantity: 1,
-    image: "/images/home/banner4.webp",
-  },
-  {
-    id: 3,
-    name: "Pearl Drop Earrings",
-    price: 1299,
-    quantity: 1,
-    image: "/images/home/banner4.webp",
-  },
-];
-
 const formatPrice = (amount: number) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -63,7 +38,7 @@ const formatPrice = (amount: number) =>
   }).format(amount);
 
 export default function CartSection() {
-  const [items, setItems] = useState<CartItem[]>(initialItems);
+  const [items, setItems] = useState<CartItem[]>(cartSectionData.items);
   const reduceMotion = useReducedMotion();
   const cartLink = site.footer.columns
     .flatMap((column) => column.links)
@@ -78,8 +53,10 @@ export default function CartSection() {
     0
   );
 
-  // Free shipping above ₹3,000.
-  const shipping = subtotal === 0 || subtotal >= 3000 ? 0 : 99;
+  const shipping =
+    subtotal === 0 || subtotal >= cartSectionData.shipping.freeAbove
+      ? 0
+      : cartSectionData.shipping.fee;
   const total = subtotal + shipping;
 
   function changeQuantity(id: number, amount: number) {
@@ -133,10 +110,10 @@ export default function CartSection() {
               gap-4 border-b border-[#e6dfd4] px-2 pb-4
               text-[10px] uppercase tracking-[0.12em]
               text-[#877c6e] md:grid">
-              <span>Product</span>
-              <span>Price</span>
-              <span>Quantity</span>
-              <span>Total</span>
+              <span>{cartSectionData.copy.product}</span>
+              <span>{cartSectionData.copy.price}</span>
+              <span>{cartSectionData.copy.quantity}</span>
+              <span>{cartSectionData.copy.total}</span>
               <span />
             </div>
 
@@ -203,7 +180,7 @@ export default function CartSection() {
                         )}
 
                         <p className="mt-2 text-xs text-[#84796c] md:hidden">
-                          {formatPrice(item.price)} each
+                          {formatPrice(item.price)} {cartSectionData.copy.priceEach}
                         </p>
                       </div>
                     </div>
@@ -222,7 +199,10 @@ export default function CartSection() {
                         <button
                           type="button"
                           disabled={item.quantity <= 1}
-                          aria-label={`Decrease ${item.name} quantity`}
+                          aria-label=                          {cartSectionData.copy.decreaseQuantity.replace(
+                            "{name}",
+                            item.name
+                          )}
                           onClick={() => changeQuantity(item.id, -1)}
                           className="flex h-full w-8 items-center
                             justify-center transition-colors
@@ -243,7 +223,10 @@ export default function CartSection() {
                         <button
                           type="button"
                           disabled={item.quantity >= 99}
-                          aria-label={`Increase ${item.name} quantity`}
+                          aria-label=                          {cartSectionData.copy.increaseQuantity.replace(
+                            "{name}",
+                            item.name
+                          )}
                           onClick={() => changeQuantity(item.id, 1)}
                           className="flex h-full w-8 items-center
                             justify-center transition-colors
@@ -256,7 +239,7 @@ export default function CartSection() {
 
                     <div className="flex items-center justify-between text-sm md:block">
                       <span className="text-xs text-[#84796c] md:hidden">
-                        Item total
+                        {cartSectionData.copy.itemTotal}
                       </span>
                       <motion.span
                         key={item.price * item.quantity}
@@ -277,7 +260,9 @@ export default function CartSection() {
                           text-xs text-[#82776a] transition-colors
                           hover:text-red-700 md:p-1"
                       >
-                        <span className="md:hidden">Remove</span>
+                        <span className="md:hidden">
+                          {cartSectionData.copy.remove}
+                        </span>
                         <X
                           size={15}
                           className="transition-transform duration-300
@@ -305,8 +290,8 @@ export default function CartSection() {
                   sm:min-h-[240px]"
               >
                 <Image
-                  src="/images/about/banner2.webp"
-                  alt="Luxury jewelry gift wrapped in an elegant presentation box"
+                  src={cartSectionData.gift.image}
+                  alt={cartSectionData.gift.imageAlt}
                   fill
                   sizes="(max-width: 1023px) 100vw, 55vw"
                   className="object-cover object-center
@@ -323,25 +308,25 @@ export default function CartSection() {
                   <div className="mb-4 flex items-center gap-2 text-[#d8bb87]">
                     <Gift size={16} strokeWidth={1.4} />
                     <span className="text-[9px] uppercase tracking-[0.23em]">
-                      A Little Something Special
+                      {cartSectionData.gift.eyebrow}
                     </span>
                   </div>
 
                   <h2 className="font-serif text-2xl
                     leading-tight text-[#fff7e9] sm:text-3xl">
-                    Luxury in Every Detail
+                    {cartSectionData.gift.title}
                   </h2>
 
                   <p className="mt-3 max-w-[260px] text-xs
                     leading-5 text-white/75 sm:text-sm">
-                    Complimentary gift wrapping with every order.
+                    {cartSectionData.gift.description}
                   </p>
 
                   <div className="mt-5 flex items-center gap-2
                     text-[9px] uppercase tracking-[0.15em]
                     text-[#e0c28f]">
                     <Sparkles size={12} />
-                    Beautifully yours
+                    {cartSectionData.gift.signoff}
                   </div>
                 </div>
               </motion.div>
@@ -355,12 +340,14 @@ export default function CartSection() {
                   bg-white/40 p-5 sm:p-7 lg:p-8"
               >
                 <h2 className="font-serif text-2xl">
-                  Order Summary
+                  {cartSectionData.copy.orderSummary}
                 </h2>
 
                 <div className="mt-6 space-y-4 text-sm">
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-[#81776b]">Subtotal</span>
+                    <span className="text-[#81776b]">
+                      {cartSectionData.copy.subtotal}
+                    </span>
                     <motion.span
                       key={subtotal}
                       initial={reduceMotion ? false : { opacity: 0.5 }}
@@ -372,16 +359,23 @@ export default function CartSection() {
                   </div>
 
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-[#81776b]">Shipping</span>
+                    <span className="text-[#81776b]">
+                      {cartSectionData.copy.shipping}
+                    </span>
                     <span className={shipping === 0 ? "text-[#71815e]" : ""}>
-                      {shipping === 0 ? "Free" : formatPrice(shipping)}
+                      {shipping === 0
+                        ? cartSectionData.copy.free
+                        : formatPrice(shipping)}
                     </span>
                   </div>
 
-                  {subtotal > 0 && subtotal < 3000 && (
+                  {subtotal > 0 &&
+                    subtotal < cartSectionData.shipping.freeAbove && (
                     <p className="text-xs leading-5 text-[#927850]">
-                      Add {formatPrice(3000 - subtotal)} more to qualify
-                      for free shipping.
+                      {cartSectionData.copy.freeShippingProgress.replace(
+                        "{amount}",
+                        formatPrice(cartSectionData.shipping.freeAbove - subtotal)
+                      )}
                     </p>
                   )}
                 </div>
@@ -389,7 +383,9 @@ export default function CartSection() {
                 <div className="my-5 border-t border-[#e6dfd4]" />
 
                 <div className="flex items-center justify-between gap-4">
-                  <span className="font-serif text-xl">Total</span>
+                  <span className="font-serif text-xl">
+                    {cartSectionData.copy.total}
+                  </span>
                   <motion.span
                     key={total}
                     initial={reduceMotion ? false : { opacity: 0, y: 4 }}
@@ -401,7 +397,7 @@ export default function CartSection() {
                 </div>
 
                 <Link
-                  href="/checkout"
+                  href={cartSectionData.copy.checkoutHref}
                   className="group mt-6 flex min-h-12 w-full
                     items-center justify-center gap-3
                     bg-[#11110f] px-5 py-4 text-center
@@ -411,7 +407,7 @@ export default function CartSection() {
                     hover:bg-[#9a7b4d]"
                 >
                   <ShoppingBag size={15} />
-                  Proceed to Checkout
+                  {cartSectionData.copy.checkout}
                   <ArrowRight
                     size={15}
                     className="transition-transform
@@ -429,7 +425,7 @@ export default function CartSection() {
               className="mt-7 sm:mt-9"
             >
               <Link
-                href="/collections"
+                href={cartSectionData.copy.continueShoppingHref}
                 className="group inline-flex items-center gap-2
                   text-[10px] uppercase tracking-[0.14em]
                   text-[#81776b] transition-colors
@@ -440,7 +436,7 @@ export default function CartSection() {
                   className="transition-transform duration-300
                     group-hover:-translate-x-1"
                 />
-                Continue Shopping
+                {cartSectionData.copy.continueShopping}
               </Link>
             </motion.div>
           </>
@@ -453,18 +449,18 @@ export default function CartSection() {
           >
             <ShoppingBag size={34} strokeWidth={1} />
             <h2 className="mt-5 font-serif text-2xl">
-              Your cart is waiting
+              {cartSectionData.copy.emptyTitle}
             </h2>
             <p className="mt-2 text-sm text-[#81776b]">
-              Discover a piece that feels uniquely yours.
+              {cartSectionData.copy.emptyDescription}
             </p>
             <Link
-              href="/collections"
+              href={cartSectionData.copy.collectionsHref}
               className="mt-6 bg-[#11110f] px-7 py-4
                 text-[10px] uppercase tracking-[0.15em]
                 text-white transition-colors hover:bg-[#9a7b4d]"
             >
-              Explore Collections
+              {cartSectionData.copy.exploreCollections}
             </Link>
           </motion.div>
         )}

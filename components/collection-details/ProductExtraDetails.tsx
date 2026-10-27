@@ -13,64 +13,11 @@ import {
   ShieldCheck,
   Truck,
 } from "lucide-react";
+import { productExtraDetailsData } from "@/data";
 
-const tabs = [
-  { id: "description", label: "Description" },
-  { id: "specifications", label: "Specifications" },
-  { id: "shipping", label: "Shipping & Returns" },
-] as const;
+const { tabs, tabContent, completeLook } = productExtraDetailsData;
 
 type TabId = (typeof tabs)[number]["id"];
-
-const tabContent: Record<TabId, { title: string; paragraphs: string[] }> = {
-  description: {
-    title: "Crafted to Last a Lifetime",
-    paragraphs: [
-      "This elegant ring showcases a brilliant round-cut diamond, carefully set in a handcrafted 18k gold band. Designed for those who appreciate fine craftsmanship and timeless beauty.",
-    ],
-  },
-  specifications: {
-    title: "The Details That Matter",
-    paragraphs: [
-      "Metal: 18k gold",
-      "Stone: Brilliant-cut diamond",
-      "Style: Timeless solitaire",
-      "Finish: High-polish finish",
-      "Please refer to the individual product certificate for verified stone specifications.",
-    ],
-  },
-  shipping: {
-    title: "A Beautiful Experience, From Start to Finish",
-    paragraphs: [
-      "Enjoy complimentary shipping on eligible orders. Each piece is carefully packaged for a memorable unboxing experience.",
-      "For delivery timelines, return eligibility, and warranty terms, please consult your store's shipping and returns policy.",
-    ],
-  },
-};
-
-const recommendations = [
-  {
-    name: "Matching Necklace",
-    price: 1899,
-    category: "Necklaces",
-    image: "/images/home/banner3.webp",
-    description: "An elegant necklace to complement your ring.",
-  },
-  {
-    name: "Diamond Earrings",
-    price: 1299,
-    category: "Earrings",
-    image: "/images/home/banner3.webp",
-    description: "Refined sparkle for every occasion.",
-  },
-  {
-    name: "Elegant Bracelet",
-    price: 1799,
-    category: "Bracelets",
-    image: "/images/home/banner3.webp",
-    description: "A delicate finishing touch in gold.",
-  },
-];
 
 const formatPrice = (price: number) =>
   new Intl.NumberFormat("en-IN", {
@@ -84,6 +31,13 @@ export default function ProductExtraDetails() {
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [addedProducts, setAddedProducts] = useState<string[]>([]);
   const reduceMotion = useReducedMotion();
+  const activeTabContent = Object.entries(tabContent).find(
+    ([id]) => id === activeTab
+  )?.[1];
+
+  if (!activeTabContent) {
+    throw new Error(`Missing product information content for tab "${activeTab}".`);
+  }
 
   const toggleWishlist = (name: string) => {
     setWishlist((current) =>
@@ -114,7 +68,7 @@ export default function ProductExtraDetails() {
         >
           <div
             role="tablist"
-            aria-label="Product information"
+            aria-label={productExtraDetailsData.tabListLabel}
             className="flex flex-wrap gap-x-7 gap-y-3
               border-b border-[#e6dfd4] sm:gap-x-10"
           >
@@ -175,10 +129,10 @@ export default function ProductExtraDetails() {
                   className="mb-3 font-serif text-xl
                   text-[#29221a] sm:text-2xl lg:text-[3xl]"
                 >
-                  {tabContent[activeTab].title}
+                  {activeTabContent.title}
                 </h2>
 
-                {tabContent[activeTab].paragraphs.map((paragraph, index) => (
+                {activeTabContent.paragraphs.map((paragraph, index) => (
                   <p
                     key={index}
                     className="mb-2 max-w-3xl text-sm
@@ -205,9 +159,12 @@ export default function ProductExtraDetails() {
           <div
             className="relative grid grid-cols-1
             lg:grid-cols-[0.78fr_1.22fr]
-            xl:bg-[url('/images/about/Woman-elegantly.webp')]
+            xl:bg-[image:var(--complete-look-background)]
             xl:bg-center bg-no-repeat"
-            style={{backgroundSize: "100% 100%"}}
+            style={{
+              backgroundSize: "100% 100%",
+              "--complete-look-background": `url("${completeLook.backgroundImage}")`,
+            } as React.CSSProperties}
           >
             <div
               className="group relative min-h-[230px]
@@ -232,25 +189,25 @@ export default function ProductExtraDetails() {
                       leading-tight tracking-[-0.02em]
                       sm:text-3xl lg:text-[32px]"
                   >
-                    Complete The Look
+                    {completeLook.title}
                   </h2>
 
                   <p
                     className="mt-2 max-w-sm text-xs
                     leading-5 text-white/55 sm:text-sm"
                   >
-                    Discover pieces that pair beautifully with your selection.
+                    {completeLook.description}
                   </p>
                 </div>
 
                 <a
-                  href="/collections"
+                  href={completeLook.href}
                   className="group/link inline-flex shrink-0
                     items-center gap-2 pb-1 text-[10px]
                     uppercase tracking-[0.15em] text-[#d6bd91]
                     transition-colors hover:text-white"
                 >
-                  View All
+                  {completeLook.viewAll}
                   <ArrowUpRight
                     size={14}
                     className="transition-transform
@@ -264,7 +221,7 @@ export default function ProductExtraDetails() {
                 className="grid grid-cols-1 gap-5
                 sm:grid-cols-3 sm:gap-3 lg:gap-4 xl:gap-5"
               >
-                {recommendations.map((item, index) => {
+                {completeLook.items.map((item, index) => {
                   const isWishlisted = wishlist.includes(item.name);
                   const isAdded = addedProducts.includes(item.name);
 
@@ -283,15 +240,18 @@ export default function ProductExtraDetails() {
                       className="group/card min-w-0"
                     >
                       <a
-                        href="/collections"
-                        aria-label={`Explore ${item.name}`}
+                        href={completeLook.href}
+                        aria-label={completeLook.exploreItem.replace(
+                          "{name}",
+                          item.name
+                        )}
                         className="relative block aspect-[1.35/1]
                           overflow-hidden border-2 border-[#b9a080]/45
                           bg-[#2a211a] sm:aspect-[1/1] rounded-lg"
                       >
                         <Image
-                          src="/images/home/banner3.webp"
-                          alt="product"
+                          src={item.image}
+                          alt={item.imageAlt}
                           fill
                           sizes="(max-width: 639px) 90vw, (max-width: 1023px) 30vw, 24vw"
                           className="object-cover transition-transform
@@ -321,8 +281,14 @@ export default function ProductExtraDetails() {
                           type="button"
                           aria-label={
                             isWishlisted
-                              ? `Remove ${item.name} from wishlist`
-                              : `Add ${item.name} to wishlist`
+                              ? completeLook.removeFromWishlist.replace(
+                                  "{name}",
+                                  item.name
+                                )
+                              : completeLook.addToWishlist.replace(
+                                  "{name}",
+                                  item.name
+                                )
                           }
                           aria-pressed={isWishlisted}
                           onClick={(event) => {
@@ -363,7 +329,7 @@ export default function ProductExtraDetails() {
 
                       <div className="pt-3">
                         <a
-                          href="/collections"
+                          href={completeLook.href}
                           className="block truncate font-serif
                             text-base text-[#f3e9da]
                             transition-colors hover:text-[#d6bd91]

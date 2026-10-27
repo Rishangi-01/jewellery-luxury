@@ -1,6 +1,24 @@
 import originalSiteData from "./site.json";
 
 export type RawSiteData = typeof originalSiteData;
+export const commerceData = originalSiteData.Insurance.commerce;
+export const cartSectionData = commerceData.cart;
+export const productDetailsData = commerceData.productDetails;
+export const productExtraDetailsData = commerceData.productExtraDetails;
+export const productListingData = commerceData.productListing;
+export const wishlistSectionData = commerceData.wishlist;
+export const collectionEditorialData = commerceData.collectionEditorial;
+export const signatureCollectionsData = commerceData.signatureCollections;
+
+export type CommerceData = typeof commerceData;
+export type CartSectionData = typeof cartSectionData;
+export type ProductDetailsData = typeof productDetailsData;
+export type ProductExtraDetailsData = typeof productExtraDetailsData;
+export type ProductListingData = typeof productListingData;
+export type WishlistSectionData = typeof wishlistSectionData;
+export type CollectionEditorialData = typeof collectionEditorialData;
+export type SignatureCollectionsData = typeof signatureCollectionsData;
+
 export type InsuranceSchema = typeof originalSiteData.Insurance;
 export type InsuranceSections = InsuranceSchema["sections"];
 export type InsuranceTemplateComponents = InsuranceSchema["templateComponents"];

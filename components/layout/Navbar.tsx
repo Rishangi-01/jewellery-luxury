@@ -19,7 +19,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-0 sm:px-5 sm:pt-0">
+    <header className="fixed inset-x-0 top-0 z-50 px-0 md:px-3 pt-0 sm:px-5 sm:pt-0">
       <motion.nav
         initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}

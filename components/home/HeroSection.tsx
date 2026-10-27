@@ -1,10 +1,10 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { site } from "@/data";
 import {
   ArrowLeft,
@@ -25,7 +25,21 @@ const textVariants = {
 export default function HeroSection() {
   const slides = site.hero.slides;
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
   const currentSlide = slides[activeSlide];
+
+  useEffect(() => {
+    if (reduceMotion || isPaused || slides.length < 2) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((previous) => (previous + 1) % slides.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [activeSlide, isPaused, reduceMotion, slides.length]);
 
   const changeSlide = (direction: number) => {
     setActiveSlide(
@@ -36,10 +50,12 @@ export default function HeroSection() {
   return (
     <section
       aria-label={`${site.site.name} featured collection`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
       className="relative isolate min-h-[680px] overflow-hidden bg-[#080706]
         sm:min-h-[760px] lg:min-h-[min(850px,100svh)] w-[100%]"
     >
-      {/* Background image slider */}
+      
       <AnimatePresence mode="sync">
         <motion.div
           key={currentSlide.image}
@@ -67,7 +83,7 @@ export default function HeroSection() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Dark overlays for readable text */}
+      
       <div className="absolute inset-0 -z-20 bg-black/20" />
 
       <div
@@ -81,14 +97,14 @@ export default function HeroSection() {
           from-black/45 via-transparent to-black/15"
       />
 
-      {/* Subtle golden atmosphere */}
+      
       <div
         className="pointer-events-none absolute left-[-10%] top-[20%]
           -z-10 h-72 w-72 rounded-full bg-[#b18a4a]/10 blur-[120px]
           sm:h-96 sm:w-96"
       />
 
-      {/* Main content */}
+      
       <div
         className="mx-auto flex min-h-[680px] max-w-[1600px]
           items-center px-6 pb-28 pt-32
@@ -113,7 +129,7 @@ export default function HeroSection() {
                 },
               }}
             >
-              {/* Eyebrow */}
+
               <motion.div
                 variants={textVariants}
                 className="mb-5 flex items-center gap-3 sm:mb-7"
@@ -134,9 +150,8 @@ export default function HeroSection() {
                 />
               </motion.div>
 
-              {/* Main heading */}
               <h1
-                className="font-serif text-[clamp(3.2rem,8vw,6.8rem)]
+                className="font-serif text-[clamp(3.2rem,8vw,5.2rem)]
                   font-normal leading-[0.98] tracking-[-0.045em]
                   text-[#f6eddb]"
               >
@@ -151,7 +166,7 @@ export default function HeroSection() {
                 ))}
               </h1>
 
-              {/* Description */}
+              
               <motion.p
                 variants={textVariants}
                 className="mt-6 max-w-[340px] text-sm leading-7
@@ -161,7 +176,7 @@ export default function HeroSection() {
                 {currentSlide.text}
               </motion.p>
 
-              {/* CTA */}
+              
               <motion.div
                 variants={textVariants}
                 className="mt-8 sm:mt-10"
@@ -191,14 +206,14 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom slider controls */}
+      
       <div
         className="absolute bottom-7 left-6 right-6 z-10
           flex items-end justify-between gap-4
           sm:bottom-10 sm:left-10 sm:right-10
           lg:left-14 lg:right-14 xl:left-20 xl:right-20"
       >
-        {/* Slide number */}
+        
         <div className="flex items-center gap-3">
           <span className="font-serif text-2xl text-[#e2c58f]">
             0{activeSlide + 1}
@@ -211,7 +226,7 @@ export default function HeroSection() {
           </span>
         </div>
 
-        {/* Progress indicators */}
+        
         <div className="flex flex-1 items-center justify-center gap-2 px-2 sm:gap-3">
           {slides.map((slide, index) => (
             <button
@@ -233,7 +248,7 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* Previous / Next */}
+        
         <div className="flex items-center gap-2">
           <button
             type="button"
@@ -263,7 +278,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative side line */}
+      
       <div
         aria-hidden="true"
         className="absolute bottom-28 right-0 top-36

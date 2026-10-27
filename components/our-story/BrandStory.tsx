@@ -88,7 +88,7 @@ export default function BrandStory() {
                     font-semibold uppercase tracking-[0.18em]
                     text-white shadow-[0_6px_20px_rgba(0,0,0,0.08)]
                     transition-all duration-300
-                    hover:border-[#a18759] hover:bg-[#a18759] lg:text-lg"
+                    hover:border-[#a18759] hover:bg-[#a18759] lg:text-[16px]"
                 >
                   {site.about.button.label}
                   <ArrowRight

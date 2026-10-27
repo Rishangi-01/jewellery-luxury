@@ -20,35 +20,15 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { productDetailsData } from "@/data";
 
-const product = {
-  name: "Eternal Diamond Ring",
-  price: 2499,
-  rating: 4.8,
-  reviews: 24,
-  description:
-    "A symbol of everlasting love, this exquisite diamond ring features a brilliant-cut center stone set in 18k gold, designed to shine for a lifetime.",
-  features: [
-    { label: "18k Gold", icon: Gem },
-    { label: "Certified Diamond", icon: ShieldCheck },
-    { label: "Lifetime Warranty", icon: RotateCcw },
-    { label: "Free Shipping", icon: Truck },
-  ],
-  sizes: ["5", "6", "7", "8", "9"],
-  images: [
-    {
-      src: "images/home/banner3.webp",
-      alt: "Eternal diamond ring front view",
-    },
-    {
-      src: "images/about/banner1.webp",
-      alt: "Diamond ring side detail",
-    },
-    {
-      src: "images/home/banner2.webp",
-      alt: "Luxury jewelry close-up",
-    },
-  ],
+const product = productDetailsData.product;
+const copy = productDetailsData.copy;
+const featureIcons: Record<string, typeof Gem> = {
+  gem: Gem,
+  shield: ShieldCheck,
+  returns: RotateCcw,
+  truck: Truck,
 };
 
 const formatPrice = (price: number) =>
@@ -60,7 +40,7 @@ const formatPrice = (price: number) =>
 
 export default function ProductDetails() {
   const [activeImage, setActiveImage] = useState(0);
-  const [selectedSize, setSelectedSize] = useState("7");
+  const [selectedSize, setSelectedSize] = useState(product.initialSize);
   const [wishlist, setWishlist] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [cartCount, setCartCount] = useState(0);
@@ -113,7 +93,10 @@ export default function ProductDetails() {
                 onClick={() => setActiveImage(index)}
                 whileHover={reduceMotion ? undefined : { scale: 1.04 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.96 }}
-                aria-label={`View image ${index + 1}`}
+                aria-label={copy.viewImage.replace(
+                  "{index}",
+                  (index + 1).toString()
+                )}
                 aria-pressed={activeImage === index}
                 className={`group relative aspect-[3/4]
                   overflow-hidden rounded-md border-2
@@ -124,7 +107,7 @@ export default function ProductDetails() {
                   }`}
               >
                 <Image
-                  src="/images/home/banner3.webp"
+                  src={image.src}
                   alt={image.alt}
                   fill
                   sizes="76px"
@@ -160,7 +143,7 @@ export default function ProductDetails() {
                 className="absolute inset-0"
               >
                 <Image
-                  src="/images/home/banner3.webp"
+                  src={product.images[activeImage].src}
                   alt={product.images[activeImage].alt}
                   fill
                   priority
@@ -186,7 +169,7 @@ export default function ProductDetails() {
               <button
                 type="button"
                 onClick={() => changeImage(-1)}
-                aria-label="Previous product image"
+                aria-label={copy.previousImage}
                 className="flex h-9 w-9 items-center justify-center
                   rounded-full border border-white/30
                   bg-black/35 text-white backdrop-blur-md
@@ -197,7 +180,7 @@ export default function ProductDetails() {
               <button
                 type="button"
                 onClick={() => changeImage(1)}
-                aria-label="Next product image"
+                aria-label={copy.nextImage}
                 className="flex h-9 w-9 items-center justify-center
                   rounded-full border border-white/30
                   bg-black/35 text-white backdrop-blur-md
@@ -211,7 +194,9 @@ export default function ProductDetails() {
               type="button"
               whileTap={reduceMotion ? undefined : { scale: 0.88 }}
               onClick={() => setWishlist((value) => !value)}
-              aria-label={wishlist ? "Remove from wishlist" : "Add to wishlist"}
+              aria-label={
+                wishlist ? copy.removeFromWishlist : copy.addProductToWishlist
+              }
               aria-pressed={wishlist}
               className="absolute right-3 top-3 flex h-10 w-10
                 items-center justify-center rounded-full
@@ -239,7 +224,7 @@ export default function ProductDetails() {
             <span className="h-px w-7 bg-[#b3996c]" />
             <span className="text-[10px] font-medium uppercase
               tracking-[0.23em] text-[#a18759]">
-              The Signature Collection
+              {copy.collection}
             </span>
           </div>
 
@@ -262,7 +247,10 @@ export default function ProductDetails() {
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
             <div
               className="flex items-center gap-0.5 text-[#a48650]"
-              aria-label={`Rated ${product.rating} out of 5`}
+              aria-label={copy.ratingAria.replace(
+                "{rating}",
+                product.rating.toString()
+              )}
             >
               {Array.from({ length: 5 }, (_, index) => (
                 <Star
@@ -290,7 +278,7 @@ export default function ProductDetails() {
                 underline-offset-4 transition-colors
                 hover:text-[#a48650] hover:underline lg:text-[16px]"
             >
-              {product.reviews} reviews
+              {copy.reviews.replace("{count}", product.reviews.toString())}
             </a>
           </div>
 
@@ -302,7 +290,7 @@ export default function ProductDetails() {
           <div className="mt-6 grid grid-cols-1 gap-4
             sm:grid-cols-2 sm:gap-x-6 sm:gap-y-4">
             {product.features.map((feature, index) => {
-              const Icon = feature.icon;
+              const Icon = featureIcons[feature.icon];
 
               return (
                 <motion.div
@@ -331,7 +319,7 @@ export default function ProductDetails() {
             <div className="flex flex-wrap items-center
               justify-between gap-3">
               <span className="text-sm font-medium text-[#33291f]">
-                Select Ring Size
+                {copy.selectSize}
               </span>
 
               <button
@@ -343,7 +331,7 @@ export default function ProductDetails() {
                   hover:text-[#3a2d1e] lg:text-[16px]"
               >
                 <Ruler size={16} />
-                Size Guide
+                {copy.sizeGuide}
               </button>
             </div>
 
@@ -373,7 +361,7 @@ export default function ProductDetails() {
           <div className="mt-5 flex flex-wrap items-center
             justify-between gap-3">
             <span className="text-sm text-[#655a4c] lg:text-[16px]">
-              Quantity
+              {copy.quantity}
             </span>
 
             <div className="flex h-10 items-center
@@ -382,7 +370,7 @@ export default function ProductDetails() {
                 type="button"
                 onClick={() => setQuantity((value) => Math.max(1, value - 1))}
                 disabled={quantity === 1}
-                aria-label="Decrease quantity"
+                aria-label={copy.decreaseQuantity}
                 className="flex h-full w-10 items-center
                   justify-center text-[#655a4c]
                   transition-colors hover:bg-[#eee8dd]
@@ -402,7 +390,7 @@ export default function ProductDetails() {
                 type="button"
                 onClick={() => setQuantity((value) => Math.min(10, value + 1))}
                 disabled={quantity === 10}
-                aria-label="Increase quantity"
+                aria-label={copy.increaseQuantity}
                 className="flex h-full w-10 items-center
                   justify-center text-[#655a4c]
                   transition-colors hover:bg-[#eee8dd]
@@ -431,7 +419,7 @@ export default function ProductDetails() {
               {cartMessage ? (
                 <>
                   <Check size={17} />
-                  Added to Cart
+                  {copy.addedToCart}
                 </>
               ) : (
                 <>
@@ -440,7 +428,7 @@ export default function ProductDetails() {
                     className="transition-transform duration-300
                       group-hover:-translate-y-0.5"
                   />
-                  Add to Cart
+                  {copy.addToCart}
                 </>
               )}
             </motion.button>
@@ -465,7 +453,7 @@ export default function ProductDetails() {
                 size={17}
                 className={wishlist ? "fill-[#a78953]" : ""}
               />
-              {wishlist ? "Added to Wishlist" : "Add to Wishlist"}
+              {wishlist ? copy.addedToWishlist : copy.addToWishlist}
             </motion.button>
           </div>
 
@@ -483,7 +471,7 @@ export default function ProductDetails() {
                 <Check size={18} className="mt-0.5 shrink-0" />
                 <div className="flex-1">
                   <p className="font-medium">
-                    Added to your shopping bag
+                    {copy.addedConfirmation}
                   </p>
                   <p className="mt-1 text-xs leading-5 text-[#796b58]">
                     {quantity} × {product.name} · Size {selectedSize}
@@ -491,13 +479,13 @@ export default function ProductDetails() {
                     {formatPrice(product.price * quantity)}
                   </p>
                   <p className="mt-1 text-[10px] text-[#8c7b62]">
-                    Demo cart items added: {cartCount}
+                    {copy.cartCount.replace("{count}", cartCount.toString())}
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => setCartMessage(false)}
-                  aria-label="Dismiss confirmation"
+                  aria-label={copy.dismissConfirmation}
                   className="p-1 hover:text-black"
                 >
                   <X size={16} />
@@ -535,18 +523,18 @@ export default function ProductDetails() {
                 <div>
                   <p className="text-[10px] uppercase
                     tracking-[0.2em] text-[#a48650]">
-                    Find your perfect fit
+                    {copy.findFit}
                   </p>
                   <h2 id="size-guide-title" className="mt-2
                     font-serif text-2xl text-[#29221a]">
-                    Ring Size Guide
+                    {copy.sizeGuideTitle}
                   </h2>
                 </div>
 
                 <button
                   type="button"
                   onClick={() => setShowSizeGuide(false)}
-                  aria-label="Close size guide"
+                  aria-label={copy.closeSizeGuide}
                   className="p-2 text-[#655a4c] hover:bg-[#eee8dd]"
                 >
                   <X size={20} />
@@ -554,16 +542,19 @@ export default function ProductDetails() {
               </div>
 
               <p className="mt-4 text-sm leading-6 text-[#756b5f]">
-                Select your preferred size. Ring sizing can vary by region,
-                so please confirm the sizing system before ordering.
+                {copy.sizeGuideDescription}
               </p>
 
               <div className="mt-5 overflow-hidden border border-[#e4ddd1]">
                 <table className="w-full text-left text-sm">
                   <thead className="bg-[#eee7db] text-[#554735]">
                     <tr>
-                      <th className="px-4 py-3 font-medium">Size</th>
-                      <th className="px-4 py-3 font-medium">Fit</th>
+                      <th className="px-4 py-3 font-medium">
+                        {copy.sizeColumn}
+                      </th>
+                      <th className="px-4 py-3 font-medium">
+                        {copy.fitColumn}
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -574,8 +565,8 @@ export default function ProductDetails() {
                         </td>
                         <td className="px-4 py-3 text-[#756b5f]">
                           {selectedSize === size
-                            ? "Currently selected"
-                            : "Available"}
+                            ? copy.selectedSize
+                            : copy.availableSize}
                         </td>
                       </tr>
                     ))}
@@ -584,8 +575,7 @@ export default function ProductDetails() {
               </div>
 
               <p className="mt-3 text-xs leading-5 text-[#8b7e6b]">
-                This sample guide uses placeholder size labels. Replace
-                these with your jeweler's verified size chart.
+                {copy.sizeGuideNote}
               </p>
 
               <button
@@ -595,7 +585,7 @@ export default function ProductDetails() {
                   text-xs font-semibold uppercase tracking-widest
                   text-white transition-colors hover:bg-[#8e754c]"
               >
-                Done
+                {copy.done}
               </button>
             </motion.div>
           </motion.div>

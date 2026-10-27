@@ -5,49 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import { site } from "@/data";
-
-const collections = [
-  {
-    id: "modern-muse",
-    title: "Modern Muse",
-    subtitle: "A fearless take on timeless classics.",
-    image:
-      "/images/home/banner4.webp",
-    position: "center 35%",
-    number: "01",
-  },
-  {
-    id: "bridal-edit",
-    title: "The Bridal Edit",
-    subtitle: "For your most unforgettable moments.",
-    image:
-      "/images/home/banner4.webp",
-    position: "center 40%",
-    number: "02",
-  },
-  {
-    id: "everyday-elegance",
-    title: "Everyday Elegance",
-    subtitle: "Make every day extraordinary.",
-    image:
-      "/images/home/banner4.webp",
-    position: "center 40%",
-    number: "03",
-  },
-  {
-    id: "evening-glam",
-    title: "Evening Glam",
-    subtitle: "Bold. Beautiful. Unforgettable.",
-    image:
-      "/images/home/banner4.webp",
-    position: "center 35%",
-    number: "04",
-  },
-];
+import { collectionEditorialData } from "@/data";
 
 export default function CollectionEditorial() {
   const reduceMotion = useReducedMotion();
+  const { collections, viewAll } = collectionEditorialData;
 
   return (
     <section
@@ -70,32 +32,31 @@ export default function CollectionEditorial() {
               <span className="h-px w-7 bg-[#ae8e5b]" />
               <span className="text-[9px] uppercase
                 tracking-[0.27em] text-[#a18759]">
-                Discover Your Style
+                {collectionEditorialData.eyebrow}
               </span>
             </div>
 
             <h2 className="font-serif text-3xl
               tracking-[-0.035em] text-[#272019]
               sm:text-4xl lg:text-[42px]">
-              Curated Collections
+              {collectionEditorialData.title}
             </h2>
 
             <p className="mt-2 max-w-lg text-sm
               leading-6 text-[#82776a]">
-              Jewelry for every version of you, crafted
-              to make every moment feel extraordinary.
+              {collectionEditorialData.description}
             </p>
           </div>
 
           <Link
-            href="/collections"
+            href={viewAll.href}
             className="group inline-flex items-center gap-2
               border-b border-[#b69a68]/60 pb-2
               text-[10px] font-medium uppercase
               tracking-[0.16em] text-[#43382a]
               transition-colors hover:text-[#a18759]"
           >
-            {site.nav.button.label}
+            {viewAll.label}
             <ArrowUpRight
               size={15}
               className="transition-transform duration-300
@@ -133,8 +94,10 @@ export default function CollectionEditorial() {
               className="group relative isolate"
             >
               <Link
-                href={site.nav.button.href}
-                aria-label={`Explore ${collection.title}: ${collection.subtitle}`}
+                href={viewAll.href}
+                aria-label={collectionEditorialData.collectionAriaLabel
+                  .replace("{title}", collection.title)
+                  .replace("{subtitle}", collection.subtitle)}
                 className="relative flex aspect-[1.48/1]
                   min-h-[220px] w-full items-end
                   overflow-hidden border border-[#b69a68]/30
@@ -194,7 +157,7 @@ export default function CollectionEditorial() {
                     <Sparkles size={13} strokeWidth={1.4} />
                     <span className="text-[8px] uppercase
                       tracking-[0.24em]">
-                      {site.site.name} EDIT
+                      {collectionEditorialData.editLabel}
                     </span>
                   </div>
 
@@ -218,7 +181,7 @@ export default function CollectionEditorial() {
                     tracking-[0.18em] text-white
                     transition-colors duration-300
                     group-hover:text-[#e4c793]">
-                    Discover Collection
+                    {collectionEditorialData.discoverLabel}
                     <ArrowUpRight
                       size={13}
                       className="transition-transform

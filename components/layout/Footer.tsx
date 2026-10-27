@@ -85,10 +85,9 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="grid grid-cols-1 gap-10 sm:grid-cols-2
-            sm:gap-x-8 lg:grid-cols-[1.05fr_0.95fr_0.7fr_0.95fr]
+            sm:gap-x-8 lg:grid-cols-[1.05fr_0.7fr_0.7fr_1fr]
             lg:gap-10 xl:gap-14"
         >
-          {/* Brand */}
           <motion.div variants={reveal} className="space-y-5">
             <Link
               href="/"
@@ -112,7 +111,6 @@ export default function Footer() {
             </p>
           </motion.div>
 
-          {/* Navigation columns */}
           {site.footer.columns.map((group) => (
             <motion.div
               variants={reveal}
@@ -225,7 +223,6 @@ export default function Footer() {
               )}
             </form>
 
-            {/* Social links */}
             <div className="mt-7 flex items-center gap-3">
               {site.site.socials.map(({ icon, label, href }) => {
                 const Icon = socialIcons[icon];
@@ -256,7 +253,6 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div
           className="mx-auto flex max-w-[1600px] flex-col

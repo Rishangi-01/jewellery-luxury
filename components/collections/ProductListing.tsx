@@ -16,120 +16,12 @@ import {
   Check,
   ShoppingBag,
 } from "lucide-react";
+import { productListingData } from "@/data";
 
-type Category = "Rings" | "Necklaces" | "Earrings" | "Bracelets";
-type Material = "Gold" | "Diamond" | "Platinum" | "Silver";
-
-type Product = {
-  id: number;
-  name: string;
-  category: Category;
-  materials: Material[];
-  price: number;
-  image: string;
-  badge?: string;
-};
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: "Eternal Diamond Ring",
-    category: "Rings",
-    materials: ["Gold", "Diamond"],
-    price: 3499,
-    image:
-      "/images/our-story/product3.png",
-  },
-  {
-    id: 2,
-    name: "Golden Bloom Necklace",
-    category: "Necklaces",
-    materials: ["Gold", "Diamond"],
-    price: 4999,
-    image:
-      "/images/our-story/product4.png",
-    badge: "Bestseller",
-  },
-  {
-    id: 3,
-    name: "Pearl Drop Earrings",
-    category: "Earrings",
-    materials: ["Gold", "Silver"],
-    price: 2199,
-    image:
-      "/images/our-story/product5.png",
-  },
-  {
-    id: 4,
-    name: "Royal Bangle",
-    category: "Bracelets",
-    materials: ["Gold"],
-    price: 1499,
-    image:
-      "/images/about/banner1.webp",
-  },
-  {
-    id: 5,
-    name: "Solitaire Ring",
-    category: "Rings",
-    materials: ["Gold", "Diamond", "Platinum"],
-    price: 3299,
-    image:
-      "/images/our-story/product2.png",
-  },
-  {
-    id: 6,
-    name: "Celestial Earrings",
-    category: "Earrings",
-    materials: ["Gold", "Diamond"],
-    price: 3299,
-    image:
-      "/images/home/banner4.webp",
-  },
-  {
-    id: 7,
-    name: "Golden Halo Ring",
-    category: "Rings",
-    materials: ["Gold"],
-    price: 2599,
-    image:
-      "/images/our-story/product4.png",
-  },
-  {
-    id: 8,
-    name: "Classic Gold Chain",
-    category: "Necklaces",
-    materials: ["Gold"],
-    price: 1899,
-    image:
-      "/images/our-story/product5.png",
-  },
-  {
-    id: 9,
-    name: "Golden Charm Bracelet",
-    category: "Bracelets",
-    materials: ["Gold", "Diamond"],
-    price: 2899,
-    image:
-      "/images/home/banner4.webp",
-  },
-];
-
-const categories: Category[] = [
-  "Rings",
-  "Necklaces",
-  "Earrings",
-  "Bracelets",
-];
-
-const materials: Material[] = [
-  "Gold",
-  "Diamond",
-  "Platinum",
-  "Silver",
-];
-
-const PAGE_SIZE = 6;
+const { products, categories, materials, sortOptions, copy } =
+  productListingData;
+type Category = (typeof categories)[number];
+type Material = (typeof materials)[number];
 
 function formatPrice(price: number) {
   return new Intl.NumberFormat("en-IN", {
@@ -142,8 +34,8 @@ function formatPrice(price: number) {
 export default function ProductListing() {
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
   const [selectedMaterials, setSelectedMaterials] = useState<Material[]>([]);
-  const [priceRange, setPriceRange] = useState(50000);
-  const [sortBy, setSortBy] = useState("featured");
+  const [priceRange, setPriceRange] = useState(productListingData.maxPrice);
+  const [sortBy, setSortBy] = useState(productListingData.defaultSort);
   const [currentPage, setCurrentPage] = useState(1);
   const [wishlist, setWishlist] = useState<number[]>([]);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -190,12 +82,12 @@ export default function ProductListing() {
 
   const totalPages = Math.max(
     1,
-    Math.ceil(filteredProducts.length / PAGE_SIZE)
+    Math.ceil(filteredProducts.length / productListingData.pageSize)
   );
 
   const visibleProducts = filteredProducts.slice(
-    (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE
+    (currentPage - 1) * productListingData.pageSize,
+    currentPage * productListingData.pageSize
   );
 
   function toggleCategory(category: Category) {
@@ -227,8 +119,8 @@ export default function ProductListing() {
   function resetFilters() {
     setSelectedCategories([]);
     setSelectedMaterials([]);
-    setPriceRange(50000);
-    setSortBy("featured");
+    setPriceRange(productListingData.maxPrice);
+    setSortBy(productListingData.defaultSort);
     setCurrentPage(1);
   }
 
@@ -237,7 +129,7 @@ export default function ProductListing() {
       {/* Filter heading */}
       <div className="flex items-center justify-between">
         <h2 className="font-serif text-xl text-[#241d16]">
-          Filters
+          {copy.filters}
         </h2>
 
         <button
@@ -245,7 +137,7 @@ export default function ProductListing() {
           className="text-[10px] uppercase tracking-widest
             text-[#9c8154] hover:text-[#4b3922]"
         >
-          Clear all
+          {copy.clearAll}
         </button>
       </div>
 
@@ -264,7 +156,7 @@ export default function ProductListing() {
           aria-expanded={expanded.category}
         >
           <span className="text-sm font-semibold text-[#28221b]">
-            Category
+            {copy.category}
           </span>
           {expanded.category ? (
             <ChevronUp size={17} />
@@ -340,7 +232,7 @@ export default function ProductListing() {
           aria-expanded={expanded.price}
         >
           <span className="text-sm font-semibold text-[#28221b]">
-            Price Range
+            {copy.priceRange}
           </span>
           {expanded.price ? (
             <ChevronUp size={17} />
@@ -359,21 +251,21 @@ export default function ProductListing() {
             >
               <input
                 type="range"
-                min={0}
-                max={50000}
-                step={500}
+                min={productListingData.minimumPrice}
+                max={productListingData.maxPrice}
+                step={productListingData.priceStep}
                 value={priceRange}
                 onChange={(event) => {
                   setPriceRange(Number(event.target.value));
                   setCurrentPage(1);
                 }}
-                aria-label="Maximum price"
+                aria-label={copy.maximumPrice}
                 className="w-full cursor-pointer accent-[#a78953]"
               />
 
               <div className="mt-2 flex justify-between text-xs
                 text-[#766c60]">
-                <span>₹0</span>
+                <span>{copy.minimumPrice}</span>
                 <span>{formatPrice(priceRange)}</span>
               </div>
             </motion.div>
@@ -394,7 +286,7 @@ export default function ProductListing() {
           aria-expanded={expanded.material}
         >
           <span className="text-sm font-semibold text-[#28221b]">
-            Material
+            {copy.materials}
           </span>
           {expanded.material ? (
             <ChevronUp size={17} />
@@ -455,7 +347,7 @@ export default function ProductListing() {
           htmlFor="sort-products"
           className="mb-3 block text-sm font-semibold text-[#28221b]"
         >
-          Sort By
+          {copy.sortBy}
         </label>
 
         <div className="relative">
@@ -472,10 +364,11 @@ export default function ProductListing() {
               outline-none transition-colors
               focus:border-[#a78953]"
           >
-            <option value="featured">Best Selling</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="name">Name: A to Z</option>
+            {sortOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
           <ChevronDown
             size={16}
@@ -493,7 +386,7 @@ export default function ProductListing() {
           transition-colors hover:bg-[#bda16f]
           hover:text-white"
       >
-        Reset Filters
+        {copy.resetFilters}
       </button>
     </div>
   );
@@ -513,11 +406,14 @@ export default function ProductListing() {
               text-[#29231c]"
           >
             <SlidersHorizontal size={16} />
-            Filters
+            {copy.filters}
           </button>
 
           <span className="text-xs text-[#766c60]">
-            {filteredProducts.length} products
+            {copy.productsCount.replace(
+              "{count}",
+              filteredProducts.length.toString()
+            )}
           </span>
 
           <button
@@ -527,14 +423,14 @@ export default function ProductListing() {
             className="inline-flex items-center gap-2 text-sm text-[#29231c]"
           >
             <ArrowUpDown size={16} />
-            Sort
+            {copy.sort}
           </button>
         </div>
 
 
         <div className="mb-5 lg:hidden">
           <label htmlFor="sort-products-mobile" className="sr-only">
-            Sort products
+            {copy.sortProducts}
           </label>
           <select
             id="sort-products-mobile"
@@ -546,10 +442,11 @@ export default function ProductListing() {
             className="w-full border border-[#ded6c9] bg-transparent
               px-3 py-2.5 text-sm text-[#6e655a] outline-none"
           >
-            <option value="featured">Best Selling</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="name">Name: A to Z</option>
+            {sortOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -566,20 +463,27 @@ export default function ProductListing() {
           <div className="min-w-0">
             <div className="mb-5 hidden items-center justify-between lg:flex">
               <p className="text-xs text-[#887d6f] lg:text-[16px]">
-                Showing{" "}
+                {copy.showing}{" "}
                 <span className="font-medium text-[#29231c]">
                   {filteredProducts.length === 0
                     ? 0
-                    : (currentPage - 1) * PAGE_SIZE + 1}
+                    : (currentPage - 1) * productListingData.pageSize + 1}
                   {"–"}
-                  {Math.min(currentPage * PAGE_SIZE, filteredProducts.length)}
+                  {Math.min(
+                    currentPage * productListingData.pageSize,
+                    filteredProducts.length
+                  )}
                 </span>{" "}
-                of {filteredProducts.length} products
+                {copy.of}{" "}
+                {copy.productsCount.replace(
+                  "{count}",
+                  filteredProducts.length.toString()
+                )}
               </p>
 
               <p className="text-[10px] uppercase tracking-[0.16em]
                 text-[#a18a63]">
-                Crafted to be cherished
+                {copy.crafted}
               </p>
             </div>
 
@@ -612,8 +516,11 @@ export default function ProductListing() {
                           overflow-hidden rounded-[3px]
                           bg-[#eae4d9]">
                           <Link
-                            href={`/collections/collection-details`}
-                            aria-label={`View ${product.name}`}
+                            href={copy.collectionHref}
+                            aria-label={copy.viewProductAria.replace(
+                              "{name}",
+                              product.name
+                            )}
                             className="absolute inset-0 z-0"
                           >
                             <Image
@@ -649,8 +556,14 @@ export default function ProductListing() {
                             onClick={() => toggleWishlist(product.id)}
                             aria-label={
                               isWishlisted
-                                ? `Remove ${product.name} from wishlist`
-                                : `Add ${product.name} to wishlist`
+                                ? copy.removeFromWishlist.replace(
+                                    "{name}",
+                                    product.name
+                                  )
+                                : copy.addToWishlist.replace(
+                                    "{name}",
+                                    product.name
+                                  )
                             }
                             aria-pressed={isWishlisted}
                             className="absolute right-2 top-2 z-10 flex
@@ -674,7 +587,7 @@ export default function ProductListing() {
 
 
                           <Link
-                            href={`/collections/collection-details`}
+                            href={copy.collectionHref}
                             className="absolute bottom-0 left-0 right-0
                               flex translate-y-full items-center
                               justify-center gap-2 bg-[#17130e]/90
@@ -684,12 +597,12 @@ export default function ProductListing() {
                               group-hover:translate-y-0"
                           >
                             <ShoppingBag size={14} />
-                            View Product
+                            {copy.viewProduct}
                           </Link>
                         </div>
 
                         <div className="pt-3">
-                          <Link href={`/collections/collection-details`}>
+                          <Link href={copy.collectionHref}>
                             <h3 className="line-clamp-2 text-sm
                               font-medium leading-5 text-[#29231c]
                               transition-colors hover:text-[#9b7a49]
@@ -704,7 +617,7 @@ export default function ProductListing() {
                           </p>
 
                           <p className="mt-1 text-[10px] text-[#a09688] lg:text-lg">
-                            Inclusive of taxes
+                            {copy.inclusiveTaxes}
                           </p>
                         </div>
                       </motion.article>
@@ -720,10 +633,10 @@ export default function ProductListing() {
                   className="mb-4 text-[#b39a70]"
                 />
                 <h3 className="font-serif text-2xl text-[#29231c]">
-                  No pieces found
+                  {copy.noProducts}
                 </h3>
                 <p className="mt-2 max-w-sm text-sm leading-6 text-[#81776a]">
-                  Try changing your filters to discover more of our collection.
+                  {copy.emptyDescription}
                 </p>
                 <button
                   onClick={resetFilters}
@@ -731,7 +644,7 @@ export default function ProductListing() {
                     px-5 py-3 text-xs uppercase tracking-wider
                     text-[#81683e] hover:bg-[#bda16f] hover:text-white"
                 >
-                  Clear Filters
+                  {copy.clearFilters}
                 </button>
               </div>
             )}
@@ -745,7 +658,7 @@ export default function ProductListing() {
                     setCurrentPage((page) => Math.max(1, page - 1))
                   }
                   disabled={currentPage === 1}
-                  aria-label="Previous page"
+                  aria-label={copy.previousPage}
                   className="flex h-10 w-10 items-center justify-center
                     rounded-full text-[#665a49] transition-colors
                     hover:bg-[#eae3d7] disabled:cursor-not-allowed
@@ -759,7 +672,10 @@ export default function ProductListing() {
                     <button
                       key={page}
                       onClick={() => setCurrentPage(page)}
-                      aria-label={`Page ${page}`}
+                      aria-label={copy.page.replace(
+                        "{page}",
+                        page.toString()
+                      )}
                       aria-current={
                         currentPage === page ? "page" : undefined
                       }
@@ -782,7 +698,7 @@ export default function ProductListing() {
                     )
                   }
                   disabled={currentPage === totalPages}
-                  aria-label="Next page"
+                  aria-label={copy.nextPage}
                   className="flex h-10 w-10 items-center justify-center
                     rounded-full text-[#665a49] transition-colors
                     hover:bg-[#eae3d7] disabled:cursor-not-allowed
@@ -802,7 +718,7 @@ export default function ProductListing() {
           <>
             <motion.button
               type="button"
-              aria-label="Close filters"
+              aria-label={copy.closeFilters}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -813,7 +729,7 @@ export default function ProductListing() {
             <motion.div
               role="dialog"
               aria-modal="true"
-              aria-label="Product filters"
+              aria-label={copy.productFilters}
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
@@ -824,11 +740,11 @@ export default function ProductListing() {
             >
               <div className="mb-7 flex items-center justify-between">
                 <h2 className="font-serif text-2xl text-[#29231c]">
-                  Filters
+                  {copy.filters}
                 </h2>
                 <button
                   onClick={() => setMobileFiltersOpen(false)}
-                  aria-label="Close filters"
+                  aria-label={copy.closeFilters}
                   className="flex h-10 w-10 items-center justify-center
                     text-[#29231c] hover:bg-[#eee8dd]"
                 >
@@ -844,7 +760,10 @@ export default function ProductListing() {
                   text-xs font-semibold uppercase tracking-widest
                   text-white transition-colors hover:bg-[#8b7046]"
               >
-                Show {filteredProducts.length} Products
+                {copy.showProducts.replace(
+                  "{count}",
+                  filteredProducts.length.toString()
+                )}
               </button>
             </motion.div>
           </>

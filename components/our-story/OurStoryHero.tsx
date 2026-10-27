@@ -61,7 +61,7 @@ export default function OurStoryHero() {
 
       <div
         className="mx-auto flex min-h-[220px] max-w-[1600px]
-          flex-col justify-center px-6 py-9
+          flex-col justify-center px-6 pb-9 pt-24
           sm:min-h-[260px] sm:px-10 sm:py-12
           md:min-h-[290px] md:px-14
           lg:min-h-[480px] lg:px-20"
