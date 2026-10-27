@@ -347,7 +347,7 @@
                   "name": "Matching Necklace",
                   "price": 1899,
                   "category": "Necklaces",
-                  "image": "/images/home/banner3.webp",
+                  "image": "/images/our-story/product2.webp",
                   "imageAlt": "Matching necklace",
                   "description": "An elegant necklace to complement your ring."
                 },
@@ -355,7 +355,7 @@
                   "name": "Diamond Earrings",
                   "price": 1299,
                   "category": "Earrings",
-                  "image": "/images/home/banner3.webp",
+                  "image": "/images/our-story/product3.webp",
                   "imageAlt": "Diamond earrings",
                   "description": "Refined sparkle for every occasion."
                 },
@@ -363,7 +363,7 @@
                   "name": "Elegant Bracelet",
                   "price": 1799,
                   "category": "Bracelets",
-                  "image": "/images/home/banner3.webp",
+                  "image": "/images/our-story/product4.webp",
                   "imageAlt": "Elegant bracelet",
                   "description": "A delicate finishing touch in gold."
                 }
@@ -527,7 +527,7 @@
               "description": "Your favorite pieces, always within reach.",
               "piece": "piece",
               "pieces": "pieces",
-              "productHref": "/product/{id}",
+              "productHref": "/collections/collection-details",
               "viewItem": "View {name}",
               "addToCart": "Add to Cart",
               "addedToCart": "Added to Cart",
@@ -536,9 +536,9 @@
               "emptyTitle": "A little room for something beautiful",
               "emptyDescription": "Save your favorite jewelry here and return whenever you are ready to make it yours.",
               "exploreCollection": "Explore Collection",
-              "exploreHref": "/shop",
+              "exploreHref": "/collections",
               "continueShopping": "Continue Shopping",
-              "continueShoppingHref": "/shop"
+              "continueShoppingHref": "/collections"
             }
           },
           "collectionEditorial": {

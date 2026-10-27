@@ -58,8 +58,8 @@ export default function WishlistSection() {
 
   return (
     <section className="min-h-[70vh] overflow-hidden
-      bg-[#faf8f3] px-4 py-10 text-[#24211c]
-      sm:px-7 sm:py-14 lg:px-12 lg:pb-16 lg:pt-36 w-[100%]">
+      bg-[#faf8f3] px-4 pt-24 pb-10 text-[#24211c]
+      sm:px-7 sm:pt-14 sm:pb-14 lg:px-12 lg:pb-16 lg:pt-36 w-[100%]">
 
       <div className="mx-auto max-w-[1250px]">
 

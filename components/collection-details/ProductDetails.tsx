@@ -63,7 +63,7 @@ export default function ProductDetails() {
 
   return (
     <section className="relative overflow-hidden bg-[#faf8f3]
-      px-4 pt-8 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-10 lg:pb-16 lg:pt-32 w-[100%]">
+      px-4 pt-24 pb-8 sm:px-6 sm:pt-12 sm:pb-12 lg:px-10 lg:pb-16 lg:pt-32 w-[100%]">
 
       <div
         aria-hidden="true"
