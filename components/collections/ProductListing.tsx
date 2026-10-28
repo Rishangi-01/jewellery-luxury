@@ -205,7 +205,7 @@ export default function ProductListing() {
                           </Link>
                         </div>
 
-                        <div className="pt-3">
+                        <div className="pt-4 sm:pt-5">
                           <Link href={copy.collectionHref}>
                             <h3
                               className="text-sm
@@ -217,7 +217,7 @@ export default function ProductListing() {
                             </h3>
                           </Link>
 
-                          <p className="mt-1 text-[10px] text-[#a09688] lg:text-xl">
+                          <p className="mt-2 text-[10px] text-[#a09688] lg:text-xl">
                             {copy.inclusiveTaxes}
                           </p>
                         </div>

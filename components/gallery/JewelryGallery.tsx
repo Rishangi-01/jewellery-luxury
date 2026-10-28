@@ -78,7 +78,7 @@ export default function JewelrygalleryData() {
   return (
     <section
       id="galleryData"
-      className="relative overflow-hidden bg-[#fbf8f4] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20 w-[100%]"
+      className="relative overflow-hidden bg-[#fbf8f4] px-4 py-12 sm:px-6 sm:py-12 lg:px-8 lg:py-12 w-[100%]"
     >
       <div
         aria-hidden="true"

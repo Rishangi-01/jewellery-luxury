@@ -37,7 +37,7 @@ export default function LatestJewelleryInsights() {
   return (
     <section
       id="jewellery-insights"
-      className="relative overflow-hidden bg-[#faf8f5] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+      className="relative overflow-hidden bg-[#faf8f5] px-4 py-12 sm:px-6 sm:py-12 lg:px-8 lg:py-12"
     >
       
       <div

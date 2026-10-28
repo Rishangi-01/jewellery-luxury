@@ -3,6 +3,7 @@ import originalSiteData from "./site.json";
 export type RawSiteData = typeof originalSiteData;
 export const commerceData = originalSiteData.Insurance.commerce;
 export const productDetailsData = commerceData.productDetails;
+export const productDetailsHeroData = commerceData.productDetails.hero;
 export const productExtraDetailsData = commerceData.productExtraDetails;
 export const productListingData = commerceData.productListing;
 export const galleryData = commerceData.gallery;
@@ -16,6 +17,7 @@ export const signatureCollectionsData = commerceData.signatureCollections;
 
 export type CommerceData = typeof commerceData;
 export type ProductDetailsData = typeof productDetailsData;
+export type ProductDetailsHeroData = typeof productDetailsHeroData;
 export type ProductExtraDetailsData = typeof productExtraDetailsData;
 export type ProductListingData = typeof productListingData;
 export type galleryData = typeof galleryData;

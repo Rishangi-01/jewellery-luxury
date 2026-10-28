@@ -179,6 +179,17 @@
     },
     "commerce": {
       "productDetails": {
+        "hero": {
+          "breadcrumbLabel": "Breadcrumb",
+          "image": {
+            "src": "/images/hero.webp",
+            "alt": "Elegant fine jewellery with gold bracelets and diamond rings"
+          },
+          "heading": "Collection Detail",
+          "homeLabel": "Home",
+          "homeHref": "/",
+          "currentLabel": "Collection Detail"
+        },
         "product": {
           "name": "Eternal Premium Diamond Ring",
           "price": 2499,
@@ -531,7 +542,7 @@
             "id": 8,
             "title": "Diamond Halo Ring",
             "category": "Diamond Jewellery",
-            "image": "/images/home/banner5.webp"
+            "image": "/images/home/banner2.webp"
           },
           {
             "id": 9,
@@ -1008,8 +1019,8 @@
               {
                 "eyebrow": "MADE TO BE CHERISHED",
                 "title": [
-                  "Your Story Deserves",
-                  "Something Beautiful"
+                  "Your Journey",
+                  "Beautifully Told"
                 ],
                 "text": "Find your signature style with our thoughtfully curated collection.",
                 "image": "/images/home/banner4.webp"

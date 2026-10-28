@@ -9,12 +9,10 @@ import { site, blogDetailsHeroData } from "@/data";
 
 export default function BlogDetailsHero() {
   const reduceMotion = useReducedMotion();
-  const pageLink = site.nav.links.find((link) => link.href === "/blog");
+
   const homeLabel = site.nav.links.find((link) => link.href === "/")?.label;
 
-  if (!pageLink) {
-    throw new Error("Blog Details navigation link is missing from site data.");
-  }
+  
 
   return (
     <section
@@ -87,16 +85,6 @@ export default function BlogDetailsHero() {
           >
             {blogDetailsHeroData.heading}
           </h1>
-
-          <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-3 text-xs leading-6 text-white/80
-              sm:mt-4 sm:text-sm md:text-base lg:text-[16px]"
-          >
-            {site.about.pageParagraphs[2]}
-          </motion.p>
         </motion.div>
 
         <motion.nav
@@ -124,7 +112,7 @@ export default function BlogDetailsHero() {
             aria-current="page"
             className="text-[#e3c58f]"
           >
-            {pageLink.label}
+            {blogDetailsHeroData.heading}
           </span>
         </motion.nav>
       </div>
