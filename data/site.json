@@ -474,51 +474,478 @@
           "collectionHref": "/collections/collection-details"
         }
       },
-      "collectionEditorial": {
-        "eyebrow": "Discover Your Style",
-        "title": "Curated Collections",
-        "description": "Jewelry for every version of you, crafted to make every moment feel extraordinary.",
-        "viewAll": {
-          "label": "Our Collection",
-          "href": "/collections"
-        },
-        "editLabel": "VÉLORA EDIT",
-        "collectionAriaLabel": "Explore {title}: {subtitle}",
-        "discoverLabel": "Discover Collection",
-        "collections": [
+      "gallery": {
+        "headingPrefix": "Our",
+        "headingHighlight": "Gallery",
+        "description": "Explore our exquisite collection of handcrafted jewellery, capturing timeless elegance and fine craftsmanship.",
+        "paginationAriaLabel": "Gallery pagination",
+        "previousPageLabel": "Previous page",
+        "nextPageLabel": "Next page",
+        "goToPageLabelTemplate": "Go to gallery page {page}",
+        "pageLabelTemplate": "Page {current} of {total}",
+        "itemsPerPage": 6,
+        "items": [
           {
-            "id": "modern-muse",
-            "title": "Modern Muse",
-            "subtitle": "A fearless take on timeless classics.",
-            "image": "/images/home/banner4.webp",
-            "position": "center 35%",
-            "number": "01"
+            "id": 1,
+            "title": "Traditional Gold Necklace",
+            "category": "Gold Jewellery",
+            "image": "/images/our-story/product2.webp"
           },
           {
-            "id": "bridal-edit",
-            "title": "The Bridal Edit",
-            "subtitle": "For your most unforgettable moments.",
-            "image": "/images/home/banner2.webp",
-            "position": "center 40%",
-            "number": "02"
+            "id": 2,
+            "title": "Diamond Solitaire Ring",
+            "category": "Diamond Jewellery",
+            "image": "/images/our-story/product2.webp"
           },
           {
-            "id": "everyday-elegance",
-            "title": "Everyday Elegance",
-            "subtitle": "Make every day extraordinary.",
-            "image": "/images/home/ValentineDay-Gift.webp",
-            "position": "center 40%",
-            "number": "03"
+            "id": 3,
+            "title": "Diamond Drop Earrings",
+            "category": "Earrings",
+            "image": "/images/our-story/product2.webp"
           },
           {
-            "id": "evening-glam",
-            "title": "Evening Glam",
-            "subtitle": "Bold. Beautiful. Unforgettable.",
-            "image": "/images/home/Reasons-Buy.webp",
-            "position": "center 35%",
-            "number": "04"
+            "id": 4,
+            "title": "Diamond Tennis Bangles",
+            "category": "Bangles",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 5,
+            "title": "Emerald Statement Ring",
+            "category": "Gemstone Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 6,
+            "title": "Gold Pendant Necklace",
+            "category": "Necklaces",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 7,
+            "title": "Classic Gold Earrings",
+            "category": "Gold Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 8,
+            "title": "Diamond Halo Ring",
+            "category": "Diamond Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 9,
+            "title": "Elegant Pearl Earrings",
+            "category": "Earrings",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 10,
+            "title": "Gold Diamond Bracelet",
+            "category": "Bracelets",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 11,
+            "title": "Ruby Gold Ring",
+            "category": "Gemstone Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 12,
+            "title": "Floral Diamond Pendant",
+            "category": "Necklaces",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 13,
+            "title": "Royal Gold Necklace",
+            "category": "Gold Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 14,
+            "title": "Princess Cut Ring",
+            "category": "Diamond Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 15,
+            "title": "Statement Diamond Earrings",
+            "category": "Earrings",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 16,
+            "title": "Classic Gold Bangles",
+            "category": "Bangles",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 17,
+            "title": "Green Emerald Jewellery",
+            "category": "Gemstone Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 18,
+            "title": "Diamond Floral Necklace",
+            "category": "Necklaces",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 19,
+            "title": "Gold Bridal Earrings",
+            "category": "Gold Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 20,
+            "title": "Round Brilliant Ring",
+            "category": "Diamond Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 21,
+            "title": "Pear Drop Earrings",
+            "category": "Earrings",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 22,
+            "title": "Diamond Cuff Bracelet",
+            "category": "Bracelets",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 23,
+            "title": "Emerald Halo Ring",
+            "category": "Gemstone Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 24,
+            "title": "Gold Floral Pendant",
+            "category": "Necklaces",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 25,
+            "title": "Vintage Gold Jewellery",
+            "category": "Gold Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 26,
+            "title": "Elegant Diamond Ring",
+            "category": "Diamond Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 27,
+            "title": "Crystal Drop Earrings",
+            "category": "Earrings",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 28,
+            "title": "Gold Diamond Bangles",
+            "category": "Bangles",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 29,
+            "title": "Emerald Statement Jewellery",
+            "category": "Gemstone Jewellery",
+            "image": "/images/our-story/product2.webp"
+          },
+          {
+            "id": 30,
+            "title": "Diamond Pendant",
+            "category": "Necklaces",
+            "image": "/images/our-story/product2.webp"
           }
         ]
+      },
+      "blog": {
+        "sectionEyebrow": "Our Blog",
+        "headingPrefix": "Latest",
+        "headingHighlight": "Jewellery",
+        "headingSuffix": " Insights",
+        "description": "Explore expert tips, trends and guides to help you choose the perfect jewellery for every occasion.",
+        "linkTemplate": "/blog",
+        "detailsHref": "/blog/blog-details",
+        "readLabelTemplate": "Read {title}",
+        "moreDetailsLabel": "More Details",
+        "paginationAriaLabel": "Blog pagination",
+        "previousPageLabel": "Previous page",
+        "goToPageLabelTemplate": "Go to page {page}",
+        "nextPageLabel": "Next page",
+        "showingLabel": "Showing",
+        "rangeSeparator": "–",
+        "ofLabel": "of",
+        "articlesLabel": "articles",
+        "postsPerPage": 6,
+        "posts": [
+          {
+            "id": 1,
+            "category": "Trends",
+            "title": "Latest Jewellery Trends You Need to Know in 2025",
+            "description": "Discover the top jewellery trends of 2025, from minimal designs to statement pieces, and find the perfect styles to elevate your look this season.",
+            "image": "/images/our-story/product2.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "latest-jewellery-trends"
+          },
+          {
+            "id": 2,
+            "category": "Bridal",
+            "title": "Bridal Jewellery Styling Tips for Your Special Day",
+            "description": "From traditional temple jewellery to modern diamond sets, explore expert styling tips to create a flawless bridal look for your big day.",
+            "image": "/images/our-story/product3.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "bridal-jewellery-styling"
+          },
+          {
+            "id": 3,
+            "category": "Guide",
+            "title": "Gold vs Diamond Jewellery – Which Is Right for You?",
+            "description": "Compare the beauty, value and benefits of gold and diamond jewellery to make an informed choice that suits your style and budget.",
+            "image": "/images/our-story/product4.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "gold-vs-diamond"
+          },
+          {
+            "id": 4,
+            "category": "Care Tips",
+            "title": "Jewellery Care Tips to Keep Your Pieces Shining",
+            "description": "Keep your jewellery beautiful for years with these simple yet effective care tips. Learn how to clean, store and maintain your precious pieces.",
+            "image": "/images/our-story/product5.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "jewellery-care-tips"
+          },
+          {
+            "id": 5,
+            "category": "Traditional",
+            "title": "Traditional Jewellery Designs That Never Go Out of Style",
+            "description": "Explore timeless traditional jewellery designs that celebrate heritage, craftsmanship and elegance, perfect for every occasion.",
+            "image": "/images/home/banner2.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "traditional-jewellery-designs"
+          },
+          {
+            "id": 6,
+            "category": "Buying Guide",
+            "title": "How to Choose the Perfect Jewellery for Any Occasion",
+            "description": "Find the right jewellery for weddings, parties, office wear and daily use with our expert buying guide. Learn what to consider for every occasion.",
+            "image": "/images/home/banner3.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "choose-perfect-jewellery"
+          },
+          {
+            "id": 7,
+            "category": "Diamond Guide",
+            "title": "How to Choose the Perfect Diamond",
+            "description": "Understand the four Cs of diamonds and discover what to look for when choosing a beautiful piece for your collection.",
+            "image": "/images/home/banner4.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "perfect-diamond-guide"
+          },
+          {
+            "id": 8,
+            "category": "Gold Guide",
+            "title": "Understanding Gold Purity Before You Buy",
+            "description": "Learn about gold purity, karats and hallmarks so you can choose jewellery with confidence and clarity.",
+            "image": "/images/our-story/product2.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "understanding-gold-purity"
+          },
+          {
+            "id": 9,
+            "category": "Style Guide",
+            "title": "Everyday Jewellery That Feels Effortlessly Elegant",
+            "description": "Explore versatile necklaces, earrings and bracelets that bring understated elegance to your everyday outfits.",
+            "image": "/images/our-story/product3.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "everyday-jewellery"
+          },
+          {
+            "id": 10,
+            "category": "Bridal Guide",
+            "title": "A Guide to Choosing Your Wedding Necklace",
+            "description": "Find the right necklace for your neckline, wedding outfit and personal style with these timeless bridal styling ideas.",
+            "image": "/images/our-story/product4.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "wedding-necklace-guide"
+          },
+          {
+            "id": 11,
+            "category": "Inspiration",
+            "title": "Finding Your Signature Jewellery Style",
+            "description": "Discover how to build a jewellery collection that reflects your personality, preferences and favourite occasions.",
+            "image": "/images/our-story/product2.webp",
+            "date": "JAN 20",
+            "year": "2025",
+            "slug": "signature-jewellery-style"
+          }
+        ]
+      },
+      "blogDetails": {
+        "hero": {
+          "breadcrumbLabel": "Breadcrumb",
+          "image": {
+            "src": "/images/hero.webp",
+            "alt": "Elegant fine jewellery with gold bracelets and diamond rings"
+          },
+          "heading": "Blog Detail",
+          "homeLabel": "Home",
+          "homeHref": "/",
+          "currentLabel": "Blog Detail"
+        },
+        "eyebrow": "Trends",
+        "headingFirst": "Simply Tips for ",
+        "headingHighlight": "Beauty",
+        "dateTime": "2025-01-20",
+        "dateLabel": "JAN 20, 2025",
+        "introduction": "Beauty is not just about looking good. It's about feeling confident and expressing your unique style. With the right care and mindful choices, you can keep your jewellery shining for years. In this article, we're sharing simple yet effective tips that will help you maintain the beauty and brilliance of your favourite pieces.",
+        "image": {
+          "src": "/images/home/ValentineDay-Gift.webp",
+          "alt": "Elegant jewellery styling with delicate gemstone rings"
+        },
+        "quotation": "Jewellery adds a touch of elegance to every moment. With the right care and styling, you can keep your favourite pieces looking beautiful for years to come. These simple tips will help you maintain their shine, protect their quality and make them a long-lasting part of your collection.",
+        "tips": [
+          {
+            "number": "01.",
+            "title": "Keep Your Jewellery Clean",
+            "paragraphs": [
+              "Regular cleaning helps maintain the natural shine of your jewellery. Use a soft, lint-free cloth to gently wipe your pieces after wearing them. For a deeper clean, use a mild jewellery cleaner or lukewarm water with a few drops of gentle soap. Avoid harsh chemicals that can damage delicate stones and metals."
+            ]
+          },
+          {
+            "number": "02.",
+            "title": "Store Them Properly",
+            "paragraphs": [
+              "Always store your jewellery in a soft-lined jewellery box or individual pouches to prevent scratches and tangling. Keep different pieces separate, especially those with gemstones or delicate designs. Proper storage not only keeps them safe but also helps maintain their brilliance for longer."
+            ]
+          },
+          {
+            "number": "03.",
+            "title": "Avoid Exposure to Harsh Elements",
+            "paragraphs": [
+              "Remove your jewellery before swimming, exercising or using household cleaning products. Exposure to chlorine, sweat, perfumes and harsh chemicals can dull the shine and damage the metal or gemstones. Putting them on after your skincare and makeup routine is a good habit."
+            ]
+          },
+          {
+            "number": "04.",
+            "title": "Get Professional Check-ups",
+            "paragraphs": [
+              "For valuable or frequently worn pieces, it's a good idea to get them checked by a professional jeweller once in a while. They can inspect the settings, clean them thoroughly and ensure that your jewellery remains in perfect condition.",
+              "Following these simple tips will help you keep your jewellery as beautiful as the day you bought it. A little care goes a long way in preserving the shine, quality and sentimental value of your favourite pieces, so you can enjoy them for many years to come."
+            ]
+          }
+        ]
+      },
+      "enquiryNow": {
+        "hero": {
+          "breadcrumbLabel": "Breadcrumb",
+          "image": {
+            "src": "/images/hero.webp",
+            "alt": "Elegant fine jewellery with gold bracelets and diamond rings"
+          },
+          "heading": "Enquiry Now",
+          "homeLabel": "Home",
+          "homeHref": "/",
+          "currentLabel": "Enquiry Now"
+        },
+        "section": {
+          "image": {
+            "src": "/images/collections/product1.webp",
+            "alt": "Elegant diamond ring in warm golden light"
+          },
+          "benefitsHeader": {
+            "eyebrow": "The VÉLORA Promise",
+            "title": "Why Choose VÉLORA?",
+            "description": "Every piece tells a story. We help you find or create jewelry that makes yours unforgettable."
+          },
+          "benefits": [
+            {
+              "icon": "UserRound",
+              "title": "Personalized Guidance",
+              "description": "Get expert advice from our jewelry consultants."
+            },
+            {
+              "icon": "Gem",
+              "title": "Custom Designs",
+              "description": "Turn your unique ideas into reality."
+            },
+            {
+              "icon": "ShieldCheck",
+              "title": "Trusted Quality",
+              "description": "Quality craftsmanship and carefully selected materials."
+            },
+            {
+              "icon": "BadgeCheck",
+              "title": "Dedicated Support",
+              "description": "We're here for you, every step of the way."
+            }
+          ],
+          "form": {
+            "eyebrow": "Let's Create Something Special",
+            "title": "Enquiry Form",
+            "description": "Fill in the details below and our team will get back to you soon.",
+            "fields": {
+              "fullName": {
+                "label": "Full Name",
+                "placeholder": "Enter your full name"
+              },
+              "email": {
+                "label": "Email Address",
+                "placeholder": "you@example.com"
+              },
+              "phone": {
+                "label": "Phone Number",
+                "placeholder": "Enter your phone number"
+              },
+              "interest": {
+                "label": "Select Interest",
+                "placeholder": "Select an option",
+                "options": [
+                  "Engagement Rings",
+                  "Diamond Jewelry",
+                  "Necklaces",
+                  "Earrings",
+                  "Bracelets",
+                  "Custom Jewelry Design",
+                  "Other Enquiry"
+                ]
+              },
+              "message": {
+                "label": "Message",
+                "placeholder": "Tell us about your enquiry...",
+                "maxLength": 3000,
+                "counterSeparator": "/"
+              }
+            },
+            "status": {
+              "success": "Your enquiry has been submitted successfully.",
+              "error": "We couldn't submit your enquiry. Please try again."
+            },
+            "submit": {
+              "label": "Submit Enquiry",
+              "submitting": "Submitting..."
+            },
+            "privacyNotice": "Your information will be handled in accordance with our privacy policy."
+          }
+        }
       },
       "signatureCollections": {
         "eyebrow": "THE VÉLORA SELECTION",
@@ -640,6 +1067,10 @@
               {
                 "label": "Gallery",
                 "href": "/gallery"
+              },
+              {
+                "label": "Blog",
+                "href": "/blog"
               },
               {
                 "label": "Contact",

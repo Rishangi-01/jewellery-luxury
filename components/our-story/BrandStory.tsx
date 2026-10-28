@@ -101,7 +101,7 @@ export default function BrandStory() {
             </div>
           </motion.div>
 
-          {/* Artisan image */}
+          
           <motion.div
             initial={
               reduceMotion ? false : { opacity: 0, x: 35, scale: 0.97 }
@@ -111,7 +111,7 @@ export default function BrandStory() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="group relative order-1 md:order-2"
           >
-            {/* Offset decorative frame */}
+            
             <div
               aria-hidden="true"
               className="absolute -right-2 -top-2
@@ -143,7 +143,7 @@ export default function BrandStory() {
                 group-hover:opacity-50"
               />
 
-              {/* Corner label */}
+              
               <div className="absolute bottom-4 left-4
                 border border-white/30 bg-black/30
                 px-4 py-3 backdrop-blur-md
@@ -159,7 +159,7 @@ export default function BrandStory() {
                 </p>
               </div>
 
-              {/* Decorative corner */}
+              
               <div className="absolute right-4 top-4
                 flex h-11 w-11 items-center justify-center
                 rounded-full border border-white/40

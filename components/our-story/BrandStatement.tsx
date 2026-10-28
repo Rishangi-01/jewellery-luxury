@@ -20,7 +20,7 @@ export default function BrandStatement() {
           border-[#bda47d]/50 bg-[#100d09]
           sm:min-h-[220px] lg:min-h-[300px]"
       >
-        {/* Background gold glow */}
+      
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-20
@@ -28,7 +28,7 @@ export default function BrandStatement() {
             bg-[#bd8c4c]/15 blur-[100px]"
         />
 
-        {/* Jewelry photography */}
+     
         <motion.div
           initial={reduceMotion ? false : { scale: 1.08, opacity: 0.7 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -48,7 +48,7 @@ export default function BrandStatement() {
           />
         </motion.div>
 
-        {/* Blend image into the dark background */}
+      
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-r
@@ -63,7 +63,7 @@ export default function BrandStatement() {
             from-black/25 to-transparent"
         />
 
-        {/* Fine gold decorative line */}
+      
         <motion.div
           initial={reduceMotion ? false : { scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -74,7 +74,7 @@ export default function BrandStatement() {
             from-[#c7a46a] via-[#8e6b3c]/50 to-transparent"
         />
 
-        {/* Text content */}
+      
         <div className="relative z-10 flex min-h-[190px]
           items-center px-6 py-9 sm:min-h-[220px]
           sm:px-10 lg:min-h-[250px] lg:px-12 xl:px-16">
