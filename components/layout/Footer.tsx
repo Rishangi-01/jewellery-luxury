@@ -121,7 +121,7 @@ export default function Footer() {
                       reduceMotion ? undefined : { y: -3, scale: 1.06 }
                     }
                     whileTap={reduceMotion ? undefined : { scale: 0.95 }}
-                    className="flex h-9 w-9 items-center justify-center
+                    className="flex h-9 w-9 bg-[#ba894a] items-center justify-center
                       rounded-full border border-white/15
                       text-white/60 transition-colors duration-300
                       hover:border-[#c6a66d]/70 hover:bg-[#c6a66d]/10
