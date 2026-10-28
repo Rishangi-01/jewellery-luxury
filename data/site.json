@@ -937,7 +937,8 @@
             },
             "status": {
               "success": "Your enquiry has been submitted successfully.",
-              "error": "We couldn't submit your enquiry. Please try again."
+              "error": "We couldn't submit your enquiry. Please try again.",
+              "requestError": "Unable to submit enquiry."
             },
             "submit": {
               "label": "Submit Enquiry",

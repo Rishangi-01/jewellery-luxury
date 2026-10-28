@@ -73,7 +73,7 @@ export default function EnquirySection() {
       });
 
       if (!response.ok) {
-        throw new Error("Unable to submit enquiry.");
+        throw new Error(formContent.status.requestError);
       }
 
       setStatus("success");
