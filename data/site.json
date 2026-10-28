@@ -495,49 +495,49 @@
             "id": 2,
             "title": "Diamond Solitaire Ring",
             "category": "Diamond Jewellery",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/our-story/product3.webp"
           },
           {
             "id": 3,
             "title": "Diamond Drop Earrings",
             "category": "Earrings",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/our-story/product4.webp"
           },
           {
             "id": 4,
             "title": "Diamond Tennis Bangles",
             "category": "Bangles",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/our-story/product5.webp"
           },
           {
             "id": 5,
             "title": "Emerald Statement Ring",
             "category": "Gemstone Jewellery",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/home/banner2.webp"
           },
           {
             "id": 6,
             "title": "Gold Pendant Necklace",
             "category": "Necklaces",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/home/banner3.webp"
           },
           {
             "id": 7,
             "title": "Classic Gold Earrings",
             "category": "Gold Jewellery",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/home/banner4.webp"
           },
           {
             "id": 8,
             "title": "Diamond Halo Ring",
             "category": "Diamond Jewellery",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/home/banner5.webp"
           },
           {
             "id": 9,
             "title": "Elegant Pearl Earrings",
             "category": "Earrings",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/collections/product1.webp"
           },
           {
             "id": 10,
@@ -549,121 +549,19 @@
             "id": 11,
             "title": "Ruby Gold Ring",
             "category": "Gemstone Jewellery",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/our-story/product3.webp"
           },
           {
             "id": 12,
             "title": "Floral Diamond Pendant",
             "category": "Necklaces",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/our-story/product4.webp"
           },
           {
             "id": 13,
             "title": "Royal Gold Necklace",
             "category": "Gold Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 14,
-            "title": "Princess Cut Ring",
-            "category": "Diamond Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 15,
-            "title": "Statement Diamond Earrings",
-            "category": "Earrings",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 16,
-            "title": "Classic Gold Bangles",
-            "category": "Bangles",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 17,
-            "title": "Green Emerald Jewellery",
-            "category": "Gemstone Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 18,
-            "title": "Diamond Floral Necklace",
-            "category": "Necklaces",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 19,
-            "title": "Gold Bridal Earrings",
-            "category": "Gold Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 20,
-            "title": "Round Brilliant Ring",
-            "category": "Diamond Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 21,
-            "title": "Pear Drop Earrings",
-            "category": "Earrings",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 22,
-            "title": "Diamond Cuff Bracelet",
-            "category": "Bracelets",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 23,
-            "title": "Emerald Halo Ring",
-            "category": "Gemstone Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 24,
-            "title": "Gold Floral Pendant",
-            "category": "Necklaces",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 25,
-            "title": "Vintage Gold Jewellery",
-            "category": "Gold Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 26,
-            "title": "Elegant Diamond Ring",
-            "category": "Diamond Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 27,
-            "title": "Crystal Drop Earrings",
-            "category": "Earrings",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 28,
-            "title": "Gold Diamond Bangles",
-            "category": "Bangles",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 29,
-            "title": "Emerald Statement Jewellery",
-            "category": "Gemstone Jewellery",
-            "image": "/images/our-story/product2.webp"
-          },
-          {
-            "id": 30,
-            "title": "Diamond Pendant",
-            "category": "Necklaces",
-            "image": "/images/our-story/product2.webp"
+            "image": "/images/our-story/product5.webp"
           }
         ]
       },
