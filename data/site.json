@@ -2170,16 +2170,16 @@
                     "href": "/"
                   },
                   {
-                    "label": "Collections",
-                    "href": "/collections"
-                  },
-                  {
                     "label": "Our Story",
                     "href": "/our-story"
                   },
                   {
                     "label": "Gallery",
                     "href": "/gallery"
+                  },
+                  {
+                    "label": "Blog",
+                    "href": "/blog"
                   },
                   {
                     "label": "Contact",
@@ -2192,7 +2192,7 @@
                 "source": "plans",
                 "links": [
                   {
-                    "label": "Rings",
+                    "label": "Collections",
                     "href": "/collections"
                   },
                   {
