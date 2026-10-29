@@ -33,7 +33,7 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto max-w-[1600px] overflow-hidden
-          rounded-md border border-white/10 bg-[#080807]/95
+          rounded-0 border border-white/10 bg-[#080807]/95
           shadow-[0_8px_40px_rgba(0,0,0,0.35)]
           backdrop-blur-xl"
       >
