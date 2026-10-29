@@ -37,7 +37,7 @@ export default function LatestJewelleryInsights() {
   return (
     <section
       id="jewellery-insights"
-      className="relative overflow-hidden bg-[#faf8f5] px-4 py-12 sm:px-6 sm:py-12 lg:px-8 lg:py-12"
+      className="relative overflow-hidden bg-[#faf8f5] px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-12"
     >
       
       <div
@@ -56,7 +56,7 @@ export default function LatestJewelleryInsights() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mx-auto mb-9 max-w-2xl text-center sm:mb-12"
+          className="mx-auto mb-6 lg:mb-9 max-w-2xl text-center sm:mb-12"
         >
           <div className="mb-2 flex items-center justify-center gap-3">
             <span className="h-px w-9 bg-[#b78043]" />

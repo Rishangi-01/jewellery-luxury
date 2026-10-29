@@ -79,7 +79,7 @@ export default function StatsSection() {
       ref={sectionRef}
       aria-label={`${site.site.name} achievements`}
       className="relative overflow-hidden bg-[#faf8f3]
-        px-4 py-8 sm:px-6 sm:py-8 lg:px-10 lg:py-8 w-[100%]"
+        px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-8 w-[100%]"
     >
       <div
         aria-hidden="true"

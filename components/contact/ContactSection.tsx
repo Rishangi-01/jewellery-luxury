@@ -99,8 +99,8 @@ export default function ContactSection() {
     <section
       id="contact"
       className="overflow-hidden bg-[#faf8f3]
-        px-4 pb-12 pt-24 text-[#25231f]
-        sm:px-7 sm:py-16 lg:px-12 lg:pb-20 lg:pt-36 w-[100%]"
+        px-4 pb-12 pt-8 text-[#25231f]
+        sm:px-7 sm:py-16 lg:px-12 lg:pb-20 lg:pt-12 w-[100%]"
     >
       <div className="mx-auto max-w-[1300px]">
 

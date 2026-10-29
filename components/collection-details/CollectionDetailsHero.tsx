@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { ChevronRight } from "lucide-react";
-import { site, blogDetailsHeroData } from "@/data";
+import { site, productDetailsHeroData } from "@/data";
 
 export default function CollectionDetailsHero() {
   const reduceMotion = useReducedMotion();
@@ -80,7 +80,7 @@ export default function CollectionDetailsHero() {
               tracking-[-0.035em] text-[#fff8eb]
               drop-shadow-md sm:text-5xl md:text-6xl"
           >
-            {blogDetailsHeroData.heading}
+            {productDetailsHeroData.heading}
           </h1>
         </motion.div>
 
@@ -109,7 +109,7 @@ export default function CollectionDetailsHero() {
             aria-current="page"
             className="text-[#e3c58f]"
           >
-            {blogDetailsHeroData.heading}
+            {productDetailsHeroData.heading}
           </span>
         </motion.nav>
       </div>

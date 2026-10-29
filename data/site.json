@@ -1995,6 +1995,17 @@
                 "title": "Visit Us",
                 "field": "address"
               }
+            },
+            "hero": {
+              "breadcrumbLabel": "Breadcrumb",
+              "image": {
+                "src": "/images/hero.webp",
+                "alt": "Elegant fine jewellery with gold bracelets and diamond rings"
+              },
+              "heading": "Contact Us",
+              "homeLabel": "Home",
+              "homeHref": "/",
+              "currentLabel": "Contact Us"
             }
           }
         }

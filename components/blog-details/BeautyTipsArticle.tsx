@@ -11,7 +11,7 @@ import { blogDetailsData } from "@/data";
 
 export default function BeautyTipsArticle() {
   return (
-    <main className="relative overflow-hidden bg-[#fdfcfb] px-4 py-10 text-[#202333] sm:px-6 sm:py-12 lg:px-16 lg:py-12">
+    <main className="relative overflow-hidden bg-[#fdfcfb] px-4 py-8 text-[#202333] sm:px-6 sm:py-12 lg:px-16 lg:py-12">
       
       <div
         aria-hidden="true"

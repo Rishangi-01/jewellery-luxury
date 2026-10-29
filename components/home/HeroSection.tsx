@@ -52,7 +52,7 @@ export default function HeroSection() {
       aria-label={`${site.site.name} featured collection`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="relative isolate min-h-[680px] overflow-hidden bg-[#080706]
+      className="relative isolate min-h-[500px] lg:min-h-[680px] overflow-hidden bg-[#080706]
         sm:min-h-[760px] lg:min-h-[min(850px,100svh)] w-[100%]"
     >
       
@@ -106,7 +106,7 @@ export default function HeroSection() {
 
       
       <div
-        className="mx-auto flex min-h-[680px] max-w-[1600px]
+        className="mx-auto flex min-h-[500px] lg:min-h-[680px] max-w-[1600px]
           items-center px-6 pb-28 pt-32
           sm:min-h-[760px] sm:px-10 sm:pb-32 sm:pt-36
           lg:min-h-[min(850px,100svh)] lg:px-14
