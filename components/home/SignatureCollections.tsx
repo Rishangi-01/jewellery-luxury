@@ -106,7 +106,7 @@ export default function SignatureCollections() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.12 }}
-          className="grid grid-cols-1 gap-x-5 gap-y-8
+          className="grid grid-cols-1 gap-x-5 gap-y-3
             sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10
             lg:grid-cols-4 lg:gap-x-6 xl:gap-x-8"
         >

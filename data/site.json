@@ -1001,8 +1001,8 @@
               {
                 "eyebrow": "THE ART OF FINE JEWELRY",
                 "title": [
-                  "Timeless Elegance",
-                  "For Modern Queens"
+                  "Elegance For",
+                  "Modern Queens"
                 ],
                 "text": "Exquisite jewelry crafted for the romantic in all of us.",
                 "image": "/images/hero.webp"
@@ -2237,6 +2237,26 @@
               }
             ],
             "contactTitle": "Get In Touch",
+            "contactDetails": [
+              {
+                "title": "Call Us",
+                "value": "+1 (212) 555-0186",
+                "href": "tel:+12125550186",
+                "icon": "phone"
+              },
+              {
+                "title": "Email Us",
+                "value": "hello@velora.com",
+                "href": "mailto:hello@velora.com",
+                "icon": "mail"
+              },
+              {
+                "title": "Visit Us",
+                "value": "123 Luxury Lane, New York, NY 10001, USA",
+                "href": "https://maps.google.com/?q=123+Luxury+Lane+New+York+NY+10001",
+                "icon": "map-pin"
+              }
+            ],
             "contact": [
               {
                 "icon": "pin-solid",

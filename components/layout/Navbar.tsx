@@ -68,7 +68,7 @@ export default function Navbar() {
             aria-label={`${site.site.name} home`}
             className="group relative shrink-0"
           >
-            <div className="flex flex-col lg:h-[60px] h-[40px]">
+            <div className="flex flex-col lg:h-[60px] md:h-[40px] h-[35px]">
               <img src={site.site.logo} alt={site.site.name} className="h-full w-full object-contain" />
             </div>
 
@@ -108,14 +108,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-5">
+          <div className="flex shrink-0 items-center md:gap-2 gap-2 lg:gap-5">
             
               <Link
                 href={site.nav.button.href}
-                className="group inline-flex min-h-[40px]
-                                items-center justify-center gap-5
-                                border border-[#c6a66d]/80 px-3 py-2 sm:py-3 rounded-xs
-                                text-[11px] font-semibold tracking-[0.15em]
+                className="group inline-flex lg:min-h-[40px] min-h-[35px]
+                                items-center justify-center lg:gap-5 gap-2
+                                border border-[#c6a66d]/80 px-2 md:px-3 py-1 md:py-2 sm:py-3 rounded-xs
+                                text-[9px] md:text-[10px] font-semibold tracking-[0.15em]
                                 text-[#f6eddb] transition-all duration-300
                                 hover:border-[#e4c68c] hover:bg-[#c6a66d]
                                 hover:text-[#100d08]

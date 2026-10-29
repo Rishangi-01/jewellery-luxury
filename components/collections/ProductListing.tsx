@@ -89,7 +89,7 @@ export default function ProductListing() {
 
   return (
     <section
-      className="min-h-screen bg-[#faf8f3] px-4 py-8
+      className="bg-[#faf8f3] px-4 py-8
       sm:px-6 sm:py-10 lg:px-10 lg:py-12 w-[100%]"
     >
       <div className="mx-auto max-w-[1600px]">
@@ -251,7 +251,7 @@ export default function ProductListing() {
 
             {filteredProducts.length > 0 && (
               <div
-                className="mt-12 flex flex-wrap items-center
+                className="lg:mt-12 mt-6 flex flex-wrap items-center
                 justify-center gap-2 sm:mt-16"
               >
                 <button

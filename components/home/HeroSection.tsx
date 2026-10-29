@@ -151,7 +151,7 @@ export default function HeroSection() {
               </motion.div>
 
               <h1
-                className="font-serif text-[clamp(3.2rem,8vw,5.2rem)]
+                className="font-serif text-[clamp(2.8rem,8vw,5.2rem)]
                   font-normal leading-[0.98] tracking-[-0.045em]
                   text-[#f6eddb]"
               >
@@ -255,8 +255,8 @@ export default function HeroSection() {
             aria-label="Previous slide"
             onClick={() => changeSlide(-1)}
             className="flex h-10 w-10 items-center justify-center
-              border border-white/20 text-white/80
-              transition-all duration-300 hover:border-[#c9a76b]
+              border border-[#c9a76b]/70 bg-[#c9a76b]/10
+              text-[#f3dfb4] transition-all duration-300
               hover:bg-[#c9a76b] hover:text-black
               sm:h-12 sm:w-12"
           >

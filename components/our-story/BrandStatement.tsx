@@ -87,10 +87,10 @@ export default function BrandStatement() {
             className="max-w-[620px]"
           >
 
-            <h2 className="font-serif text-[27px]
+            <h2 className="font-serif text-[17px]
               font-normal leading-[1.3] tracking-[-0.025em]
               text-[#f8f0e3] sm:text-3xl
-              md:text-4xl lg:text-[32px] xl:text-[36px]">
+              md:text-4xl lg:text-[30px] xl:text-[32px]">
               {site.about.pageParagraphs[3]}
             </h2>
 
