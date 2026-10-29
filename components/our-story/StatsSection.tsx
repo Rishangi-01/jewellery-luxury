@@ -88,7 +88,7 @@ export default function StatsSection() {
           rounded-full bg-[#c5a36d]/[0.06] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1400px]">
+      <div className="relative mx-auto max-w-[1500px]">
         <div className="grid grid-cols-2 lg:grid-cols-4">
           {site.stats.map((stat, index) => {
             const value = parseStatValue(stat.value);

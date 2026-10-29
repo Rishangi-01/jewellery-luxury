@@ -32,7 +32,7 @@ export default function BrandStory() {
           blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-[1400px]">
+      <div className="relative mx-auto max-w-[1500px]">
         <div className="grid grid-cols-1 items-center
           gap-10 md:grid-cols-2 md:gap-10
           lg:gap-16 xl:gap-24">

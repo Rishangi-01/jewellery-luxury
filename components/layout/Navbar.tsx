@@ -37,7 +37,7 @@ export default function Navbar() {
           shadow-[0_8px_40px_rgba(0,0,0,0.35)]
           backdrop-blur-xl"
       >
-        {/* Ambient golden light */}
+       
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden"

@@ -62,7 +62,7 @@ export default function ProductDetails() {
       />
 
       <div
-        className="relative mx-auto grid max-w-[1400px]
+        className="relative mx-auto grid max-w-[1500px]
         grid-cols-1 gap-8 md:grid-cols-2
         md:gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]
         lg:gap-12 xl:gap-16"
